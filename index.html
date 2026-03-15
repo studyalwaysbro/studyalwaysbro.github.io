@@ -455,18 +455,36 @@
                 <div style={{ marginTop: 16, fontSize: 12, color: TEXT_DIM }}>Data visualization, valuation models, AI integration planned</div>
               </Card>
 
-              <Card hover>
+                            <Card hover>
                 <Tag color={GOLD}>Bot</Tag>
-                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>The Ticker Prophet</h3>
+                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>Jenkins</h3>
                 <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  Discord bot for aggregating and delivering market data and news to community channels.
-                  Automated content curation with customizable filters and market event tracking.
+                  AI-powered Discord bot with a custom voice, persistent memory, and a theatrical personality.
+                  Features real-time voice channel interaction via ElevenLabs TTS, intelligent noise filtering
+                  for audio processing, and autonomous behavior on a scheduling system.
                 </p>
                 <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["Discord.py", "FMP API", "Automated Alerts"].map((t) => (
+                  {["discord.js", "DeepSeek", "ElevenLabs", "Node.js"].map((t) => (
                     <Tag key={t} color={GOLD}>{t}</Tag>
                   ))}
                 </div>
+                <a href="https://github.com/studyalwaysbro/jenkins-discord-bot" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: GOLD, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
+              </Card>
+
+              <Card hover>
+                <Tag color={ACCENT}>Research</Tag>
+                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>Asset Cluster Migration</h3>
+                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
+                  Quantitative study of how asset clusters reorganize under geopolitical stress across 43 ETFs
+                  from 2019-2026. Uses spectral clustering, transfer entropy, Granger causality networks,
+                  and hidden Markov models to map structural regime shifts in multi-asset topologies.
+                </p>
+                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["Python", "Spectral Clustering", "Transfer Entropy", "HMM", "NetworkX"].map((t) => (
+                    <Tag key={t} color={ACCENT}>{t}</Tag>
+                  ))}
+                </div>
+                <a href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: ACCENT, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
               </Card>
 
               <Card hover>
