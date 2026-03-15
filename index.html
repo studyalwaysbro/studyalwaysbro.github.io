@@ -173,6 +173,626 @@
               }}>NT</div>
 
               <h1 style={{ fontSize: 52, fontWeight: 800, margin: 0, color: "white", letterSpacing: "-1px" }}>Nicholas Tavares</h1>
+              <p style={{ fontSize: 13, color: ACCENT, fontWeight: 600, letterSpacing: 4, textTransform: "uppercase", marginTop: 12 }}>CIMA® Certificant</p>
+              <p style={{ fontSize: 20, color: TEXT_DIM, marginTop: 16, maxWidth: 700, margin: "16px auto 0", lineHeight: 1.6 }}>
+                Mathematician • Quantitative Researcher • ML Engineer • Agentic AI
+              </p>
+              <p style={{ fontSize: 14, color: TEXT_DIM, marginTop: 12, fontStyle: "italic", fontFamily: "Georgia, serif" }}>
+                Exploring market microstructure through network analysis and information theory.
+              </p>
+
+              <div style={{ marginTop: 36, display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+                <a href="#research" style={{ display: "inline-block", padding: "12px 32px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14 }}>View Research</a>
+                <a href="#projects" style={{ display: "inline-block", padding: "12px 32px", background: "transparent", color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>Explore Projects</a>
+                <a href="https://github.com/studyalwaysbro" target="_blank" style={{ display: "inline-block", padding: "12px 32px", background: "transparent", color: TEXT_DIM, borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>GitHub ↗</a>
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "center", gap: 40, marginTop: 60, flexWrap: "wrap" }}>
+                <StatBox value="91" label="ETFs Analyzed" />
+                <StatBox value="13K+" label="Lines of Code" />
+                <StatBox value="8" label="Data Sources" />
+                <StatBox value="24" label="Published Figures" />
+                <StatBox value="172" label="Python Scripts" />
+              </div>
+            </div>
+          </section>
+
+          {/* ABOUT */}
+          <Section id="about" dark>
+            <SectionTitle sub="The intersection of pure mathematics and dirty market data">About</SectionTitle>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 24 }}>
+                  <div style={{
+                    width: 100, height: 100, borderRadius: "50%",
+                    background: `linear-gradient(135deg, ${ACCENT}, ${BLUE})`,
+                    flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center",
+                    border: "3px solid rgba(233,69,96,0.3)", boxShadow: `0 0 30px ${ACCENT}22`, overflow: "hidden",
+                  }}>
+                    <span style={{ fontSize: 36, fontWeight: 800, color: "white" }}>NT</span>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 18, fontWeight: 700, color: "white" }}>Nicholas Tavares</div>
+                    <div style={{ fontSize: 12, color: ACCENT, fontWeight: 600, marginTop: 2 }}>CIMA® Certificant</div>
+                    <div style={{ fontSize: 12, color: TEXT_DIM, marginTop: 4 }}>Stevens Institute of Technology</div>
+                  </div>
+                </div>
+                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT }}>
+                  I'm a quantitative researcher and ML engineer who builds systems that find structure in chaos.
+                  My work sits at the intersection of <span style={{ color: ACCENT, fontWeight: 600 }}>graph theory</span>,
+                  <span style={{ color: BLUE, fontWeight: 600 }}> information theory</span>, and
+                  <span style={{ color: GREEN, fontWeight: 600 }}> financial markets</span>, using tools from
+                  pure mathematics to solve applied problems in portfolio construction and market microstructure.
+                </p>
+                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginTop: 16 }}>
+                  Currently pursuing an M.S. in Mathematics at <b>Stevens Institute of Technology</b>{" "}
+                  while building multi-agent research systems for prediction market analysis.
+                  Also currently working in wealth management on a team managing multi-asset portfolios
+                  across equities, fixed income, alternatives, options, and structured products.
+                </p>
+                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginTop: 16 }}>
+                  I believe the best insights come from asking better questions, not running faster models.
+                  My research suggests that market network structures show measurable changes <i>before</i> observed
+                  crises, not during them. A pattern worth studying rigorously.
+                </p>
+              </div>
+              <div>
+                <Card>
+                  <h3 style={{ color: "white", fontSize: 16, marginTop: 0, marginBottom: 8 }}>Credentials & Licenses</h3>
+                  <p style={{ fontSize: 11, color: TEXT_DIM, marginTop: 0, marginBottom: 12, fontStyle: "italic" }}>
+                    Securities licenses held through employer. Listed for professional background only. This site is personal and independent.
+                  </p>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                    {["CIMA® Certificant", "Series 7", "Series 66", "Series 3", "SIE"].map((c) => (
+                      <div key={c} style={{ padding: "10px 14px", background: `${ACCENT}11`, borderRadius: 8, border: `1px solid ${ACCENT}33`, fontSize: 13, fontWeight: 600, color: ACCENT }}>{c}</div>
+                    ))}
+                  </div>
+                  <h3 style={{ color: "white", fontSize: 16, marginTop: 24, marginBottom: 12 }}>Education</h3>
+                  <div style={{ fontSize: 14, color: TEXT }}>
+                    <b>Stevens Institute of Technology</b>
+                    <p style={{ color: TEXT_DIM, fontSize: 13, margin: "4px 0 0" }}>M.S. Mathematics | Dec 2023 - Jun 2026 (expected)</p>
+                  </div>
+                  <div style={{ fontSize: 14, color: TEXT, marginTop: 12 }}>
+                    <b>Oregon Institute of Technology</b>
+                    <p style={{ color: TEXT_DIM, fontSize: 13, margin: "4px 0 0" }}>B.S. Applied Mathematics | 2015 - 2018</p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </Section>
+
+          {/* DISCLOSURES */}
+          <Section id="disclosures">
+            <SectionTitle sub="Please review before exploring this site">Disclosures</SectionTitle>
+            <div style={{ maxWidth: 800, margin: "0 auto" }}>
+              <Card>
+                <div style={{ display: "grid", gap: 20 }}>
+                  <div>
+                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Personal Site</h3>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
+                      This website is maintained in my personal capacity only. I am a registered representative
+                      through UBS Financial Services Inc., Member FINRA/SIPC, but this site is <b>not affiliated with,
+                      endorsed by, or associated with UBS</b> or any other employer or financial institution.
+                      All views and opinions expressed here are my own and do not represent the views of any firm.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Not Investment Advice</h3>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
+                      Nothing on this site constitutes investment advice, a solicitation to buy or sell securities,
+                      or a recommendation of any investment product, strategy, or course of action. All content is
+                      for <b>educational and academic research purposes only</b> and should not be used as the basis
+                      for any investment decision.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Research Disclaimer</h3>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
+                      All research findings, statistical results, and quantitative analysis presented here are theoretical
+                      and academic in nature. Historical patterns observed in specific datasets do not predict future performance
+                      and have not been validated for real-world trading or investment applications. Past performance,
+                      whether simulated or backtested, does not indicate future results.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Credentials</h3>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
+                      Securities licenses (Series 7, 66, 3, SIE) are held through my employer and are listed here
+                      solely to describe my professional background. The CIMA® (Certified Investment Management Analyst®)
+                      certification is issued by the
+                      Investments & Wealth Institute. The display of these credentials does not imply any firm's
+                      endorsement of this website or its content.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </Section>
+
+          {/* RESEARCH */}
+          <Section id="research">
+            <SectionTitle sub="Publication-ready quantitative research with novel mathematical contributions">Research</SectionTitle>
+            <Card hover style={{ marginBottom: 32 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
+                <div style={{ flex: 1, minWidth: 300 }}>
+                  <Tag color={ACCENT}>Network Theory</Tag>
+                  <Tag color={BLUE}>Information Theory</Tag>
+                  <Tag color={GREEN}>Geopolitical Finance</Tag>
+                  <Tag color={GOLD}>HMM Regime Detection</Tag>
+                  <h3 style={{ color: "white", fontSize: 22, margin: "16px 0 8px", lineHeight: 1.3 }}>
+                    Dynamic Multi-Asset Portfolio Topology Reorganization During Geopolitical Stress
+                  </h3>
+                  <p style={{ color: TEXT_DIM, fontSize: 13, margin: 0 }}>N. Tavares, A. Hanini, B. Dasilva | Stevens Institute of Technology, 2025-2026</p>
+                </div>
+                <a href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank"
+                  style={{ padding: "10px 20px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>
+                  View on GitHub ↗
+                </a>
+              </div>
+              <p style={{ fontSize: 14, lineHeight: 1.7, marginTop: 16 }}>
+                A novel framework analyzing how multi-asset portfolio structures reorganize during geopolitical crises.
+                Constructs multi-layer similarity networks across <b>91 ETFs</b> spanning 8 asset classes using shrinkage correlation,
+                distance correlation, and tail-dependence measures. Applies Leiden community detection, Hidden Markov Model regime identification,
+                and information-theoretic metrics (transfer entropy via KSG estimator, Granger causality) to reveal directional
+                information flow between asset clusters.
+              </p>
+
+              <div style={{ marginTop: 20, background: `${BLUE}11`, border: `1px solid ${BLUE}33`, borderRadius: 8, padding: 12, marginBottom: 16 }}>
+                <p style={{ fontSize: 11, color: TEXT_DIM, margin: 0, lineHeight: 1.6 }}>
+                  <b style={{ color: BLUE }}>Academic Research:</b> Findings below are from a specific historical dataset and time period.
+                  They have not been validated for real-world application and should not be construed as investment recommendations.
+                </p>
+              </div>
+
+              <div style={{ marginTop: 20 }}>
+                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Key Findings</h4>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                  {[
+                    { icon: "\u26a1", text: "In this dataset, topology metrics showed structural changes preceding observed crises, a pattern meriting further study" },
+                    { icon: "\ud83d\udd17", text: "Tail-dependence CMI Granger-causes Pearson CMI (p=0.041) in our sample period (generalizability under investigation)" },
+                    { icon: "\ud83c\udfdb\ufe0f", text: "Treasury cluster shifted to primary information sender during geopolitical periods studied (vs. credit in calm)" },
+                    { icon: "\ud83d\udcca", text: "COVID period showed distinct cluster dissolution (CMI=1.0) with faster structural recovery than geopolitical shocks" },
+                  ].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 10, fontSize: 13, lineHeight: 1.6, color: TEXT }}>
+                      <span style={{ fontSize: 18 }}>{f.icon}</span><span>{f.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ marginTop: 20 }}>
+                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Novel Contributions</h4>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {["CMI (Cluster Migration Index)", "TDS (Topology Deformation Score)", "Layer Agreement Metric", "Net Transfer Entropy Ranking", "Cross-Layer Granger Causality"].map((c) => (
+                    <Tag key={c} color={BLUE}>{c}</Tag>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ marginTop: 20 }}>
+                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Methodology & Robustness</h4>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {["Walk-Forward Validation", "Block Bootstrap CI", "IAAFT Surrogate Testing", "Monte Carlo Power Analysis", "Bonferroni & BH-FDR Correction", "Sensitivity Analysis"].map((m) => (
+                    <Tag key={m} color={GREEN}>{m}</Tag>
+                  ))}
+                </div>
+              </div>
+            </Card>
+
+            <div style={{ marginTop: 24 }}>
+              <h4 style={{ color: "white", fontSize: 16, marginBottom: 16, textAlign: "center" }}>Publication-Quality Figures (24 Total)</h4>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+                {["CMI/TDS Time Series", "Correlation Heatmap", "Epic Fury Evolution", "Information Flow",
+                  "Transfer Entropy Heatmap", "Granger Network", "Cross-Layer Causality", "COVID Cluster Evolution"
+                ].map((fig, i) => (
+                  <div key={i} style={{
+                    background: `linear-gradient(135deg, ${CARD}, ${ACCENT}11)`, borderRadius: 8,
+                    padding: 16, border: `1px solid ${CARD_BORDER}`, textAlign: "center", fontSize: 11, color: TEXT_DIM,
+                  }}>
+                    <div style={{ fontSize: 28, marginBottom: 8 }}>{["\ud83d\udcc8", "\ud83d\uddfa\ufe0f", "\ud83c\udf00", "\ud83d\udd04", "\ud83d\udd25", "\ud83d\udd78\ufe0f", "\u26a1", "\ud83e\udda0"][i]}</div>
+                    Fig. {i + 1}: {fig}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Section>
+
+          {/* PROJECTS */}
+          <Section id="projects" dark>
+            <SectionTitle sub="Research systems, multi-agent AI, and quantitative tools">Projects</SectionTitle>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+              <Card hover>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                  <Tag color={ACCENT}>Research</Tag>
+                  <span style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>v2.0</span>
+                </div>
+                <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>Polymarket Agents</h3>
+                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
+                  Multi-agent research system using CrewAI for analyzing sentiment patterns in prediction markets
+                  across 8 data sources. Features ensemble NLP (VADER + TextBlob + LLM),
+                  cross-market data aggregation (Kalshi, Manifold), confidence scoring methodology, FastAPI dashboard,
+                  and research validation framework.
+                </p>
+                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["CrewAI", "DeepSeek", "FastAPI", "PostgreSQL", "LangChain", "Bluesky", "GDELT"].map((t) => (
+                    <Tag key={t} color={BLUE}>{t}</Tag>
+                  ))}
+                </div>
+                <div style={{ marginTop: 16, display: "flex", gap: 12 }}>
+                  <span style={{ fontSize: 12, color: TEXT_DIM }}>8,179+ LOC</span>
+                  <span style={{ fontSize: 12, color: TEXT_DIM }}>&bull;</span>
+                  <span style={{ fontSize: 12, color: TEXT_DIM }}>8 Data Sources</span>
+                  <span style={{ fontSize: 12, color: TEXT_DIM }}>&bull;</span>
+                  <span style={{ fontSize: 12, color: TEXT_DIM }}>4 Agents</span>
+                </div>
+                <a href="https://github.com/studyalwaysbro/Polymarket_Agents" target="_blank" style={{ display: "inline-block", marginTop: 16, color: ACCENT, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
+              </Card>
+
+              <Card hover>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                  <Tag color={GREEN}>Active Development</Tag>
+                </div>
+                <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>YeetTerminal</h3>
+                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
+                  Sophisticated finance dashboard with live DCF valuation, sector analysis, portfolio tracking,
+                  and AI-powered stock analysis. Built with FMP API integration, real-time data streaming,
+                  and planned LangChain agent for natural language market queries over personal DCF models.
+                </p>
+                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["FMP API", "LangChain", "Ollama", "React", "DCF Models"].map((t) => (
+                    <Tag key={t} color={GREEN}>{t}</Tag>
+                  ))}
+                </div>
+                <div style={{ marginTop: 16, fontSize: 12, color: TEXT_DIM }}>Data visualization &bull; Valuation models &bull; AI integration planned</div>
+              </Card>
+
+              <Card hover>
+                <Tag color={GOLD}>Bot</Tag>
+                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>The Ticker Prophet</h3>
+                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
+                  Discord bot for aggregating and delivering market data and news to community channels.
+                  Automated content curation with customizable filters and market event tracking.
+                </p>
+                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["Discord.py", "FMP API", "Automated Alerts"].map((t) => (
+                    <Tag key={t} color={GOLD}>{t}</Tag>
+                  ))}
+                </div>
+              </Card>
+
+              <Card hover>
+                <Tag color={BLUE}>ML Pipeline</Tag>
+                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>LSTM Time-Series Research Pipeline</h3>
+                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
+                  Academic deep learning project exploring time-series pattern recognition with 6 Keras models,
+                  walk-forward validation, and hyperparameter optimization.
+                  Part of a 172-script quantitative research Python library.
+                </p>
+                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {["TensorFlow", "Keras", "LSTM", "SARIMA", "Walk-Forward CV"].map((t) => (
+                    <Tag key={t} color={BLUE}>{t}</Tag>
+                  ))}
+                </div>
+              </Card>
+            </div>
+
+            <Card style={{ marginTop: 24, border: `1px dashed ${ACCENT}44`, background: `${ACCENT}08` }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+                <Tag color={ACCENT}>Coming Soon</Tag>
+                <span style={{ fontSize: 13, color: ACCENT, fontWeight: 600 }}>Regime-Aware Research Engine</span>
+              </div>
+              <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                Merging Asset-Cluster-Migration topology analysis with Polymarket sentiment signals into a
+                research engine for studying regime transitions. When HMM detects structural shifts AND prediction
+                markets show divergence simultaneously, that convergence is theoretically interesting and worth
+                rigorous academic investigation.
+              </p>
+            </Card>
+          </Section>
+
+          {/* MATHEMATICS */}
+          <Section id="mathematics">
+            <SectionTitle sub="From abstract structures to applied algorithms, the mathematical foundation">Mathematical Interests</SectionTitle>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+              {[
+                { title: "Partial Differential Equations", eq: "\u2202u/\u2202t = \u03b1\u2207\u00b2u + f(x,t)", desc: "Black-Scholes, heat equation, diffusion processes. The language of continuous-time finance.", color: ACCENT },
+                { title: "Calculus & Real Analysis", eq: "lim \u03b5\u21920 |f(x+\u03b5)\u2212f(x)|/\u03b5", desc: "Measure theory, Lebesgue integration, functional analysis. Rigorous foundations for probability.", color: BLUE },
+                { title: "Linear Algebra", eq: "Av = \u03bbv, det(A\u2212\u03bbI) = 0", desc: "Spectral decomposition, SVD, eigenvalue problems. Core of PCA, clustering, and network analysis.", color: GREEN },
+                { title: "Abstract & Lie Algebras", eq: "[X,Y] = XY \u2212 YX \u2208 g", desc: "Group theory, symmetry, representation theory. Structure behind gauge theories and symmetry breaking.", color: GOLD },
+                { title: "Complex Analysis", eq: "\u222e f(z)dz = 2\u03c0i \u03a3 Res(f,a\u2096)", desc: "Residue calculus, conformal mapping, analytic continuation. Elegant tools for signal processing.", color: "#a855f7" },
+                { title: "Probability & Stochastic Calculus", eq: "dX = \u03bcdt + \u03c3dW", desc: "It\u00f4 calculus, martingales, SDEs, measure-theoretic probability. The engine of quantitative finance.", color: ACCENT },
+                { title: "Graph & Network Theory", eq: "L = D \u2212 A, x^T Lx \u2265 0", desc: "Spectral graph theory, community detection, multi-layer networks. My primary research domain.", color: BLUE },
+                { title: "Information Theory", eq: "T_{X\u2192Y} = H(Y|Y\u207b) \u2212 H(Y|Y\u207b,X\u207b)", desc: "Transfer entropy, mutual information, KL divergence. Measuring causal information flow between assets.", color: GREEN },
+                { title: "Machine Learning Theory", eq: "R(f) \u2264 R\u0302(f) + \u221a(d/n)", desc: "VC dimension, generalization bounds, PAC learning, bias-variance decomposition. Rigorous ML.", color: GOLD },
+              ].map((m, i) => (
+                <Card key={i} hover>
+                  <div style={{ fontSize: 12, color: m.color, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>{m.title}</div>
+                  <div style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: 15, color: "white", padding: "12px 0", borderBottom: `1px solid ${CARD_BORDER}`, marginBottom: 12 }}>{m.eq}</div>
+                  <p style={{ fontSize: 12, color: TEXT_DIM, lineHeight: 1.6, margin: 0 }}>{m.desc}</p>
+                </Card>
+              ))}
+            </div>
+          </Section>
+
+          {/* EXPERIENCE */}
+          <Section id="experience" dark>
+            <SectionTitle sub="From institutional wealth management to independent quantitative research">Experience</SectionTitle>
+            <div style={{ position: "relative", paddingLeft: 32 }}>
+              <div style={{ position: "absolute", left: 7, top: 8, bottom: 8, width: 2, background: `linear-gradient(to bottom, ${ACCENT}, ${BLUE}, ${GREEN})` }} />
+              {[
+                {
+                  period: "2025 - Present", role: "Quantitative Researcher & ML Engineer",
+                  org: "Stevens Institute of Technology / Independent",
+                  desc: "Conducting research on multi-asset topology dynamics during geopolitical crises. Building multi-agent research systems for prediction market data analysis. Developing novel metrics (CMI, TDS) with full statistical robustness validation.",
+                  tags: ["Graph Theory", "Transfer Entropy", "HMM", "CrewAI", "LangChain"],
+                },
+                {
+                  period: "2023 - Present", role: "Financial Advisor / Analyst",
+                  org: "Institutional Wealth Management Team",
+                  desc: "Client acquisition and retention strategy across a diversified book covering equities, fixed income, alternatives/commodities, options, and structured products. Contributing to client relationship management and portfolio analysis across multiple asset classes.",
+                  tags: ["Portfolio Analysis", "Client Strategy", "Multi-Asset", "Wealth Management"],
+                },
+                {
+                  period: "2023 - Present", role: "M.S. Mathematics",
+                  org: "Stevens Institute of Technology",
+                  desc: "Coursework in Machine Learning (CPE595), Applied Statistics (MA544), Time Series Analysis (MA641), Optimization & Stochastic Calculus (MA576), Big Data Technologies (BIA678). Building research projects that bridge academic rigor with practical financial applications.",
+                  tags: ["LSTM", "SARIMA", "HMM", "Spark", "Kafka", "PostgreSQL"],
+                },
+              ].map((exp, i) => (
+                <div key={i} style={{ marginBottom: 32, position: "relative" }}>
+                  <div style={{ position: "absolute", left: -28, top: 6, width: 14, height: 14, borderRadius: "50%", background: ACCENT, border: `3px solid ${DARKER}` }} />
+                  <Card>
+                    <span style={{ fontSize: 12, color: ACCENT, fontWeight: 600 }}>{exp.period}</span>
+                    <h3 style={{ color: "white", fontSize: 18, margin: "8px 0 4px" }}>{exp.role}</h3>
+                    <p style={{ color: TEXT_DIM, fontSize: 13, margin: "0 0 12px", fontWeight: 500 }}>{exp.org}</p>
+                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>{exp.desc}</p>
+                    <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                      {exp.tags.map((t) => <Tag key={t}>{t}</Tag>)}
+                    </div>
+                  </Card>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: 40 }}>
+              <h3 style={{ color: "white", fontSize: 20, textAlign: "center", marginBottom: 24 }}>Technical Arsenal</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+                {[
+                  { cat: "Languages", items: "Python, SQL, LaTeX, Bash, R, JavaScript" },
+                  { cat: "ML/DL", items: "TensorFlow, Keras, Scikit-learn, XGBoost, LSTM, HMM, SARIMA" },
+                  { cat: "AI/Agents", items: "LangChain, CrewAI, Ollama, DeepSeek, LangSmith, RAG" },
+                  { cat: "Finance", items: "Black-Scholes, Monte Carlo, DCF, VaR, Transfer Entropy" },
+                  { cat: "Data", items: "Pandas, NumPy, SciPy, Polars, NetworkX, igraph, Statsmodels" },
+                  { cat: "Infrastructure", items: "PostgreSQL, Supabase, FastAPI, Docker, Git, GitHub Actions" },
+                  { cat: "Viz", items: "Matplotlib, Seaborn, Plotly, Chart.js, D3.js" },
+                  { cat: "APIs", items: "FMP, Polymarket, Bluesky, GDELT, Tavily, Alpha Vantage" },
+                ].map((s, i) => (
+                  <div key={i} style={{ background: CARD, border: `1px solid ${CARD_BORDER}`, borderRadius: 8, padding: 16 }}>
+                    <div style={{ fontSize: 11, color: ACCENT, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>{s.cat}</div>
+                    <div style={{ fontSize: 12, color: TEXT_DIM, lineHeight: 1.6 }}>{s.items}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Section>
+
+          {/* CONTACT */}
+          <Section id="contact">
+            <SectionTitle sub="Interested in research collaborations and quantitative problem-solving">Get In Touch</SectionTitle>
+            <div style={{ textAlign: "center", maxWidth: 500, margin: "0 auto" }}>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginBottom: 32 }}>
+                Open to academic research collaborations, quantitative mathematics discussions,
+                and software engineering opportunities. If you're working on interesting problems at the
+                intersection of mathematics and computation, I'm happy to connect.
+              </p>
+              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+                <a href="mailto:nickcosta32@gmail.com" style={{ display: "inline-block", padding: "14px 36px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14 }}>nickcosta32@gmail.com</a>
+                <a href="https://github.com/studyalwaysbro" target="_blank" style={{ display: "inline-block", padding: "14px 36px", background: CARD, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>GitHub</a>
+                <a href="https://linkedin.com/in/nicholast-cima" target="_blank" style={{ display: "inline-block", padding: "14px 36px", background: CARD, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>LinkedIn</a>
+              </div>
+            </div>
+          </Section>
+
+          {/* FOOTER */}
+          <footer style={{ padding: "32px 24px", borderTop: `1px solid ${CARD_BORDER}`, textAlign: "center" }}>
+            <div style={{ background: `${ACCENT}08`, border: `1px solid ${ACCENT}22`, borderRadius: 8, padding: 16, marginBottom: 20, maxWidth: 700, margin: "0 auto 20px" }}>
+              <p style={{ fontSize: 11, color: TEXT, margin: 0, lineHeight: 1.7 }}>
+                <b style={{ color: ACCENT }}>Disclosure:</b> This is a personal website. Nothing herein constitutes investment advice or a solicitation.
+                I am a registered representative through UBS Financial Services Inc., Member FINRA/SIPC.
+                This site is not affiliated with or endorsed by UBS or any employer.
+                All research content is academic and theoretical. <a href="#disclosures" style={{ color: ACCENT, textDecoration: "underline" }}>Full disclosures →</a>
+              </p>
+            </div>
+            <p style={{ fontSize: 12, color: TEXT_DIM, margin: 0 }}>
+              © {new Date().getFullYear()} Nicholas Tavares. Built with math, caffeine, and a rigorous curiosity about market structure.
+            </p>
+            <p style={{ fontSize: 11, color: `${TEXT_DIM}88`, marginTop: 8 }}>
+              "Understanding markets requires both humility and rigor," the kind of thing Keynes would say if he had Python
+            </p>
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<Portfolio />);
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicholas Tavares | Quantitative Research & ML Engineering</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { background: #0a0a1a; }
+    @keyframes float { 0% { transform: translateY(0px) translateX(0px); } 100% { transform: translateY(-30px) translateX(15px); } }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    ::selection { background: #e9456044; color: white; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    const ACCENT = "#e94560";
+    const DARK = "#0a0a1a";
+    const DARKER = "#060612";
+    const CARD = "#12122a";
+    const CARD_BORDER = "#1e1e3a";
+    const TEXT = "#e0e0e0";
+    const TEXT_DIM = "#8888aa";
+    const BLUE = "#4361ee";
+    const GREEN = "#2dd4bf";
+    const GOLD = "#f59e0b";
+
+    const EQUATIONS = [
+      "\u2202f/\u2202t + \u00bd\u03c3\u00b2S\u00b2\u2202\u00b2f/\u2202S\u00b2 + rS\u2202f/\u2202S \u2212 rf = 0",
+      "E[X] = \u222bxf(x)dx",
+      "\u2207\u00b2\u03c8 + (2m/\u210f\u00b2)(E\u2212V)\u03c8 = 0",
+      "det(A \u2212 \u03bbI) = 0",
+      "T_{X\u2192Y} = \u03a3 p(y,y\u207b,x\u207b) log[p(y|y\u207b,x\u207b)/p(y|y\u207b)]",
+      "dS = \u03bcSdt + \u03c3SdW",
+      "H(X) = \u2212\u03a3 p(x) log p(x)",
+      "\u2202u/\u2202t = \u03b1\u2207\u00b2u",
+      "[G,G] \u2286 G",
+      "||Ax \u2212 b||\u2082\u00b2",
+      "P(A|B) = P(B|A)P(A)/P(B)",
+      "\u03c1(X,Y) = cov(X,Y)/\u03c3\u2093\u03c3\u1d67",
+      "F = ma",
+      "\u222e E\u00b7dl = \u2212d\u03a6/dt",
+      "\u03a3\u1d62 \u03bb\u1d62e\u1d62\u2297e\u1d62",
+      "lim(n\u2192\u221e) \u03a3 1/n\u00b2= \u03c0\u00b2/6",
+    ];
+
+    const FloatingEquation = ({ eq, index }) => {
+      const top = 5 + ((index * 37) % 90);
+      const left = 2 + ((index * 23) % 95);
+      const duration = 20 + (index % 5) * 8;
+      const delay = index * 1.5;
+      return (
+        <div style={{
+          position: "absolute", top: `${top}%`, left: `${left}%`,
+          color: "rgba(100,100,180,0.07)", fontSize: `${11 + (index % 4) * 2}px`,
+          fontFamily: "Georgia, serif", fontStyle: "italic", whiteSpace: "nowrap",
+          pointerEvents: "none", animation: `float ${duration}s ease-in-out ${delay}s infinite alternate`, zIndex: 0,
+        }}>{eq}</div>
+      );
+    };
+
+    const Section = ({ id, children, dark }) => (
+      <section id={id} style={{ position: "relative", padding: "80px 0", background: dark ? DARKER : "transparent", overflow: "hidden" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>{children}</div>
+      </section>
+    );
+
+    const SectionTitle = ({ children, sub }) => (
+      <div style={{ marginBottom: 40, textAlign: "center" }}>
+        <h2 style={{ fontSize: 36, fontWeight: 800, color: "white", margin: 0, letterSpacing: "-0.5px" }}>{children}</h2>
+        {sub && <p style={{ color: TEXT_DIM, fontSize: 15, marginTop: 8 }}>{sub}</p>}
+        <div style={{ width: 60, height: 3, background: ACCENT, margin: "16px auto 0", borderRadius: 2 }} />
+      </div>
+    );
+
+    const Card = ({ children, style, hover }) => {
+      const [hovered, setHovered] = useState(false);
+      return (
+        <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+          style={{
+            background: CARD, border: `1px solid ${hovered && hover ? ACCENT : CARD_BORDER}`,
+            borderRadius: 12, padding: 28, transition: "all 0.3s ease",
+            transform: hovered && hover ? "translateY(-4px)" : "none",
+            boxShadow: hovered && hover ? "0 8px 30px rgba(233,69,96,0.15)" : "none", ...style,
+          }}>{children}</div>
+      );
+    };
+
+    const Tag = ({ children, color = ACCENT }) => (
+      <span style={{
+        display: "inline-block", padding: "4px 12px", borderRadius: 20, fontSize: 11,
+        fontWeight: 600, background: `${color}22`, color: color, marginRight: 6, marginBottom: 6,
+      }}>{children}</span>
+    );
+
+    const StatBox = ({ value, label }) => (
+      <div style={{ textAlign: "center", padding: "20px 16px" }}>
+        <div style={{ fontSize: 36, fontWeight: 800, color: ACCENT, fontFamily: "Georgia, serif" }}>{value}</div>
+        <div style={{ fontSize: 12, color: TEXT_DIM, marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>{label}</div>
+      </div>
+    );
+
+    const Nav = ({ active }) => {
+      const links = ["About", "Disclosures", "Research", "Projects", "Mathematics", "Experience", "Contact"];
+      return (
+        <nav style={{
+          position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+          background: "rgba(6,6,18,0.92)", backdropFilter: "blur(20px)",
+          borderBottom: `1px solid ${CARD_BORDER}`, padding: "0 24px",
+        }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: 60 }}>
+            <a href="#hero" style={{ color: "white", textDecoration: "none", fontWeight: 800, fontSize: 18 }}>
+              <span style={{ color: ACCENT }}>N</span>T
+            </a>
+            <div style={{ display: "flex", gap: 28 }}>
+              {links.map((l) => (
+                <a key={l} href={`#${l.toLowerCase()}`} style={{
+                  color: active === l.toLowerCase() ? ACCENT : TEXT_DIM,
+                  textDecoration: "none", fontSize: 13, fontWeight: 500, letterSpacing: 0.5, transition: "color 0.2s",
+                }}>{l}</a>
+              ))}
+            </div>
+          </div>
+        </nav>
+      );
+    };
+
+    function Portfolio() {
+      const [activeSection, setActiveSection] = useState("about");
+
+      useEffect(() => {
+        const handleScroll = () => {
+          const sections = ["about", "disclosures", "research", "projects", "mathematics", "experience", "contact"];
+          for (const id of sections) {
+            const el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top < 200) setActiveSection(id);
+          }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+
+      return (
+        <div style={{
+          background: DARK, color: TEXT,
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          minHeight: "100vh", overflowX: "hidden",
+        }}>
+          <style>{`a:hover { color: ${ACCENT} !important; }`}</style>
+          <Nav active={activeSection} />
+
+          {/* HERO */}
+          <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+            {EQUATIONS.map((eq, i) => <FloatingEquation key={i} eq={eq} index={i} />)}
+            <div style={{ position: "absolute", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 70%)", top: "10%", right: "-10%", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(67,97,238,0.06) 0%, transparent 70%)", bottom: "10%", left: "-5%", pointerEvents: "none" }} />
+
+            <div style={{ textAlign: "center", zIndex: 1, animation: "slideUp 1s ease-out" }}>
+              <div style={{
+                width: 160, height: 160, borderRadius: "50%",
+                background: `linear-gradient(135deg, ${ACCENT}, ${BLUE})`,
+                margin: "0 auto 32px", display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 56, fontWeight: 800, color: "white",
+                boxShadow: `0 0 60px ${ACCENT}33`, border: "3px solid rgba(255,255,255,0.1)",
+              }}>NT</div>
+
+              <h1 style={{ fontSize: 52, fontWeight: 800, margin: 0, color: "white", letterSpacing: "-1px" }}>Nicholas Tavares</h1>
               <p style={{ fontSize: 13, color: ACCENT, fontWeight: 600, letterSpacing: 4, textTransform: "uppercase", marginTop: 12 }}>CIMA\u00ae Certificant</p>
               <p style={{ fontSize: 20, color: TEXT_DIM, marginTop: 16, maxWidth: 700, margin: "16px auto 0", lineHeight: 1.6 }}>
                 Mathematician \u2022 Quantitative Researcher \u2022 ML Engineer \u2022 Agentic AI
