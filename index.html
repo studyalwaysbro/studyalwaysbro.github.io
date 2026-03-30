@@ -101,9 +101,43 @@
       }}>{children}</span>
     );
 
-    const StatBox = ({ value, label }) => (
+    const AnimatedNumber = ({ target, suffix = "" }) => {
+      const [current, setCurrent] = useState(0);
+      const ref = useRef(null);
+      const started = useRef(false);
+
+      useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+          if (entry.isIntersecting && !started.current) {
+            started.current = true;
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            let step = 0;
+            const timer = setInterval(() => {
+              step++;
+              if (step >= steps) {
+                setCurrent(target);
+                clearInterval(timer);
+              } else {
+                setCurrent(Math.floor(increment * step));
+              }
+            }, duration / steps);
+          }
+        }, { threshold: 0.3 });
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+      }, [target]);
+
+      const display = target >= 1000 ? Math.floor(current / 1000) + "K+" : current.toLocaleString();
+      return <span ref={ref}>{started.current && current === target ? (target >= 1000 ? Math.floor(target / 1000) + "K+" : target.toLocaleString()) : display}{suffix}</span>;
+    };
+
+    const StatBox = ({ value, label, numeric }) => (
       <div style={{ textAlign: "center", padding: "20px 16px" }}>
-        <div style={{ fontSize: 36, fontWeight: 800, color: ACCENT, fontFamily: "Georgia, serif" }}>{value}</div>
+        <div style={{ fontSize: 36, fontWeight: 800, color: ACCENT, fontFamily: "Georgia, serif" }}>
+          {numeric != null ? <AnimatedNumber target={numeric} /> : value}
+        </div>
         <div style={{ fontSize: 12, color: TEXT_DIM, marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>{label}</div>
       </div>
     );
@@ -135,6 +169,14 @@
 
     function Portfolio() {
       const [activeSection, setActiveSection] = useState("about");
+      const [stats, setStats] = useState({ loc: 93314, python_scripts: 314, projects: 12, commits: 69, data_sources: 8 });
+
+      useEffect(() => {
+        fetch("stats.json?" + Date.now())
+          .then(r => r.json())
+          .then(d => setStats(d))
+          .catch(() => {});
+      }, []);
 
       useEffect(() => {
         const handleScroll = () => {
@@ -196,11 +238,11 @@
               </div>
 
               <div style={{ display: "flex", justifyContent: "center", gap: 40, marginTop: 60, flexWrap: "wrap" }}>
-                <StatBox value="91" label="ETFs Analyzed" />
-                <StatBox value="13K+" label="Lines of Code" />
-                <StatBox value="8" label="Data Sources" />
-                <StatBox value="24" label="Published Figures" />
-                <StatBox value="172" label="Python Scripts" />
+                <StatBox numeric={stats.loc} label="Lines of Code" />
+                <StatBox numeric={stats.python_scripts} label="Python Scripts" />
+                <StatBox numeric={stats.projects} label="Projects" />
+                <StatBox numeric={stats.commits} label="Commits" />
+                <StatBox numeric={stats.data_sources} label="Data Sources" />
               </div>
             </div>
           </section>
@@ -474,7 +516,7 @@
                 <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
                   Academic deep learning project exploring time-series pattern recognition with 6 Keras models,
                   walk-forward validation, and hyperparameter optimization.
-                  Part of a 172-script quantitative research Python library.
+                  Part of a multi-hundred-script quantitative research Python library.
                 </p>
                 <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {["TensorFlow", "Keras", "LSTM", "SARIMA", "Walk-Forward CV"].map((t) => (
