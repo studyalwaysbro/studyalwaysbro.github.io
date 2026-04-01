@@ -1,0 +1,275 @@
+{
+  "projects": [
+    {
+      "id": "asset-cluster-migration",
+      "name": "Asset Cluster Migration",
+      "category": "Research",
+      "color": "#e94560",
+      "featured": true,
+      "visible": true,
+      "description": "My thesis project and the thing I'm most proud of right now. This is a deep dive into how asset clusters fall apart and rebuild themselves when geopolitical chaos hits. I built the whole pipeline from scratch: spectral clustering, transfer entropy networks, hidden Markov models for regime detection, and a bunch of novel metrics that didn't exist before I needed them. 91 ETFs across 8 asset classes, years of data, and some genuinely surprising findings about how information flows between markets when everything goes sideways.",
+      "tags": [
+        "Python",
+        "Spectral Clustering",
+        "Transfer Entropy",
+        "HMM",
+        "NetworkX",
+        "Graph Theory"
+      ],
+      "github": "https://github.com/studyalwaysbro/asset-cluster-migration",
+      "stats": {
+        "loc": 6877,
+        "commits": 22,
+        "last_activity": "this week",
+        "last_commit_date": "2026-03-28T14:00:07-04:00",
+        "last_commit_msg": "Auto-commit: 2026-03-28 14:00 data/processed/cleaned_prices.parquet, data/proces"
+      }
+    },
+    {
+      "id": "jenkins-discord-bot",
+      "name": "Jenkins the Law",
+      "category": "Bot",
+      "color": "#f59e0b",
+      "featured": true,
+      "visible": true,
+      "description": "Jenkins is an AI bot with a full personality, real voice, and opinions about everything. He lives in our Discord server and has 7 different alter egos he switches between, real time voice chat through ElevenLabs, persistent memory so he actually remembers conversations, and an autonomous preaching schedule where he lectures the server on random topics. Built him as a passion project and he's honestly become a real member of the community at this point.",
+      "tags": [
+        "discord.js",
+        "DeepSeek",
+        "ElevenLabs",
+        "Node.js",
+        "Telegram"
+      ],
+      "github": "https://github.com/studyalwaysbro/jenkins-discord-bot",
+      "stats": {
+        "loc": 14886,
+        "commits": 20,
+        "last_activity": "this week",
+        "last_commit_date": "2026-03-27T02:38:41-04:00",
+        "last_commit_msg": "Add game knowledge: Barotrauma, 7DtD, Kenshi, Dom6, STS, Monster Train"
+      }
+    },
+    {
+      "id": "polymarket-agents",
+      "name": "Polymarket Agents",
+      "category": "Research",
+      "color": "#e94560",
+      "featured": true,
+      "visible": true,
+      "description": "A multi agent research system that analyzes prediction markets using CrewAI. Four specialized AI agents work together to pull sentiment data from 8 different sources, run ensemble NLP analysis (VADER, TextBlob, and LLM scoring), and cross reference with Kalshi and Manifold data. Originally built to find pricing gaps in Polymarket, the research actually proved these markets are surprisingly efficient. The real value ended up being the infrastructure itself.",
+      "tags": [
+        "CrewAI",
+        "DeepSeek",
+        "FastAPI",
+        "PostgreSQL",
+        "LangChain",
+        "GDELT"
+      ],
+      "github": "https://github.com/studyalwaysbro/Polymarket_Agents",
+      "stats": {
+        "loc": 11848,
+        "commits": 12,
+        "last_activity": "this month",
+        "last_commit_date": "2026-03-21T14:04:41-04:00",
+        "last_commit_msg": "Auto-commit: 2026-03-21 14:04 python"
+      }
+    },
+    {
+      "id": "stock-signal-engine",
+      "name": "Stock Signal Engine",
+      "category": "ML Pipeline",
+      "color": "#4361ee",
+      "featured": true,
+      "visible": true,
+      "description": "An end to end ML pipeline that trains 4 different model architectures (XGBoost, Random Forest, GRU, TFT) across hundreds of tickers every single day, completely automated. Each model votes on direction, a meta learner combines them, and an LLM judge cross checks the results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. This is the project where I learned the most about building systems that actually run in production without babysitting.",
+      "tags": [
+        "TensorFlow",
+        "XGBoost",
+        "GRU",
+        "TFT",
+        "Python",
+        "DuckDB"
+      ],
+      "github": "https://github.com/studyalwaysbro/stock-signal-engine",
+      "stats": {
+        "loc": 20686,
+        "commits": 4,
+        "last_activity": "this month",
+        "last_commit_date": "2026-03-23T04:32:06-04:00",
+        "last_commit_msg": "Remove generated files from tracking (now gitignored)"
+      }
+    },
+    {
+      "id": "ticker-prophet",
+      "name": "Ticker Prophet",
+      "category": "Bot",
+      "color": "#2dd4bf",
+      "featured": false,
+      "visible": true,
+      "description": "A financial data bot that runs on both Discord and Telegram. You throw a ticker at it and it pulls real time quotes, charts, fundamentals, and AI powered analysis covering stocks, crypto, forex, commodities, and ETFs globally. Built it because I wanted instant access to market data without leaving my chat apps.",
+      "tags": [
+        "Node.js",
+        "FMP API",
+        "DeepSeek",
+        "Discord.js",
+        "Telegram"
+      ],
+      "github": "https://github.com/studyalwaysbro/ticker-prophet",
+      "stats": {
+        "loc": 4457,
+        "commits": 3,
+        "last_activity": "this month",
+        "last_commit_date": "2026-03-22T14:00:09-04:00",
+        "last_commit_msg": "Auto-commit: 2026-03-22 14:00 INFRASTRUCTURE_REPORT.txt"
+      }
+    },
+    {
+      "id": "twitter-agent",
+      "name": "Twitter Agent",
+      "category": "Automation",
+      "color": "#4361ee",
+      "featured": false,
+      "visible": true,
+      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent research and market themes, runs them through a compliance filter, and queues them for review. Nothing goes out without a human looking at it first, but it handles all the drafting and scheduling.",
+      "tags": [
+        "Python",
+        "DeepSeek",
+        "Twitter API"
+      ],
+      "github": "https://github.com/studyalwaysbro/twitter-agent",
+      "stats": {
+        "loc": 649,
+        "commits": 2,
+        "last_activity": "this month",
+        "last_commit_date": "2026-03-21T19:50:50-04:00",
+        "last_commit_msg": "Sanitize system prompt and sync codebase"
+      }
+    },
+    {
+      "id": "yeet-terminal",
+      "name": "YeetTerminal",
+      "category": "Learning Project",
+      "color": "#2dd4bf",
+      "featured": false,
+      "visible": true,
+      "description": "A personal learning project where I taught myself React by building a multi tab data dashboard. 16 different views covering various data visualizations and API integrations. Purely educational, built it because I wanted to understand how frontend frameworks actually work after years of only writing Python.",
+      "tags": [
+        "React",
+        "Vite",
+        "REST APIs",
+        "Data Visualization"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 5607,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "openclaw-bot",
+      "name": "OpenClaw Bot",
+      "category": "Bot",
+      "color": "#f59e0b",
+      "featured": false,
+      "visible": false,
+      "description": "Discord server management bot with audio features. Handles server automation, game nights, economy system, and achievement tracking for our community.",
+      "tags": [
+        "discord.js",
+        "Node.js"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 2713,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "daily-reminders",
+      "name": "Daily Reminders",
+      "category": "Utility",
+      "color": "#2dd4bf",
+      "featured": false,
+      "visible": false,
+      "description": "Simple daily checklist app. Tasks persist but checkboxes reset every day. Built it for personal use.",
+      "tags": [
+        "HTML",
+        "JavaScript"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 1796,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "api-monitor",
+      "name": "Api Monitor",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 1101,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "legacy-python-scripts",
+      "name": "Legacy Python Scripts",
+      "category": "Research",
+      "color": "#e94560",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 19879,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "portfolio-council",
+      "name": "Portfolio Council",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "stats": {
+        "loc": 6111,
+        "commits": 0,
+        "last_activity": "unknown",
+        "last_commit_date": null,
+        "last_commit_msg": ""
+      }
+    }
+  ],
+  "generated": "2026-04-01T02:36:29.270512+00:00"
+}
