@@ -170,11 +170,16 @@
     function Portfolio() {
       const [activeSection, setActiveSection] = useState("about");
       const [stats, setStats] = useState({ loc: 93314, python_scripts: 314, projects: 12, commits: 69, data_sources: 8 });
+      const [projects, setProjects] = useState([]);
 
       useEffect(() => {
         fetch("stats.json?" + Date.now())
           .then(r => r.json())
           .then(d => setStats(d))
+          .catch(() => {});
+        fetch("projects.json?" + Date.now())
+          .then(r => r.json())
+          .then(d => setProjects(d.projects || []))
           .catch(() => {});
       }, []);
 
@@ -439,91 +444,32 @@
           <Section id="projects" dark>
             <SectionTitle sub="Research systems, multi-agent AI, and quantitative tools">Projects</SectionTitle>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-              <Card hover>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                  <Tag color={ACCENT}>Research</Tag>
-                  <span style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>v2.0</span>
-                </div>
-                <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>Polymarket Agents</h3>
-                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  Multi-agent research system using CrewAI for analyzing sentiment patterns in prediction markets
-                  across 8 data sources. Features ensemble NLP (VADER + TextBlob + LLM),
-                  cross-market data aggregation (Kalshi, Manifold), confidence scoring methodology, FastAPI dashboard,
-                  and research validation framework.
-                </p>
-                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["CrewAI", "DeepSeek", "FastAPI", "PostgreSQL", "LangChain", "Bluesky", "GDELT"].map((t) => (
-                    <Tag key={t} color={BLUE}>{t}</Tag>
-                  ))}
-                </div>
-                <div style={{ marginTop: 16, fontSize: 12, color: TEXT_DIM }}>8,179+ LOC, 8 Data Sources, 4 Agents</div>
-                <a href="https://github.com/studyalwaysbro/Polymarket_Agents" target="_blank" style={{ display: "inline-block", marginTop: 16, color: ACCENT, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
-              </Card>
-
-              <Card hover>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                  <Tag color={GREEN}>Solo Learning Project</Tag>
-                </div>
-                <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>YeetTerminal</h3>
-                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  Personal full-stack learning project exploring React dashboard design, REST API integration,
-                  and data visualization. Built as a solo exercise in frontend engineering with public market data APIs.
-                  Not used for any professional, advisory, or investment decision-making purpose.
-                </p>
-                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["React", "REST APIs", "Ollama", "Data Visualization", "Full-Stack"].map((t) => (
-                    <Tag key={t} color={GREEN}>{t}</Tag>
-                  ))}
-                </div>
-                <div style={{ marginTop: 16, fontSize: 12, color: TEXT_DIM }}>Solo educational project, not affiliated with any firm or advisory activity</div>
-              </Card>
-
-                            <Card hover>
-                <Tag color={GOLD}>Bot</Tag>
-                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>Jenkins</h3>
-                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  AI-powered Discord bot with a custom voice, persistent memory, and a theatrical personality.
-                  Features real-time voice channel interaction via ElevenLabs TTS, intelligent noise filtering
-                  for audio processing, and autonomous behavior on a scheduling system.
-                </p>
-                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["discord.js", "DeepSeek", "ElevenLabs", "Node.js"].map((t) => (
-                    <Tag key={t} color={GOLD}>{t}</Tag>
-                  ))}
-                </div>
-                <a href="https://github.com/studyalwaysbro/jenkins-discord-bot" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: GOLD, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
-              </Card>
-
-              <Card hover>
-                <Tag color={ACCENT}>Research</Tag>
-                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>Asset Cluster Migration</h3>
-                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  Quantitative study of how asset clusters reorganize under geopolitical stress across 43 ETFs
-                  from 2019-2026. Uses spectral clustering, transfer entropy, Granger causality networks,
-                  and hidden Markov models to map structural regime shifts in multi-asset topologies.
-                </p>
-                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["Python", "Spectral Clustering", "Transfer Entropy", "HMM", "NetworkX"].map((t) => (
-                    <Tag key={t} color={ACCENT}>{t}</Tag>
-                  ))}
-                </div>
-                <a href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: ACCENT, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub →</a>
-              </Card>
-
-              <Card hover>
-                <Tag color={BLUE}>ML Pipeline</Tag>
-                <h3 style={{ color: "white", fontSize: 20, margin: "12px 0 8px" }}>LSTM Time-Series Research Pipeline</h3>
-                <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>
-                  Academic deep learning project exploring time-series pattern recognition with 6 Keras models,
-                  walk-forward validation, and hyperparameter optimization.
-                  Part of a multi-hundred-script quantitative research Python library.
-                </p>
-                <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {["TensorFlow", "Keras", "LSTM", "SARIMA", "Walk-Forward CV"].map((t) => (
-                    <Tag key={t} color={BLUE}>{t}</Tag>
-                  ))}
-                </div>
-              </Card>
+              {projects.filter(p => p.visible).map((proj) => (
+                <Card key={proj.id} hover>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                    <Tag color={proj.color}>{proj.category}</Tag>
+                    {proj.stats && proj.stats.last_activity && proj.stats.last_activity !== "unknown" && (
+                      <span style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>Active {proj.stats.last_activity}</span>
+                    )}
+                  </div>
+                  <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>{proj.name}</h3>
+                  <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>{proj.description}</p>
+                  <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                    {proj.tags.map((t) => (
+                      <Tag key={t} color={proj.color}>{t}</Tag>
+                    ))}
+                  </div>
+                  {proj.stats && (proj.stats.loc > 0 || proj.stats.commits > 0) && (
+                    <div style={{ marginTop: 16, fontSize: 12, color: TEXT_DIM }}>
+                      {proj.stats.loc >= 1000 ? Math.floor(proj.stats.loc / 1000) + "K+" : proj.stats.loc} LOC
+                      {proj.stats.commits > 0 && (" · " + proj.stats.commits + " commits")}
+                    </div>
+                  )}
+                  {proj.github && (
+                    <a href={proj.github} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: proj.color, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub &#x2192;</a>
+                  )}
+                </Card>
+              ))}
             </div>
 
             <Card style={{ marginTop: 24, border: `1px dashed ${ACCENT}44`, background: `${ACCENT}08` }}>
