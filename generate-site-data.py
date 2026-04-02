@@ -296,6 +296,7 @@ def generate_projects():
             "description": proj["description"],
             "tags": proj["tags"],
             "github": proj.get("github"),
+            "github_private": proj.get("github_private", False),
             "stats": {
                 "loc": stats["loc"],
                 "commits": stats["commits"],
