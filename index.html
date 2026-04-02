@@ -465,8 +465,11 @@
                       {proj.stats.commits > 0 && (" · " + proj.stats.commits + " commits")}
                     </div>
                   )}
-                  {proj.github && (
+                  {proj.github && !proj.github_private && (
                     <a href={proj.github} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: proj.color, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub &#x2192;</a>
+                  )}
+                  {proj.github_private && (
+                    <span style={{ display: "inline-block", marginTop: 16, color: TEXT_DIM, fontSize: 13, fontWeight: 600 }}>Private Repository</span>
                   )}
                 </Card>
               ))}

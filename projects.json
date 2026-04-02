@@ -81,7 +81,7 @@
       "color": "#4361ee",
       "featured": true,
       "visible": true,
-      "description": "An end to end ML pipeline that trains 4 different model architectures (XGBoost, Random Forest, GRU, TFT) across hundreds of tickers every single day, completely automated. Each model votes on direction, a meta learner combines them, and an LLM judge cross checks the results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. This is the project where I learned the most about building systems that actually run in production without babysitting.",
+      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering — not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
       "tags": [
         "TensorFlow",
         "XGBoost",
@@ -91,6 +91,7 @@
         "DuckDB"
       ],
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
+      "github_private": true,
       "stats": {
         "loc": 21290,
         "commits": 5,
@@ -130,7 +131,7 @@
       "color": "#4361ee",
       "featured": false,
       "visible": true,
-      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent research and market themes, runs them through a compliance filter, and queues them for review. Nothing goes out without a human looking at it first, but it handles all the drafting and scheduling.",
+      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent research and market themes, then queues them for human review before posting. Nothing goes out without a person looking at it first, but it handles all the drafting and scheduling.",
       "tags": [
         "Python",
         "DeepSeek",
