@@ -17,12 +17,13 @@
         "Graph Theory"
       ],
       "github": "https://github.com/studyalwaysbro/asset-cluster-migration",
+      "github_private": false,
       "stats": {
         "loc": 6877,
-        "commits": 22,
-        "last_activity": "this week",
-        "last_commit_date": "2026-03-28T14:00:07-04:00",
-        "last_commit_msg": "Auto-commit: 2026-03-28 14:00 data/processed/cleaned_prices.parquet, data/proces"
+        "commits": 23,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-01T18:29:11-04:00",
+        "last_commit_msg": "Update pipeline modules, report generation, and clustering tools"
       }
     },
     {
@@ -41,12 +42,13 @@
         "Telegram"
       ],
       "github": "https://github.com/studyalwaysbro/jenkins-discord-bot",
+      "github_private": false,
       "stats": {
         "loc": 14887,
-        "commits": 20,
-        "last_activity": "this week",
-        "last_commit_date": "2026-03-27T02:38:41-04:00",
-        "last_commit_msg": "Add game knowledge: Barotrauma, 7DtD, Kenshi, Dom6, STS, Monster Train"
+        "commits": 21,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-01T19:19:58-04:00",
+        "last_commit_msg": "Update bot features and event handlers"
       }
     },
     {
@@ -66,12 +68,13 @@
         "GDELT"
       ],
       "github": "https://github.com/studyalwaysbro/Polymarket_Agents",
+      "github_private": false,
       "stats": {
         "loc": 11848,
-        "commits": 12,
-        "last_activity": "this month",
-        "last_commit_date": "2026-03-21T14:04:41-04:00",
-        "last_commit_msg": "Auto-commit: 2026-03-21 14:04 python"
+        "commits": 13,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-01T20:20:53-04:00",
+        "last_commit_msg": "Update data collection and analysis modules"
       }
     },
     {
@@ -81,7 +84,7 @@
       "color": "#4361ee",
       "featured": true,
       "visible": true,
-      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering — not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
+      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering \u2014 not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
       "tags": [
         "TensorFlow",
         "XGBoost",
@@ -93,7 +96,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 21290,
+        "loc": 24547,
         "commits": 5,
         "last_activity": "today",
         "last_commit_date": "2026-04-01T15:18:37-04:00",
@@ -116,12 +119,13 @@
         "Telegram"
       ],
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
+      "github_private": false,
       "stats": {
         "loc": 4457,
-        "commits": 3,
-        "last_activity": "this month",
-        "last_commit_date": "2026-03-22T14:00:09-04:00",
-        "last_commit_msg": "Auto-commit: 2026-03-22 14:00 INFRASTRUCTURE_REPORT.txt"
+        "commits": 4,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-01T19:29:23-04:00",
+        "last_commit_msg": "Update bot commands and market reporting"
       }
     },
     {
@@ -131,19 +135,20 @@
       "color": "#4361ee",
       "featured": false,
       "visible": true,
-      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent research and market themes, then queues them for human review before posting. Nothing goes out without a person looking at it first, but it handles all the drafting and scheduling.",
+      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent ML research and academic topics, then queues them for human review before posting. Nothing goes out without a person looking at it first, but it handles all the drafting and scheduling.",
       "tags": [
         "Python",
         "DeepSeek",
         "Twitter API"
       ],
       "github": "https://github.com/studyalwaysbro/twitter-agent",
+      "github_private": false,
       "stats": {
         "loc": 649,
-        "commits": 2,
-        "last_activity": "this month",
-        "last_commit_date": "2026-03-21T19:50:50-04:00",
-        "last_commit_msg": "Sanitize system prompt and sync codebase"
+        "commits": 3,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-01T20:11:10-04:00",
+        "last_commit_msg": "Update agent configuration"
       }
     },
     {
@@ -161,6 +166,7 @@
         "Data Visualization"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 5607,
         "commits": 0,
@@ -182,6 +188,7 @@
         "Node.js"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 2713,
         "commits": 0,
@@ -203,6 +210,7 @@
         "JavaScript"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 1796,
         "commits": 0,
@@ -223,6 +231,7 @@
         "Code"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 1101,
         "commits": 0,
@@ -243,6 +252,7 @@
         "Python"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 19879,
         "commits": 0,
@@ -263,6 +273,7 @@
         "Code"
       ],
       "github": null,
+      "github_private": false,
       "stats": {
         "loc": 6111,
         "commits": 0,
@@ -272,5 +283,5 @@
       }
     }
   ],
-  "generated": "2026-04-01T21:55:55.755190+00:00"
+  "generated": "2026-04-02T04:10:46.580523+00:00"
 }

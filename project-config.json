@@ -103,7 +103,7 @@
       "color": "#4361ee",
       "featured": false,
       "visible": true,
-      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent research and market themes, then queues them for human review before posting. Nothing goes out without a person looking at it first, but it handles all the drafting and scheduling.",
+      "description": "An automated content pipeline for Twitter/X. DeepSeek drafts posts based on recent ML research and academic topics, then queues them for human review before posting. Nothing goes out without a person looking at it first, but it handles all the drafting and scheduling.",
       "tags": [
         "Python",
         "DeepSeek",
