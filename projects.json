@@ -110,16 +110,14 @@
       "color": "#2dd4bf",
       "featured": false,
       "visible": true,
-      "description": "A financial data bot that runs on both Discord and Telegram. You throw a ticker at it and it pulls real time quotes, charts, fundamentals, and AI powered analysis covering stocks, crypto, forex, commodities, and ETFs globally. Built it because I wanted instant access to market data without leaving my chat apps.",
+      "description": "A personal data lookup tool I built to satisfy my own curiosity about how real-time API integrations work. Pulls quotes, charts, and fundamentals for various asset classes. The interesting engineering challenge was building a unified interface across multiple data providers and learning how to work with financial APIs at scale. Purely a personal learning project.",
       "tags": [
         "Node.js",
         "FMP API",
-        "DeepSeek",
-        "Discord.js",
-        "Telegram"
+        "DeepSeek"
       ],
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
-      "github_private": false,
+      "github_private": true,
       "stats": {
         "loc": 4457,
         "commits": 4,
@@ -142,7 +140,7 @@
         "Twitter API"
       ],
       "github": "https://github.com/studyalwaysbro/twitter-agent",
-      "github_private": false,
+      "github_private": true,
       "stats": {
         "loc": 649,
         "commits": 3,
@@ -166,7 +164,7 @@
         "Data Visualization"
       ],
       "github": null,
-      "github_private": false,
+      "github_private": true,
       "stats": {
         "loc": 5607,
         "commits": 0,
