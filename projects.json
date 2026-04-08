@@ -96,7 +96,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 31438,
+        "loc": 31495,
         "commits": 5,
         "last_activity": "this week",
         "last_commit_date": "2026-04-01T15:18:37-04:00",
@@ -281,5 +281,5 @@
       }
     }
   ],
-  "generated": "2026-04-08T04:10:08.092487+00:00"
+  "generated": "2026-04-08T17:30:06.230507+00:00"
 }
