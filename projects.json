@@ -72,7 +72,7 @@
       "stats": {
         "loc": 11848,
         "commits": 14,
-        "last_activity": "this week",
+        "last_activity": "this month",
         "last_commit_date": "2026-04-02T00:26:04-04:00",
         "last_commit_msg": "Auto-commit: 2026-04-02 00:26 report/polymarket_report.pdf"
       }
@@ -96,7 +96,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 41496,
+        "loc": 42629,
         "commits": 5,
         "last_activity": "this month",
         "last_commit_date": "2026-04-01T15:18:37-04:00",
@@ -281,5 +281,5 @@
       }
     }
   ],
-  "generated": "2026-04-10T04:10:03.079066+00:00"
+  "generated": "2026-04-10T17:30:05.161029+00:00"
 }
