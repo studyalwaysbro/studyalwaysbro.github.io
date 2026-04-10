@@ -21,7 +21,7 @@
       "stats": {
         "loc": 6877,
         "commits": 23,
-        "last_activity": "this week",
+        "last_activity": "this month",
         "last_commit_date": "2026-04-01T18:29:11-04:00",
         "last_commit_msg": "Update pipeline modules, report generation, and clustering tools"
       }
@@ -46,7 +46,7 @@
       "stats": {
         "loc": 14901,
         "commits": 21,
-        "last_activity": "this week",
+        "last_activity": "this month",
         "last_commit_date": "2026-04-01T19:19:58-04:00",
         "last_commit_msg": "Update bot features and event handlers"
       }
@@ -96,9 +96,9 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 41447,
+        "loc": 41496,
         "commits": 5,
-        "last_activity": "this week",
+        "last_activity": "this month",
         "last_commit_date": "2026-04-01T15:18:37-04:00",
         "last_commit_msg": "Update training pipeline, model infrastructure, and analysis tools"
       }
@@ -144,7 +144,7 @@
       "stats": {
         "loc": 649,
         "commits": 3,
-        "last_activity": "this week",
+        "last_activity": "this month",
         "last_commit_date": "2026-04-01T20:11:10-04:00",
         "last_commit_msg": "Update agent configuration"
       }
@@ -281,5 +281,5 @@
       }
     }
   ],
-  "generated": "2026-04-09T17:30:05.161056+00:00"
+  "generated": "2026-04-10T04:10:03.079066+00:00"
 }
