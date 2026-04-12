@@ -45,10 +45,10 @@
       "github_private": false,
       "stats": {
         "loc": 14901,
-        "commits": 21,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-01T19:19:58-04:00",
-        "last_commit_msg": "Update bot features and event handlers"
+        "commits": 22,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-12T03:50:40-04:00",
+        "last_commit_msg": "Update voice pipeline, alter-ego system, and dependency upgrades"
       }
     },
     {
@@ -120,10 +120,35 @@
       "github_private": true,
       "stats": {
         "loc": 4496,
-        "commits": 6,
+        "commits": 7,
         "last_activity": "today",
-        "last_commit_date": "2026-04-10T14:03:39-04:00",
+        "last_commit_date": "2026-04-12T03:50:42-04:00",
         "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "ice-cream-forecasting",
+      "name": "Ice Cream Production Forecasting",
+      "category": "Research",
+      "color": "#e94560",
+      "featured": false,
+      "visible": true,
+      "description": "Full ARIMA/SARIMA time series forecasting pipeline. Built this for a class project but went way deeper than required. Includes exploratory data analysis, stationarity testing, model selection with AIC/BIC, residual diagnostics, and out-of-sample forecasting. Good example of how I approach a statistics problem from scratch.",
+      "tags": [
+        "Python",
+        "ARIMA",
+        "SARIMA",
+        "Statsmodels",
+        "Time Series"
+      ],
+      "github": "https://github.com/studyalwaysbro/Ice-Cream-Production-Forecasting",
+      "github_private": false,
+      "stats": {
+        "loc": 530,
+        "commits": 6,
+        "last_activity": "a while ago",
+        "last_commit_date": "2025-11-20T19:53:27-05:00",
+        "last_commit_msg": "converted to jupyter notebook for easier presentation"
       }
     },
     {
@@ -302,5 +327,5 @@
       }
     }
   ],
-  "generated": "2026-04-12T07:49:57.859533+00:00"
+  "generated": "2026-04-12T07:51:07.518384+00:00"
 }
