@@ -1,0 +1,29 @@
+project: studyalwaysbro.github.io
+dormant_after_days: 14
+sources:
+  - path: README.md
+    required: true
+  - path: project-config.json
+    required: true
+    description: "manual project registry, source of truth for project metadata"
+  - path: compliance_config.json
+    required: true
+    description: "allowlists and safety rules for public data generation"
+derived:
+  - path: projects.json
+    required: true
+    description: "generated from project-config.json + compliance filter"
+    stale_after_days: 7
+  - path: stats.json
+    required: true
+    description: "aggregated from visible projects only"
+    stale_after_days: 7
+  - path: truth-sync-report.json
+    required: true
+    description: "validation report from last generation run"
+    stale_after_days: 7
+validation:
+  - check: "stats.json scope field should be visible_projects_only"
+  - check: "no private repo commit messages in projects.json"
+  - check: "visible project count in stats.json matches projects.json"
+  - check: "compliance_config.json exists and is valid JSON"

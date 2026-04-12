@@ -169,7 +169,7 @@
 
     function Portfolio() {
       const [activeSection, setActiveSection] = useState("about");
-      const [stats, setStats] = useState({ loc: 93314, python_scripts: 314, projects: 12, commits: 69, data_sources: 8 });
+      const [stats, setStats] = useState({ loc: 93314, python_scripts: 314, projects: 7, commits: 69, public_repos: 6 });
       const [projects, setProjects] = useState([]);
 
       useEffect(() => {
@@ -247,7 +247,7 @@
                 <StatBox numeric={stats.python_scripts} label="Python Scripts" />
                 <StatBox numeric={stats.projects} label="Projects" />
                 <StatBox numeric={stats.commits} label="Commits" />
-                <StatBox numeric={stats.data_sources} label="Data Sources" />
+                <StatBox numeric={stats.public_repos} label="Public Repos" />
               </div>
             </div>
           </section>

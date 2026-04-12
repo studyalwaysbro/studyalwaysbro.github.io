@@ -19,7 +19,7 @@
       "github": "https://github.com/studyalwaysbro/asset-cluster-migration",
       "github_private": false,
       "stats": {
-        "loc": 6877,
+        "loc": 7287,
         "commits": 23,
         "last_activity": "this month",
         "last_commit_date": "2026-04-01T18:29:11-04:00",
@@ -70,11 +70,11 @@
       "github": "https://github.com/studyalwaysbro/Polymarket_Agents",
       "github_private": false,
       "stats": {
-        "loc": 11848,
-        "commits": 14,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-02T00:26:04-04:00",
-        "last_commit_msg": "Auto-commit: 2026-04-02 00:26 report/polymarket_report.pdf"
+        "loc": 12197,
+        "commits": 19,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-12T03:01:20-04:00",
+        "last_commit_msg": "Rewrite all docs for v2.1 upstream sync and cleanup"
       }
     },
     {
@@ -96,11 +96,11 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 56511,
+        "loc": 58527,
         "commits": 5,
         "last_activity": "this month",
         "last_commit_date": "2026-04-01T15:18:37-04:00",
-        "last_commit_msg": "Update training pipeline, model infrastructure, and analysis tools"
+        "last_commit_msg": ""
       }
     },
     {
@@ -123,7 +123,7 @@
         "commits": 6,
         "last_activity": "today",
         "last_commit_date": "2026-04-10T14:03:39-04:00",
-        "last_commit_msg": "Auto-commit: 2026-04-10 14:03 config.js"
+        "last_commit_msg": ""
       }
     },
     {
@@ -146,7 +146,28 @@
         "commits": 3,
         "last_activity": "this month",
         "last_commit_date": "2026-04-01T20:11:10-04:00",
-        "last_commit_msg": "Update agent configuration"
+        "last_commit_msg": ""
+      }
+    },
+    {
+      "id": "python-learning-lab",
+      "name": "Python Learning Lab",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "loc": 673,
+        "commits": 1,
+        "last_activity": "today",
+        "last_commit_date": "2026-04-12T03:16:05-04:00",
+        "last_commit_msg": ""
       }
     },
     {
@@ -281,5 +302,5 @@
       }
     }
   ],
-  "generated": "2026-04-11T17:30:05.073755+00:00"
+  "generated": "2026-04-12T07:40:26.885694+00:00"
 }

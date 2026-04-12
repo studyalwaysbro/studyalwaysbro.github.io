@@ -1,0 +1,12 @@
+{
+  "generated": "2026-04-12T07:40:26.903549+00:00",
+  "status": "warnings",
+  "visible_project_count": 7,
+  "total_project_count": 13,
+  "stats_scope": "visible_projects_only",
+  "public_repos": 7,
+  "warnings": [
+    "YeetTerminal has 5617 LOC but 0 commits (not a git repo?)"
+  ],
+  "compliance_config_used": true
+}
