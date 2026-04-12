@@ -204,6 +204,24 @@
       "_auto_discovered": true
     },
     {
+      "id": "ice-cream-forecasting",
+      "name": "Ice Cream Production Forecasting",
+      "repo_path": "Ice-Cream-Production-Forecasting",
+      "github": "https://github.com/studyalwaysbro/Ice-Cream-Production-Forecasting",
+      "category": "Research",
+      "color": "#e94560",
+      "featured": false,
+      "visible": true,
+      "description": "Full ARIMA/SARIMA time series forecasting pipeline. Built this for a class project but went way deeper than required. Includes exploratory data analysis, stationarity testing, model selection with AIC/BIC, residual diagnostics, and out-of-sample forecasting. Good example of how I approach a statistics problem from scratch.",
+      "tags": [
+        "Python",
+        "ARIMA",
+        "SARIMA",
+        "Statsmodels",
+        "Time Series"
+      ]
+    },
+    {
       "id": "python-learning-lab",
       "name": "Python Learning Lab",
       "repo_path": "python-learning-lab",
@@ -226,6 +244,7 @@
     "Polymarket-Agents",
     "polymarket_debate.py",
     "polymarket_debate_output.md",
-    "startup-dashboard.sh"
+    "startup-dashboard.sh",
+    "intro-ml-study"
   ]
 }
