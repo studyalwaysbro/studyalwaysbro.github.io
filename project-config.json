@@ -47,7 +47,7 @@
       "color": "#4361ee",
       "featured": true,
       "visible": true,
-      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering — not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
+      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering \u2014 not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
       "tags": [
         "TensorFlow",
         "XGBoost",
@@ -77,7 +77,7 @@
     {
       "id": "polymarket-agents",
       "name": "Polymarket Agents",
-      "repo_path": "Polymarket-Agents/Polymarket_Agents-main",
+      "repo_path": "Polymarket_Agents",
       "github": "https://github.com/studyalwaysbro/Polymarket_Agents",
       "category": "Research",
       "color": "#e94560",
@@ -202,11 +202,30 @@
         "Code"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "python-learning-lab",
+      "name": "Python Learning Lab",
+      "repo_path": "python-learning-lab",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
     "studyalwaysbro.github.io",
     "actual-budget",
-    "actual-dashboard"
+    "actual-dashboard",
+    "Polymarket-Agents",
+    "polymarket_debate.py",
+    "polymarket_debate_output.md",
+    "startup-dashboard.sh"
   ]
 }

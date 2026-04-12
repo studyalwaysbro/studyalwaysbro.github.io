@@ -1,10 +1,11 @@
 {
-  "loc": 132546,
-  "loc_display": "132K+",
-  "python_scripts": 391,
-  "projects": 14,
-  "commits": 58,
-  "data_sources": 8,
+  "loc": 103674,
+  "loc_display": "103K+",
+  "python_scripts": 237,
+  "projects": 7,
+  "commits": 77,
+  "public_repos": 7,
   "active_projects": 6,
-  "updated": "2026-04-11T17:30:05Z"
+  "updated": "2026-04-12T07:40:26Z",
+  "scope": "visible_projects_only"
 }

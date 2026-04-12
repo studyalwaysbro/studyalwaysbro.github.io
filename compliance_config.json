@@ -1,0 +1,58 @@
+{
+  "github_username": "studyalwaysbro",
+  "visible_projects_only": true,
+  "public_repos_for_commits": true,
+  "strip_private_commit_msgs": true,
+  "stat_fields": {
+    "loc": {
+      "label": "Lines of Code",
+      "source": "visible_projects",
+      "enabled": true
+    },
+    "python_scripts": {
+      "label": "Python Scripts",
+      "source": "visible_projects",
+      "enabled": true
+    },
+    "projects": {
+      "label": "Projects",
+      "source": "visible_count",
+      "enabled": true
+    },
+    "commits": {
+      "label": "Commits",
+      "source": "visible_projects",
+      "enabled": true
+    },
+    "public_repos": {
+      "label": "Public Repos",
+      "source": "github_api",
+      "enabled": true
+    }
+  },
+  "safe_project_fields": [
+    "id",
+    "name",
+    "category",
+    "color",
+    "featured",
+    "visible",
+    "description",
+    "tags",
+    "github",
+    "github_private",
+    "stats"
+  ],
+  "blocked_project_fields": [
+    "repo_path",
+    "_auto_discovered"
+  ],
+  "private_repo_stripped_fields": [
+    "last_commit_msg"
+  ],
+  "stale_threshold_days": 7,
+  "platform_tag_allowlist": [
+    "jenkins-discord-bot",
+    "openclaw-bot"
+  ]
+}
