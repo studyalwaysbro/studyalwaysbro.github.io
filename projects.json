@@ -21,7 +21,7 @@
       "stats": {
         "loc": 7287,
         "commits": 24,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:47:03-04:00",
         "last_commit_msg": "Update processed data, daily reports, and documentation through 2026-04-10"
       }
@@ -46,7 +46,7 @@
       "stats": {
         "loc": 14901,
         "commits": 22,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:50:40-04:00",
         "last_commit_msg": "Update voice pipeline, alter-ego system, and dependency upgrades"
       }
@@ -72,7 +72,7 @@
       "stats": {
         "loc": 12197,
         "commits": 19,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:01:20-04:00",
         "last_commit_msg": "Rewrite all docs for v2.1 upstream sync and cleanup"
       }
@@ -96,7 +96,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 59868,
+        "loc": 60174,
         "commits": 6,
         "last_activity": "today",
         "last_commit_date": "2026-04-12T18:25:28-04:00",
@@ -121,7 +121,7 @@
       "stats": {
         "loc": 4496,
         "commits": 7,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:50:42-04:00",
         "last_commit_msg": ""
       }
@@ -193,7 +193,7 @@
       "stats": {
         "loc": 5617,
         "commits": 1,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:44:11-04:00",
         "last_commit_msg": ""
       }
@@ -214,7 +214,7 @@
       "stats": {
         "loc": 673,
         "commits": 1,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-12T03:16:05-04:00",
         "last_commit_msg": ""
       }
@@ -327,5 +327,5 @@
       }
     }
   ],
-  "generated": "2026-04-14T04:11:37.504862+00:00"
+  "generated": "2026-04-14T17:30:13.730380+00:00"
 }
