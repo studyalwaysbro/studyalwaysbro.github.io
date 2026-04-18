@@ -46,7 +46,7 @@
       "stats": {
         "loc": 15621,
         "commits": 23,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-16T00:29:04-04:00",
         "last_commit_msg": "Auto-commit: 2026-04-16 00:29 SOLO_BACKLOG.md"
       }
@@ -96,7 +96,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 63390,
+        "loc": 63679,
         "commits": 14,
         "last_activity": "this week",
         "last_commit_date": "2026-04-15T16:13:16-04:00",
@@ -121,7 +121,7 @@
       "stats": {
         "loc": 4647,
         "commits": 8,
-        "last_activity": "today",
+        "last_activity": "this week",
         "last_commit_date": "2026-04-16T00:29:22-04:00",
         "last_commit_msg": ""
       }
@@ -327,5 +327,5 @@
       }
     }
   ],
-  "generated": "2026-04-18T04:08:22.281032+00:00"
+  "generated": "2026-04-18T17:30:12.819914+00:00"
 }
