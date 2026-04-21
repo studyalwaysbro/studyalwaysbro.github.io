@@ -19,11 +19,7 @@
       "github": "https://github.com/studyalwaysbro/asset-cluster-migration",
       "github_private": false,
       "stats": {
-        "loc": 7287,
-        "commits": 24,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-12T03:47:03-04:00",
-        "last_commit_msg": "Update processed data, daily reports, and documentation through 2026-04-10"
+        "last_activity": "this month"
       }
     },
     {
@@ -44,11 +40,7 @@
       "github": "https://github.com/studyalwaysbro/jenkins-discord-bot",
       "github_private": false,
       "stats": {
-        "loc": 15621,
-        "commits": 23,
-        "last_activity": "this week",
-        "last_commit_date": "2026-04-16T00:29:04-04:00",
-        "last_commit_msg": "Auto-commit: 2026-04-16 00:29 SOLO_BACKLOG.md"
+        "last_activity": "this week"
       }
     },
     {
@@ -70,11 +62,7 @@
       "github": "https://github.com/studyalwaysbro/Polymarket_Agents",
       "github_private": false,
       "stats": {
-        "loc": 12188,
-        "commits": 19,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-12T03:01:20-04:00",
-        "last_commit_msg": "Rewrite all docs for v2.1 upstream sync and cleanup"
+        "last_activity": "this month"
       }
     },
     {
@@ -96,11 +84,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "loc": 63943,
-        "commits": 14,
-        "last_activity": "this week",
-        "last_commit_date": "2026-04-15T16:13:16-04:00",
-        "last_commit_msg": ""
+        "last_activity": "this week"
       }
     },
     {
@@ -119,11 +103,7 @@
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
       "github_private": true,
       "stats": {
-        "loc": 4647,
-        "commits": 8,
-        "last_activity": "this week",
-        "last_commit_date": "2026-04-16T00:29:22-04:00",
-        "last_commit_msg": ""
+        "last_activity": "this week"
       }
     },
     {
@@ -144,11 +124,7 @@
       "github": "https://github.com/studyalwaysbro/Ice-Cream-Production-Forecasting",
       "github_private": false,
       "stats": {
-        "loc": 530,
-        "commits": 6,
-        "last_activity": "a while ago",
-        "last_commit_date": "2025-11-20T19:53:27-05:00",
-        "last_commit_msg": "converted to jupyter notebook for easier presentation"
+        "last_activity": "a while ago"
       }
     },
     {
@@ -167,11 +143,7 @@
       "github": "https://github.com/studyalwaysbro/twitter-agent",
       "github_private": true,
       "stats": {
-        "loc": 649,
-        "commits": 3,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-01T20:11:10-04:00",
-        "last_commit_msg": ""
+        "last_activity": "this month"
       }
     },
     {
@@ -191,11 +163,7 @@
       "github": null,
       "github_private": true,
       "stats": {
-        "loc": 6585,
-        "commits": 1,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-12T03:44:11-04:00",
-        "last_commit_msg": ""
+        "last_activity": "this month"
       }
     },
     {
@@ -212,11 +180,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 673,
-        "commits": 1,
-        "last_activity": "this month",
-        "last_commit_date": "2026-04-12T03:16:05-04:00",
-        "last_commit_msg": ""
+        "last_activity": "this month"
       }
     },
     {
@@ -234,11 +198,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 2755,
-        "commits": 0,
-        "last_activity": "unknown",
-        "last_commit_date": null,
-        "last_commit_msg": ""
+        "last_activity": "unknown"
       }
     },
     {
@@ -256,11 +216,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 1801,
-        "commits": 0,
-        "last_activity": "unknown",
-        "last_commit_date": null,
-        "last_commit_msg": ""
+        "last_activity": "unknown"
       }
     },
     {
@@ -277,11 +233,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 1101,
-        "commits": 0,
-        "last_activity": "unknown",
-        "last_commit_date": null,
-        "last_commit_msg": ""
+        "last_activity": "unknown"
       }
     },
     {
@@ -298,11 +250,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 19879,
-        "commits": 0,
-        "last_activity": "unknown",
-        "last_commit_date": null,
-        "last_commit_msg": ""
+        "last_activity": "unknown"
       }
     },
     {
@@ -319,13 +267,9 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "loc": 6111,
-        "commits": 0,
-        "last_activity": "unknown",
-        "last_commit_date": null,
-        "last_commit_msg": ""
+        "last_activity": "unknown"
       }
     }
   ],
-  "generated": "2026-04-21T04:12:46.430725+00:00"
+  "generated": "2026-04-21T17:30:08.266351+00:00"
 }
