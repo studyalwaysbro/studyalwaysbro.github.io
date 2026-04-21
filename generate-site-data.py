@@ -427,7 +427,6 @@ def sanitize_project(proj, stats, is_private, compliance_cfg):
         },
     }
 
-    # Only include commit messages for public repos
     if is_private and compliance_cfg.get("strip_private_commit_msgs", True):
         entry["stats"]["last_commit_msg"] = ""
     else:
@@ -490,8 +489,13 @@ def generate_projects(compliance_cfg):
     else:
         print("\n  Compliance review passed")
 
+    public_projects = []
+    for p in enriched:
+        pub = {**p, "stats": {k: v for k, v in p["stats"].items() if k in ("last_activity",)}}
+        public_projects.append(pub)
+
     with open(PROJECTS_OUTPUT, "w") as f:
-        json.dump({"projects": enriched, "generated": datetime.now(timezone.utc).isoformat()}, f, indent=2)
+        json.dump({"projects": public_projects, "generated": datetime.now(timezone.utc).isoformat()}, f, indent=2)
 
     print(f"\nWrote {len(enriched)} projects to {PROJECTS_OUTPUT}")
     return enriched, public_repo_count
