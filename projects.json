@@ -269,7 +269,24 @@
       "stats": {
         "last_activity": "unknown"
       }
+    },
+    {
+      "id": "_archived",
+      "name": "Archived",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown"
+      }
     }
   ],
-  "generated": "2026-04-30T17:30:08.180122+00:00"
+  "generated": "2026-05-01T04:05:05.137992+00:00"
 }

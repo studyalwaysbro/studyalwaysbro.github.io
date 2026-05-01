@@ -235,6 +235,21 @@
         "Python"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "_archived",
+      "name": "Archived",
+      "repo_path": "_archived",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
