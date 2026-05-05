@@ -286,7 +286,24 @@
       "stats": {
         "last_activity": "unknown"
       }
+    },
+    {
+      "id": "operator-memory",
+      "name": "Operator Memory",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown"
+      }
     }
   ],
-  "generated": "2026-05-04T17:30:10.110325+00:00"
+  "generated": "2026-05-05T04:08:28.745806+00:00"
 }
