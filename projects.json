@@ -163,7 +163,7 @@
       "github": null,
       "github_private": true,
       "stats": {
-        "last_activity": "this month"
+        "last_activity": "recently"
       }
     },
     {
@@ -180,7 +180,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "last_activity": "this month"
+        "last_activity": "recently"
       }
     },
     {
@@ -305,5 +305,5 @@
       }
     }
   ],
-  "generated": "2026-05-13T04:09:00.875402+00:00"
+  "generated": "2026-05-13T17:30:08.063914+00:00"
 }
