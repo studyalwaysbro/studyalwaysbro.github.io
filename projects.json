@@ -84,7 +84,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "last_activity": "this week"
+        "last_activity": "this month"
       }
     },
     {
@@ -104,6 +104,23 @@
       "github_private": true,
       "stats": {
         "last_activity": "this week"
+      }
+    },
+    {
+      "id": "forecast-comparison-lab",
+      "name": "Forecast Comparison Lab",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
       }
     },
     {
@@ -181,23 +198,6 @@
       "github_private": false,
       "stats": {
         "last_activity": "recently"
-      }
-    },
-    {
-      "id": "forecast-comparison-lab",
-      "name": "Forecast Comparison Lab",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Python"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
       }
     },
     {
@@ -322,5 +322,5 @@
       }
     }
   ],
-  "generated": "2026-05-14T04:19:07.030232+00:00"
+  "generated": "2026-05-14T17:30:09.267851+00:00"
 }
