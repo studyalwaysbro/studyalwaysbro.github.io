@@ -19,7 +19,7 @@
       "github": "https://github.com/studyalwaysbro/asset-cluster-migration",
       "github_private": false,
       "stats": {
-        "last_activity": "today"
+        "last_activity": "this week"
       }
     },
     {
@@ -103,7 +103,7 @@
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
       "github_private": true,
       "stats": {
-        "last_activity": "today"
+        "last_activity": "this week"
       }
     },
     {
@@ -322,5 +322,5 @@
       }
     }
   ],
-  "generated": "2026-05-23T17:30:04.485657+00:00"
+  "generated": "2026-05-24T17:30:04.459683+00:00"
 }
