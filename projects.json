@@ -164,6 +164,23 @@
       }
     },
     {
+      "id": "tavares-construction-website",
+      "name": "Tavares Construction Website",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "yeet-terminal",
       "name": "YeetTerminal",
       "category": "Learning Project",
@@ -322,5 +339,5 @@
       }
     }
   ],
-  "generated": "2026-06-06T17:30:04.689194+00:00"
+  "generated": "2026-06-07T20:14:53.016858+00:00"
 }
