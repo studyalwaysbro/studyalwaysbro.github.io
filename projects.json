@@ -103,7 +103,7 @@
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
       "github_private": true,
       "stats": {
-        "last_activity": "this week"
+        "last_activity": "today"
       }
     },
     {
@@ -215,6 +215,40 @@
       "github_private": false,
       "stats": {
         "last_activity": "recently"
+      }
+    },
+    {
+      "id": "nabla",
+      "name": "Nabla",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
+      "id": "quorum",
+      "name": "Quorum",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
       }
     },
     {
@@ -339,5 +373,5 @@
       }
     }
   ],
-  "generated": "2026-06-08T17:30:11.106314+00:00"
+  "generated": "2026-06-09T04:17:44.261791+00:00"
 }

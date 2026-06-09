@@ -295,6 +295,36 @@
         "Code"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "nabla",
+      "name": "Nabla",
+      "repo_path": "nabla",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
+    },
+    {
+      "id": "quorum",
+      "name": "Quorum",
+      "repo_path": "quorum",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
