@@ -124,6 +124,23 @@
       }
     },
     {
+      "id": "quorum",
+      "name": "Quorum",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "ice-cream-forecasting",
       "name": "Ice Cream Production Forecasting",
       "category": "Research",
@@ -142,6 +159,23 @@
       "github_private": false,
       "stats": {
         "last_activity": "a while ago"
+      }
+    },
+    {
+      "id": "nabla",
+      "name": "Nabla",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
       }
     },
     {
@@ -215,40 +249,6 @@
       "github_private": false,
       "stats": {
         "last_activity": "recently"
-      }
-    },
-    {
-      "id": "nabla",
-      "name": "Nabla",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Python"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
-      }
-    },
-    {
-      "id": "quorum",
-      "name": "Quorum",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Python"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
       }
     },
     {
@@ -373,5 +373,5 @@
       }
     }
   ],
-  "generated": "2026-06-09T17:30:05.865539+00:00"
+  "generated": "2026-06-10T04:16:36.669249+00:00"
 }
