@@ -162,6 +162,23 @@
       }
     },
     {
+      "id": "gachapon-spire",
+      "name": "Gachapon Spire",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "nabla",
       "name": "Nabla",
       "category": "Unknown",
@@ -195,23 +212,6 @@
       "github_private": true,
       "stats": {
         "last_activity": "recently"
-      }
-    },
-    {
-      "id": "gachapon-spire",
-      "name": "Gachapon Spire",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
       }
     },
     {
@@ -388,7 +388,24 @@
       "stats": {
         "last_activity": "unknown"
       }
+    },
+    {
+      "id": "fractal-madness",
+      "name": "Fractal Madness",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown"
+      }
     }
   ],
-  "generated": "2026-06-11T04:15:33.747972+00:00"
+  "generated": "2026-06-11T17:30:05.122103+00:00"
 }
