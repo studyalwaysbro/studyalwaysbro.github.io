@@ -107,23 +107,6 @@
       }
     },
     {
-      "id": "forecast-comparison-lab",
-      "name": "Forecast Comparison Lab",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Python"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "this month"
-      }
-    },
-    {
       "id": "quorum",
       "name": "Quorum",
       "category": "Unknown",
@@ -138,6 +121,23 @@
       "github_private": false,
       "stats": {
         "last_activity": "today"
+      }
+    },
+    {
+      "id": "forecast-comparison-lab",
+      "name": "Forecast Comparison Lab",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "this month"
       }
     },
     {
@@ -195,6 +195,23 @@
       "github_private": true,
       "stats": {
         "last_activity": "recently"
+      }
+    },
+    {
+      "id": "gachapon-spire",
+      "name": "Gachapon Spire",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
       }
     },
     {
@@ -373,5 +390,5 @@
       }
     }
   ],
-  "generated": "2026-06-10T17:30:06.052329+00:00"
+  "generated": "2026-06-11T04:15:33.747972+00:00"
 }
