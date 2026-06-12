@@ -124,6 +124,23 @@
       }
     },
     {
+      "id": "gachapon-spire",
+      "name": "Gachapon Spire",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "forecast-comparison-lab",
       "name": "Forecast Comparison Lab",
       "category": "Unknown",
@@ -159,23 +176,6 @@
       "github_private": false,
       "stats": {
         "last_activity": "a while ago"
-      }
-    },
-    {
-      "id": "gachapon-spire",
-      "name": "Gachapon Spire",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
       }
     },
     {
@@ -407,5 +407,5 @@
       }
     }
   ],
-  "generated": "2026-06-12T04:11:28.482055+00:00"
+  "generated": "2026-06-12T17:30:05.610429+00:00"
 }
