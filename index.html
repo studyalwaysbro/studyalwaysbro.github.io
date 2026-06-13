@@ -635,10 +635,10 @@
       .then(function (r) { return r.json(); })
       .then(function (s) {
         var items = [
-          { v: s.loc_display || String(s.loc), l: "lines of code" },
-          { v: (s.commits || 0).toLocaleString(), l: "commits" },
-          { v: s.projects, l: "projects tracked" },
-          { v: s.public_repos, l: "public repos" }
+          { v: s.open_source_releases, l: "open-source releases" },
+          { v: s.projects, l: "projects" },
+          { v: s.public_repos, l: "public repos" },
+          { v: s.active_this_month, l: "active this month" }
         ];
         $("#hero-stats").innerHTML = items.map(function (it) {
           return '<div class="hero-stat"><b>' + esc(it.v) + "</b><span>" + esc(it.l) + "</span></div>";
