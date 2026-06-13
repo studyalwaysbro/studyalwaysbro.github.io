@@ -268,18 +268,20 @@
     },
     {
       "id": "forecast-comparison-lab",
-      "name": "Forecast Comparison Lab",
+      "name": "forecast-compare",
       "repo_path": "forecast-comparison-lab",
-      "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
+      "github": "https://github.com/studyalwaysbro/forecast-comparison-lab",
+      "category": "Research",
+      "color": "#e94560",
       "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "visible": true,
+      "description": "A small Python package for honest forecast comparison, published with CI and a real test suite. Diebold-Mariano and Giacomini-White tests, stationary bootstrap confidence intervals, Model Confidence Sets, and FDR correction, all behind one compare_models() call. The part I care about most is a stability diagnostic that asks not just whether two models differ on average, but when that gap appears or disappears. Runtime dependencies are numpy and scipy, nothing else.",
       "tags": [
-        "Python"
-      ],
-      "_auto_discovered": true
+        "Python",
+        "Statistics",
+        "Bootstrap",
+        "Hypothesis Testing"
+      ]
     },
     {
       "id": "tavares-construction-website",
@@ -298,63 +300,73 @@
     },
     {
       "id": "nabla",
-      "name": "Nabla",
+      "name": "nabla",
       "repo_path": "nabla",
-      "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "github": "https://github.com/studyalwaysbro/nabla",
+      "category": "Foundations",
+      "color": "#2dd4bf",
+      "featured": true,
+      "visible": true,
+      "description": "A reverse-mode automatic differentiation engine written from scratch on NumPy. No PyTorch, no autograd library, just the chain rule with hand-derived vector-Jacobian products. Every gradient is derived on paper in the docs and verified against finite differences in the test suite, including the softmax cross-entropy cancellation most tutorials skip. It is real enough to train neural nets: the 3-class spiral example hits 99% accuracy. I built it because I wanted to know exactly what loss.backward() does. Now I do.",
       "tags": [
-        "Python"
-      ],
-      "_auto_discovered": true
+        "Python",
+        "NumPy",
+        "Autodiff",
+        "Hand-Derived VJPs"
+      ]
     },
     {
       "id": "quorum",
       "name": "Quorum",
       "repo_path": "quorum",
-      "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "github": "https://github.com/studyalwaysbro/quorum",
+      "category": "AI Systems",
+      "color": "#a78bfa",
+      "featured": true,
+      "visible": true,
+      "description": "A multi-model deliberation engine, open source under MIT. Ask a panel of language models one question and Quorum runs a structured deliberation: every model answers blind first so nobody anchors, an adversarial skeptic attacks the emerging consensus, and a distiller maps where the panel actually agrees instead of counting votes. Built after months of running ad hoc model councils by hand and noticing that naive fan-out voting is often worse than one good model. Every verdict ships with a fully replayable transcript.",
       "tags": [
-        "Python"
-      ],
-      "_auto_discovered": true
+        "Python",
+        "LLM Orchestration",
+        "Multi-Agent",
+        "MIT"
+      ]
     },
     {
       "id": "gachapon-spire",
-      "name": "Gachapon Spire",
+      "name": "Prize Fighter",
       "repo_path": "gachapon-spire",
       "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "github_private": true,
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": true,
+      "visible": true,
+      "description": "A single-player roguelike deckbuilder in Godot where every relic comes out of a gachapon machine. Drop rates are printed on the machine, the pity dial is visible, and dupes always upgrade. It is a slot machine where you rig the slots, and rigging them is the strategy game. Combat and capsule logic live in a pure, engine-independent sim with a headless test suite, and the pull ceremony (coin clunk, drum rattle, pop reveal) gets the same obsessive attention as the math. No real-money purchases, ever.",
       "tags": [
-        "Code"
-      ],
-      "_auto_discovered": true
+        "Godot",
+        "GDScript",
+        "Systems Design",
+        "Authored RNG"
+      ]
     },
     {
       "id": "fractal-madness",
       "name": "Fractal Madness",
       "repo_path": "fractal-madness",
       "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "github_private": true,
+      "category": "Graphics",
+      "color": "#5b7bff",
+      "featured": true,
+      "visible": true,
+      "description": "A real-time GPU raymarcher for high-dimensional fractals. Eight worlds, including a Mandelbulb whose power exponent morphs continuously, a genuine 4D quaternion Julia set you can slide through along the fourth axis, and a black hole that is not a fractal at all: it integrates null geodesics around a Schwarzschild metric, so the lensing and the photon ring simply emerge from the ray bending. Python is just the window glue. Every pixel is sphere-traced distance estimation in one big GLSL fragment shader. The animated background on this site is its tiny WebGL cousin.",
       "tags": [
-        "Code"
-      ],
-      "_auto_discovered": true
+        "GLSL",
+        "OpenGL",
+        "Raymarching",
+        "Python"
+      ]
     }
   ],
   "excluded_repos": [
