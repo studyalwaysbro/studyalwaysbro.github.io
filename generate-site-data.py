@@ -507,8 +507,15 @@ def generate_stats(projects, public_repo_count, compliance_cfg):
     total_commits = 0
     total_python = 0
     visible_count = 0
+    open_source_releases = 0
+    active_this_month = 0
 
+    recent_labels = {"today", "this week", "this month"}
     visible_only = compliance_cfg.get("visible_projects_only", True)
+
+    with open(CONFIG_FILE) as f:
+        config = json.load(f)
+    config_by_id = {p["id"]: p for p in config["projects"]}
 
     for proj in projects:
         if visible_only and not proj.get("visible", False):
@@ -518,33 +525,37 @@ def generate_stats(projects, public_repo_count, compliance_cfg):
         total_loc += proj["stats"]["loc"]
         total_commits += proj["stats"]["commits"]
 
-        # Count python files from the actual repo
-        repo_path_name = None
-        # Look up repo_path from config
-        with open(CONFIG_FILE) as f:
-            config = json.load(f)
-        for cfg_proj in config["projects"]:
-            if cfg_proj["id"] == proj["id"]:
-                repo_path_name = cfg_proj.get("repo_path")
-                break
+        if proj["stats"].get("last_activity") in recent_labels:
+            active_this_month += 1
+
+        cfg_proj = config_by_id.get(proj["id"], {})
+        repo_path_name = cfg_proj.get("repo_path")
 
         if repo_path_name:
             repo_path = PROJECTS_DIR / repo_path_name
             if repo_path.exists():
                 total_python += count_python_files(str(repo_path))
+                # An "open-source release" is a public repo that is actually
+                # packaged and licensed for reuse: pyproject.toml + LICENSE.
+                is_public = bool(proj.get("github")) and not proj.get("github_private", False)
+                packaged = (repo_path / "pyproject.toml").exists() and (repo_path / "LICENSE").exists()
+                if is_public and packaged:
+                    open_source_releases += 1
 
     loc_display = f"{total_loc // 1000}K+" if total_loc >= 1000 else str(total_loc)
 
     active_count = sum(1 for p in projects if p.get("visible") and p["stats"]["commits"] > 0)
 
     stats = {
+        "open_source_releases": open_source_releases,
+        "projects": visible_count,
+        "public_repos": public_repo_count,
+        "active_this_month": active_this_month,
+        "active_projects": active_count,
+        "python_scripts": total_python,
         "loc": total_loc,
         "loc_display": loc_display,
-        "python_scripts": total_python,
-        "projects": visible_count,
         "commits": total_commits,
-        "public_repos": public_repo_count,
-        "active_projects": active_count,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "scope": "visible_projects_only" if visible_only else "all_local",
     }
@@ -552,8 +563,8 @@ def generate_stats(projects, public_repo_count, compliance_cfg):
     with open(STATS_OUTPUT, "w") as f:
         json.dump(stats, f, indent=2)
 
-    print(f"\nStats (visible projects only): {loc_display} LOC, {total_python} .py files, "
-          f"{total_commits} commits, {visible_count} projects, {public_repo_count} public repos")
+    print(f"\nStats (visible projects only): {open_source_releases} open-source releases, "
+          f"{visible_count} projects, {public_repo_count} public repos, {active_this_month} active this month")
     return stats
 
 
