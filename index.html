@@ -3,611 +3,906 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nicholas Tavares | Quantitative Research & ML Engineering</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <title>Nicholas Tavares | Mathematics, Machine Learning, Systems</title>
+  <meta name="description" content="Graduate mathematics research, machine learning systems, a from-scratch autodiff engine, a multi-model deliberation engine, GPU fractals, and a roguelike deckbuilder." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307070d'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23e94560' font-family='Georgia'%3E%E2%88%87%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body { background: #0a0a1a; }
-    @keyframes float { 0% { transform: translateY(0px) translateX(0px); } 100% { transform: translateY(-30px) translateX(15px); } }
-    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    ::selection { background: #e9456044; color: white; }
+    :root {
+      --bg: #07070d;
+      --bg2: #0a0a13;
+      --surface: #0e0e18;
+      --surface2: #12121e;
+      --border: #1d1d2e;
+      --border2: #2a2a40;
+      --text: #d9d9e3;
+      --dim: #8c8ca3;
+      --faint: #5b5b72;
+      --ember: #e94560;
+      --blue: #5b7bff;
+      --teal: #2dd4bf;
+      --gold: #f59e0b;
+      --violet: #a78bfa;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: rgba(233,69,96,0.35); color: #fff; }
+    a { color: inherit; }
+
+    /* ---------- nav ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(7,7,13,0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+    .nav-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 28px;
+      height: 58px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-mark {
+      font-family: var(--serif); font-size: 19px; font-weight: 600;
+      color: #fff; text-decoration: none; letter-spacing: 0.2px;
+      white-space: nowrap; margin-right: 18px;
+    }
+    @media (max-width: 560px) { .nav-mark { font-size: 16px; } }
+    .nav-mark span { color: var(--ember); }
+    .nav-links { display: flex; gap: 26px; overflow-x: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.6px;
+      color: var(--dim); text-decoration: none; text-transform: lowercase;
+      white-space: nowrap; transition: color 0.2s; padding: 4px 0;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ember); }
+
+    /* ---------- hero ---------- */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      overflow: hidden;
+    }
+    #julia {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      display: block; z-index: 0;
+    }
+    .hero-veil {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        linear-gradient(to right, rgba(7,7,13,0.88) 0%, rgba(7,7,13,0.55) 45%, rgba(7,7,13,0.18) 100%),
+        linear-gradient(to top, var(--bg) 0%, rgba(7,7,13,0) 28%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1140px; width: 100%; margin: 0 auto; padding: 120px 28px 90px;
+    }
+    .kicker {
+      font-family: var(--mono); font-size: 12px; color: var(--ember);
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+    .hero-inner h1 {
+      font-family: var(--serif); font-weight: 500; color: #fff;
+      font-size: clamp(46px, 7.5vw, 84px); line-height: 1.04;
+      letter-spacing: -1px; margin: 18px 0 0; max-width: 700px;
+    }
+    .hero-thesis {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(19px, 2.4vw, 25px); color: var(--text);
+      margin-top: 26px; max-width: 520px; line-height: 1.45;
+    }
+    .hero-sub {
+      color: var(--dim); font-size: 15px; max-width: 480px; margin-top: 18px;
+    }
+    .hero-cta { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 26px; border-radius: 6px;
+      text-decoration: none; font-size: 13.5px; font-weight: 600;
+      transition: transform 0.15s, background 0.2s, border-color 0.2s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-ember { background: var(--ember); color: #fff; }
+    .btn-ember:hover { background: #f25672; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border2); }
+    .btn-ghost:hover { border-color: var(--ember); color: #fff; }
+    .hero-stats {
+      display: flex; gap: 0; margin-top: 64px; flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      max-width: 760px;
+    }
+    .hero-stat { padding: 18px 36px 0 0; }
+    .hero-stat b {
+      display: block; font-family: var(--mono); font-weight: 700;
+      font-size: 24px; color: #fff; letter-spacing: -0.5px;
+    }
+    .hero-stat span {
+      font-family: var(--mono); font-size: 10.5px; color: var(--faint);
+      letter-spacing: 1.2px; text-transform: uppercase;
+    }
+    .hero-sync {
+      margin-top: 14px; font-family: var(--mono); font-size: 11px; color: var(--faint);
+    }
+    .hero-sync i { color: var(--teal); font-style: normal; }
+    .shader-caption {
+      position: absolute; right: 24px; bottom: 18px; z-index: 2;
+      font-family: var(--mono); font-size: 10.5px; color: var(--faint);
+      text-align: right; line-height: 1.6; pointer-events: none;
+    }
+    .shader-caption b { color: var(--dim); font-weight: 500; }
+
+    /* ---------- sections ---------- */
+    section { position: relative; padding: 96px 0; }
+    section.alt { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+    .sec-head { margin-bottom: 48px; }
+    .sec-num {
+      font-family: var(--mono); font-size: 11.5px; color: var(--ember);
+      letter-spacing: 2px;
+    }
+    .sec-head h2 {
+      font-family: var(--serif); font-weight: 500; color: #fff;
+      font-size: clamp(30px, 4vw, 42px); letter-spacing: -0.5px; margin-top: 8px;
+    }
+    .sec-head p { color: var(--dim); font-size: 14.5px; margin-top: 8px; max-width: 560px; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .card.hov:hover {
+      border-color: var(--border2); transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    }
+    .chip {
+      display: inline-block; padding: 3px 11px; border-radius: 999px;
+      font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+      letter-spacing: 0.4px; margin: 0 6px 6px 0;
+    }
+
+    /* ---------- about ---------- */
+    .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 44px; align-items: start; }
+    .about-grid p { margin-bottom: 16px; font-size: 15.5px; line-height: 1.85; }
+    .about-grid p:last-child { margin-bottom: 0; }
+    .hl-e { color: var(--ember); font-weight: 600; }
+    .hl-b { color: var(--blue); font-weight: 600; }
+    .hl-t { color: var(--teal); font-weight: 600; }
+    .edu-item { padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-item b { color: #fff; font-size: 14.5px; }
+    .edu-item div { color: var(--dim); font-size: 13px; margin-top: 2px; }
+    .card h3 { color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+
+    /* ---------- disclosures ---------- */
+    .disc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .disc-grid .card { padding: 22px; }
+    .disc-grid h3 { color: var(--ember); font-size: 13px; letter-spacing: 0.3px; }
+    .disc-grid p { font-size: 12.5px; line-height: 1.75; color: var(--dim); }
+    .disc-grid p b { color: var(--text); }
+    .disc-grid a { color: var(--ember); }
+
+    /* ---------- research ---------- */
+    .paper { padding: 36px; }
+    .paper-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+    .paper h3 {
+      font-family: var(--serif); font-weight: 500; color: #fff;
+      font-size: clamp(22px, 2.6vw, 28px); line-height: 1.25; margin: 14px 0 6px;
+    }
+    .paper-authors { font-family: var(--mono); font-size: 11.5px; color: var(--dim); }
+    .paper-body { font-size: 14.5px; line-height: 1.8; margin-top: 18px; color: var(--text); max-width: 860px; }
+    .paper-stats { display: flex; flex-wrap: wrap; gap: 0; margin: 26px 0 6px; border-top: 1px solid var(--border); }
+    .paper-stat { padding: 16px 34px 0 0; }
+    .paper-stat b { display: block; font-family: var(--mono); font-size: 21px; font-weight: 700; color: var(--ember); }
+    .paper-stat span { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 1px; text-transform: uppercase; }
+    .paper h4 {
+      font-family: var(--mono); font-size: 11px; color: var(--dim);
+      letter-spacing: 1.6px; text-transform: uppercase; margin: 26px 0 12px;
+    }
+    .findings { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+    .findings div {
+      font-size: 13.5px; line-height: 1.7; color: var(--text);
+      padding-left: 16px; border-left: 2px solid var(--border2);
+    }
+    .note {
+      background: rgba(91,123,255,0.06); border: 1px solid rgba(91,123,255,0.2);
+      border-radius: 8px; padding: 12px 16px; margin-top: 22px;
+      font-size: 11.5px; line-height: 1.7; color: var(--dim);
+    }
+    .note b { color: var(--blue); }
+
+    /* ---------- projects ---------- */
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 34px; }
+    .filter-btn {
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.4px;
+      padding: 7px 16px; border-radius: 999px; cursor: pointer;
+      background: transparent; border: 1px solid var(--border2); color: var(--dim);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { color: var(--text); border-color: var(--faint); }
+    .filter-btn.on { background: var(--ember); border-color: var(--ember); color: #fff; }
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .proj-card { display: flex; flex-direction: column; }
+    .proj-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .proj-card h3 {
+      font-family: var(--serif); font-weight: 500; color: #fff;
+      font-size: 23px; margin-bottom: 8px; letter-spacing: -0.2px;
+    }
+    .proj-card .desc { color: var(--dim); font-size: 13.5px; line-height: 1.75; flex: 1; }
+    .proj-tags { margin-top: 16px; }
+    .proj-foot { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; }
+    .proj-link { font-family: var(--mono); font-size: 12px; font-weight: 500; text-decoration: none; }
+    .proj-link:hover { text-decoration: underline; }
+    .proj-private { font-family: var(--mono); font-size: 11px; color: var(--faint); }
+    .activity { font-family: var(--mono); font-size: 10.5px; color: var(--faint); display: flex; align-items: center; gap: 6px; }
+    .activity .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .more-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .more-row {
+      display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 16px 22px; transition: border-color 0.2s;
+    }
+    .more-row:hover { border-color: var(--border2); }
+    .more-row h3 { font-family: var(--serif); font-weight: 500; font-size: 17px; color: #fff; }
+    .more-row .cat { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+    .more-row .desc { flex: 1 1 100%; color: var(--dim); font-size: 12.5px; line-height: 1.7; }
+    .pipeline-note {
+      margin-top: 28px; border: 1px dashed var(--border2); border-radius: 10px;
+      padding: 22px 26px; display: flex; gap: 16px; align-items: baseline;
+    }
+    .pipeline-note .pulse {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+      flex-shrink: 0; position: relative; top: -1px;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 0.45; } 50% { opacity: 1; } }
+    .pipeline-note p { font-size: 12.5px; color: var(--dim); line-height: 1.75; }
+    .pipeline-note b { color: var(--text); font-weight: 600; }
+
+    /* ---------- math ---------- */
+    .math-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .math-card { padding: 22px; }
+    .math-card .mt { font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 10px; }
+    .math-card .eq {
+      font-family: var(--serif); font-style: italic; font-size: 15.5px; color: #fff;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 12px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .math-card p { font-size: 12px; color: var(--dim); line-height: 1.65; }
+
+    /* ---------- experience ---------- */
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px; width: 1px;
+      background: linear-gradient(to bottom, var(--ember), var(--blue), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 26px; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -28px; top: 26px;
+      width: 9px; height: 9px; border-radius: 50%; background: var(--ember);
+      box-shadow: 0 0 0 4px var(--bg2);
+    }
+    .tl-item .period { font-family: var(--mono); font-size: 11px; color: var(--ember); letter-spacing: 1px; }
+    .tl-item h3 { font-family: var(--serif); font-weight: 500; font-size: 20px; color: #fff; margin: 6px 0 2px; }
+    .tl-item .org { color: var(--dim); font-size: 13px; margin-bottom: 10px; }
+    .tl-item p { font-size: 13.5px; line-height: 1.75; color: var(--text); }
+    .toolbox { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+    .tool-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; }
+    .tool-cell b { font-family: var(--mono); font-size: 10px; color: var(--ember); letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; }
+    .tool-cell div { font-size: 12px; color: var(--dim); line-height: 1.65; margin-top: 7px; }
+
+    /* ---------- contact / footer ---------- */
+    .contact-box { text-align: center; max-width: 560px; margin: 0 auto; }
+    .contact-box p { font-size: 15.5px; line-height: 1.85; color: var(--text); margin-bottom: 34px; }
+    footer { padding: 40px 28px 36px; border-top: 1px solid var(--border); text-align: center; }
+    .foot-disc {
+      max-width: 720px; margin: 0 auto 24px; border: 1px solid rgba(233,69,96,0.18);
+      background: rgba(233,69,96,0.04); border-radius: 8px; padding: 14px 20px;
+      font-size: 11px; line-height: 1.75; color: var(--dim); text-align: left;
+    }
+    .foot-disc b { color: var(--ember); }
+    .foot-disc a { color: var(--ember); }
+    footer .colophon { font-size: 12px; color: var(--dim); }
+    footer .colophon-sub { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-top: 8px; }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 980px) {
+      .about-grid, .proj-grid, .findings { grid-template-columns: 1fr; }
+      .math-grid { grid-template-columns: 1fr 1fr; }
+      .toolbox { grid-template-columns: 1fr 1fr; }
+      .disc-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .math-grid, .toolbox { grid-template-columns: 1fr; }
+      section { padding: 72px 0; }
+      .hero-inner { padding: 110px 22px 80px; }
+      .wrap { padding: 0 22px; }
+      .shader-caption { display: none; }
+      .hero-stat { padding-right: 26px; }
+    }
   </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    const { useState, useEffect, useRef } = React;
 
-    const ACCENT = "#e94560";
-    const DARK = "#0a0a1a";
-    const DARKER = "#060612";
-    const CARD = "#12122a";
-    const CARD_BORDER = "#1e1e3a";
-    const TEXT = "#e0e0e0";
-    const TEXT_DIM = "#8888aa";
-    const BLUE = "#4361ee";
-    const GREEN = "#2dd4bf";
-    const GOLD = "#f59e0b";
-
-    const EQUATIONS = [
-      "\u2202f/\u2202t + \u00bd\u03c3\u00b2S\u00b2\u2202\u00b2f/\u2202S\u00b2 + rS\u2202f/\u2202S \u2212 rf = 0",
-      "E[X] = \u222bxf(x)dx",
-      "\u2207\u00b2\u03c8 + (2m/\u210f\u00b2)(E\u2212V)\u03c8 = 0",
-      "det(A \u2212 \u03bbI) = 0",
-      "T_{X\u2192Y} = \u03a3 p(y,y\u207b,x\u207b) log[p(y|y\u207b,x\u207b)/p(y|y\u207b)]",
-      "dS = \u03bcSdt + \u03c3SdW",
-      "H(X) = \u2212\u03a3 p(x) log p(x)",
-      "\u2202u/\u2202t = \u03b1\u2207\u00b2u",
-      "[G,G] \u2286 G",
-      "||Ax \u2212 b||\u2082\u00b2",
-      "P(A|B) = P(B|A)P(A)/P(B)",
-      "\u03c1(X,Y) = cov(X,Y)/\u03c3\u2093\u03c3\u1d67",
-      "F = ma",
-      "\u222e E\u00b7dl = \u2212d\u03a6/dt",
-      "\u03a3\u1d62 \u03bb\u1d62e\u1d62\u2297e\u1d62",
-      "lim(n\u2192\u221e) \u03a3 1/n\u00b2= \u03c0\u00b2/6",
-    ];
-
-    const FloatingEquation = ({ eq, index }) => {
-      const top = 5 + ((index * 37) % 90);
-      const left = 2 + ((index * 23) % 95);
-      const duration = 20 + (index % 5) * 8;
-      const delay = index * 1.5;
-      return (
-        <div style={{
-          position: "absolute", top: `${top}%`, left: `${left}%`,
-          color: "rgba(100,100,180,0.07)", fontSize: `${11 + (index % 4) * 2}px`,
-          fontFamily: "Georgia, serif", fontStyle: "italic", whiteSpace: "nowrap",
-          pointerEvents: "none", animation: `float ${duration}s ease-in-out ${delay}s infinite alternate`, zIndex: 0,
-        }}>{eq}</div>
-      );
-    };
-
-    const Section = ({ id, children, dark }) => (
-      <section id={id} style={{ position: "relative", padding: "80px 0", background: dark ? DARKER : "transparent", overflow: "hidden" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 1 }}>{children}</div>
-      </section>
-    );
-
-    const SectionTitle = ({ children, sub }) => (
-      <div style={{ marginBottom: 40, textAlign: "center" }}>
-        <h2 style={{ fontSize: 36, fontWeight: 800, color: "white", margin: 0, letterSpacing: "-0.5px" }}>{children}</h2>
-        {sub && <p style={{ color: TEXT_DIM, fontSize: 15, marginTop: 8 }}>{sub}</p>}
-        <div style={{ width: 60, height: 3, background: ACCENT, margin: "16px auto 0", borderRadius: 2 }} />
+  <nav id="nav">
+    <div class="nav-inner">
+      <a class="nav-mark" href="#hero"><span>N</span>icholas Tavares</a>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#disclosures">disclosures</a>
+        <a href="#research">research</a>
+        <a href="#projects">projects</a>
+        <a href="#mathematics">math</a>
+        <a href="#experience">experience</a>
+        <a href="#contact">contact</a>
       </div>
-    );
+    </div>
+  </nav>
 
-    const Card = ({ children, style, hover }) => {
-      const [hovered, setHovered] = useState(false);
-      return (
-        <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-          style={{
-            background: CARD, border: `1px solid ${hovered && hover ? ACCENT : CARD_BORDER}`,
-            borderRadius: 12, padding: 28, transition: "all 0.3s ease",
-            transform: hovered && hover ? "translateY(-4px)" : "none",
-            boxShadow: hovered && hover ? "0 8px 30px rgba(233,69,96,0.15)" : "none", ...style,
-          }}>{children}</div>
-      );
-    };
+  <!-- ================= HERO ================= -->
+  <section id="hero">
+    <canvas id="julia"></canvas>
+    <div class="hero-veil"></div>
+    <div class="hero-inner">
+      <div class="kicker">Mathematics &middot; Machine Learning &middot; Systems</div>
+      <h1>Structure,<br />found in chaos.</h1>
+      <p class="hero-thesis">I'm Nicholas Tavares, a graduate mathematician who builds research code that gets validated and infrastructure that runs itself.</p>
+      <p class="hero-sub">Network topology of markets under stress. A from-scratch autodiff engine. A deliberation protocol for panels of language models. GPU fractals. A deckbuilder about rigging slot machines. It all connects, I promise.</p>
+      <div class="hero-cta">
+        <a class="btn btn-ember" href="#research">The research</a>
+        <a class="btn btn-ghost" href="#projects">Projects</a>
+        <a class="btn btn-ghost" href="https://github.com/studyalwaysbro" target="_blank" rel="noopener noreferrer">GitHub &#8599;</a>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+      <div class="hero-sync" id="hero-sync"></div>
+    </div>
+    <div class="shader-caption">
+      <b>background:</b> Julia set, z &rarr; z&sup2; + c, c orbiting the cardioid<br />
+      rendered live on your GPU &middot; little sibling of the Fractal Madness project
+    </div>
+  </section>
 
-    const Tag = ({ children, color = ACCENT }) => (
-      <span style={{
-        display: "inline-block", padding: "4px 12px", borderRadius: 20, fontSize: 11,
-        fontWeight: 600, background: `${color}22`, color: color, marginRight: 6, marginBottom: 6,
-      }}>{children}</span>
-    );
-
-    const AnimatedNumber = ({ target, suffix = "" }) => {
-      const [current, setCurrent] = useState(0);
-      const ref = useRef(null);
-      const started = useRef(false);
-
-      useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-          if (entry.isIntersecting && !started.current) {
-            started.current = true;
-            const duration = 2000;
-            const steps = 60;
-            const increment = target / steps;
-            let step = 0;
-            const timer = setInterval(() => {
-              step++;
-              if (step >= steps) {
-                setCurrent(target);
-                clearInterval(timer);
-              } else {
-                setCurrent(Math.floor(increment * step));
-              }
-            }, duration / steps);
-          }
-        }, { threshold: 0.3 });
-        if (ref.current) observer.observe(ref.current);
-        return () => observer.disconnect();
-      }, [target]);
-
-      const display = target >= 1000 ? Math.floor(current / 1000) + "K+" : current.toLocaleString();
-      return <span ref={ref}>{started.current && current === target ? (target >= 1000 ? Math.floor(target / 1000) + "K+" : target.toLocaleString()) : display}{suffix}</span>;
-    };
-
-    const StatBox = ({ value, label, numeric }) => (
-      <div style={{ textAlign: "center", padding: "20px 16px" }}>
-        <div style={{ fontSize: 36, fontWeight: 800, color: ACCENT, fontFamily: "Georgia, serif" }}>
-          {numeric != null ? <AnimatedNumber target={numeric} /> : value}
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">01 / About</div>
+        <h2>Where pure math meets messy data</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm a graduate student and ML engineer who builds systems that find structure in chaos. My academic work sits at the intersection of <span class="hl-e">graph theory</span>, <span class="hl-b">information theory</span>, and <span class="hl-t">network analysis</span>, using tools from pure mathematics to study complex systems and multi-agent architectures.</p>
+          <p>Currently pursuing an M.S. in Mathematics at <b>Stevens Institute of Technology</b>, where my thesis asks whether network topology metrics show structural change during periods of macroeconomic stress. It's an open academic question, and it deserves rigor, not vibes.</p>
+          <p>The rest of my time goes to building. Lately that ranges from an automatic differentiation engine written from scratch to prove I understand the chain rule, to a deliberation protocol for panels of language models, to a raymarcher that renders 4D fractals in real time. I believe the best insights come from asking better questions, not running faster models.</p>
         </div>
-        <div style={{ fontSize: 12, color: TEXT_DIM, marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>{label}</div>
-      </div>
-    );
-
-    const Nav = ({ active }) => {
-      const links = ["About", "Disclosures", "Research", "Projects", "Mathematics", "Experience", "Contact"];
-      return (
-        <nav style={{
-          position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-          background: "rgba(6,6,18,0.92)", backdropFilter: "blur(20px)",
-          borderBottom: `1px solid ${CARD_BORDER}`, padding: "0 24px",
-        }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: 60 }}>
-            <a href="#hero" style={{ color: "white", textDecoration: "none", fontWeight: 800, fontSize: 18 }}>
-              <span style={{ color: ACCENT }}>N</span>T
-            </a>
-            <div style={{ display: "flex", gap: 28 }}>
-              {links.map((l) => (
-                <a key={l} href={`#${l.toLowerCase()}`} style={{
-                  color: active === l.toLowerCase() ? ACCENT : TEXT_DIM,
-                  textDecoration: "none", fontSize: 13, fontWeight: 500, letterSpacing: 0.5, transition: "color 0.2s",
-                }}>{l}</a>
-              ))}
+        <div class="reveal">
+          <div class="card">
+            <h3>Education</h3>
+            <div class="edu-item">
+              <b>Stevens Institute of Technology</b>
+              <div>M.S. Mathematics &middot; Dec 2023 to Jun 2026 (expected)</div>
+            </div>
+            <div class="edu-item">
+              <b>Oregon Institute of Technology</b>
+              <div>B.S. Applied Mathematics &middot; 2015 to 2018</div>
             </div>
           </div>
-        </nav>
-      );
-    };
-
-    function Portfolio() {
-      const [activeSection, setActiveSection] = useState("about");
-      const [projects, setProjects] = useState([]);
-
-      useEffect(() => {
-        fetch("projects.json?" + Date.now())
-          .then(r => r.json())
-          .then(d => setProjects(d.projects || []))
-          .catch(() => {});
-      }, []);
-
-      useEffect(() => {
-        const handleScroll = () => {
-          const sections = ["about", "disclosures", "research", "projects", "mathematics", "experience", "contact"];
-          for (const id of sections) {
-            const el = document.getElementById(id);
-            if (el && el.getBoundingClientRect().top < 200) setActiveSection(id);
-          }
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
-
-      return (
-        <div style={{
-          background: DARK, color: TEXT,
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-          minHeight: "100vh", overflowX: "hidden",
-        }}>
-          <style>{`a:hover { color: ${ACCENT} !important; }`}</style>
-          <Nav active={activeSection} />
-
-          {/* HERO */}
-          <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-            {EQUATIONS.map((eq, i) => <FloatingEquation key={i} eq={eq} index={i} />)}
-            <div style={{ position: "absolute", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 70%)", top: "10%", right: "-10%", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(67,97,238,0.06) 0%, transparent 70%)", bottom: "10%", left: "-5%", pointerEvents: "none" }} />
-
-            <div style={{ textAlign: "center", zIndex: 1, animation: "slideUp 1s ease-out" }}>
-              <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "block", margin: "0 auto 32px", width: 160, height: 160, borderRadius: "50%", cursor: "pointer", position: "relative" }}>
-                <div style={{
-                  width: 160, height: 160, borderRadius: "50%",
-                  background: `linear-gradient(135deg, ${ACCENT}, ${BLUE})`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 56, fontWeight: 800, color: "white",
-                  boxShadow: `0 0 60px ${ACCENT}33`, border: "3px solid rgba(255,255,255,0.1)",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                }}>NT</div>
-                <div style={{ position: "absolute", bottom: 4, right: 4, width: 36, height: 36, borderRadius: "50%", background: "#0A66C2", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #0d1117", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </div>
-              </a>
-
-              <h1 style={{ fontSize: 52, fontWeight: 800, margin: 0, color: "white", letterSpacing: "-1px" }}>Nicholas Tavares</h1>
-              <p style={{ fontSize: 13, color: ACCENT, fontWeight: 600, letterSpacing: 4, textTransform: "uppercase", marginTop: 12 }}>Aspiring Researcher</p>
-              <p style={{ fontSize: 20, color: TEXT_DIM, marginTop: 16, maxWidth: 700, margin: "16px auto 0", lineHeight: 1.6 }}>
-                Mathematician, Quantitative Researcher, ML Engineer, Agentic AI
-              </p>
-              <p style={{ fontSize: 14, color: TEXT_DIM, marginTop: 12, fontStyle: "italic", fontFamily: "Georgia, serif" }}>
-                Exploring market microstructure through network analysis and information theory.
-              </p>
-
-              <div style={{ marginTop: 36, display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="#research" style={{ display: "inline-block", padding: "12px 32px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14 }}>View Research</a>
-                <a href="#projects" style={{ display: "inline-block", padding: "12px 32px", background: "transparent", color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>Explore Projects</a>
-                <a href="https://github.com/studyalwaysbro" target="_blank" style={{ display: "inline-block", padding: "12px 32px", background: "transparent", color: TEXT_DIM, borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>GitHub ↗</a>
-              </div>
-
-              <div style={{ display: "flex", justifyContent: "center", gap: 40, marginTop: 60, flexWrap: "wrap" }}>
-                <StatBox numeric={91} label="ETFs Analyzed" />
-                <StatBox numeric={24} label="Publication Figures" />
-                <StatBox numeric={5} label="Novel Metrics" />
-                <StatBox numeric={8} label="Asset Classes" />
-                <StatBox numeric={6} label="Validation Methods" />
-              </div>
+          <div class="card" style="margin-top: 16px;">
+            <h3>Elsewhere</h3>
+            <div class="edu-item">
+              <b><a href="https://github.com/studyalwaysbro" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">GitHub &#8599;</a></b>
+              <div>Open source: Quorum, nabla, forecast-compare</div>
             </div>
-          </section>
-
-          {/* ABOUT */}
-          <Section id="about" dark>
-            <SectionTitle sub="Where pure mathematics meets messy real-world datasets">About</SectionTitle>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 24 }}>
-                  <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", flexShrink: 0, position: "relative", display: "inline-block" }}>
-                    <div style={{
-                      width: 100, height: 100, borderRadius: "50%",
-                      background: `linear-gradient(135deg, ${ACCENT}, ${BLUE})`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      border: "3px solid rgba(233,69,96,0.3)", boxShadow: `0 0 30px ${ACCENT}22`, overflow: "hidden",
-                      cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s",
-                    }}>
-                      <span style={{ fontSize: 36, fontWeight: 800, color: "white" }}>NT</span>
-                    </div>
-                    <div style={{ position: "absolute", bottom: 0, right: 0, width: 28, height: 28, borderRadius: "50%", background: "#0A66C2", display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #0d1117", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </div>
-                  </a>
-                  <div>
-                    <div style={{ fontSize: 18, fontWeight: 700, color: "white" }}>Nicholas Tavares</div>
-                    <div style={{ fontSize: 12, color: ACCENT, fontWeight: 600, marginTop: 2 }}>M.S. Mathematics Candidate</div>
-                    <div style={{ fontSize: 12, color: TEXT_DIM, marginTop: 4 }}>Stevens Institute of Technology</div>
-                  </div>
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT }}>
-                  I'm a graduate student and ML engineer who builds systems that find structure in chaos.
-                  My academic work sits at the intersection of <span style={{ color: ACCENT, fontWeight: 600 }}>graph theory</span>,
-                  <span style={{ color: BLUE, fontWeight: 600 }}> information theory</span>, and
-                  <span style={{ color: GREEN, fontWeight: 600 }}> network analysis</span>, using tools from
-                  pure mathematics to study complex systems and multi-agent architectures.
-                </p>
-                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginTop: 16 }}>
-                  Currently pursuing an M.S. in Mathematics at <b>Stevens Institute of Technology</b>{" "}
-                  while building multi-agent research systems for prediction market analysis.
-                </p>
-                <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginTop: 16 }}>
-                  I believe the best insights come from asking better questions, not running faster models.
-                  My coursework and thesis research explore whether network topology metrics exhibit
-                  structural changes during periods of macroeconomic stress. An open academic question worth studying rigorously.
-                </p>
-              </div>
-              <div>
-                <Card>
-                  <h3 style={{ color: "white", fontSize: 16, marginTop: 0, marginBottom: 12 }}>Education</h3>
-                  <div style={{ fontSize: 14, color: TEXT }}>
-                    <b>Stevens Institute of Technology</b>
-                    <p style={{ color: TEXT_DIM, fontSize: 13, margin: "4px 0 0" }}>M.S. Mathematics | Dec 2023 - Jun 2026 (expected)</p>
-                  </div>
-                  <div style={{ fontSize: 14, color: TEXT, marginTop: 12 }}>
-                    <b>Oregon Institute of Technology</b>
-                    <p style={{ color: TEXT_DIM, fontSize: 13, margin: "4px 0 0" }}>B.S. Applied Mathematics | 2015 - 2018</p>
-                  </div>
-                </Card>
-              </div>
+            <div class="edu-item">
+              <b><a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">LinkedIn &#8599;</a></b>
+              <div>Professional background</div>
             </div>
-          </Section>
-
-          {/* DISCLOSURES */}
-          <Section id="disclosures">
-            <SectionTitle sub="Please review before exploring this site">Disclosures</SectionTitle>
-            <div style={{ maxWidth: 800, margin: "0 auto" }}>
-              <Card>
-                <div style={{ display: "grid", gap: 20 }}>
-                  <div>
-                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Personal Site</h3>
-                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
-                      This website is maintained in my personal capacity only. It is <b>not affiliated with,
-                      endorsed by, or associated with any employer</b> or financial institution.
-                      All views and opinions expressed here are my own and do not represent the views of any firm.
-                      For professional background, please see my {" "}
-                      <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style={{ color: ACCENT, textDecoration: "underline" }}>LinkedIn profile</a>.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Not Investment Advice</h3>
-                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
-                      Nothing on this site constitutes investment advice, a solicitation to buy or sell securities,
-                      or a recommendation of any investment product, strategy, or course of action. All content is
-                      for <b>educational and academic research purposes only</b> and should not be used as the basis
-                      for any investment decision.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 style={{ color: ACCENT, fontSize: 15, marginTop: 0, marginBottom: 8 }}>Research Disclaimer</h3>
-                    <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>
-                      All research findings, statistical results, and quantitative analysis presented here are theoretical
-                      and academic in nature. Historical patterns observed in specific datasets do not predict future performance
-                      and have not been validated for real-world trading or investment applications. Past performance,
-                      whether simulated or backtested, does not indicate future results.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </Section>
-
-          {/* RESEARCH */}
-          <Section id="research">
-            <SectionTitle sub="Publication-ready quantitative research with novel mathematical contributions">Research</SectionTitle>
-            <Card hover style={{ marginBottom: 32 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
-                <div style={{ flex: 1, minWidth: 300 }}>
-                  <Tag color={ACCENT}>Network Theory</Tag>
-                  <Tag color={BLUE}>Information Theory</Tag>
-                  <Tag color={GREEN}>Geopolitical Finance</Tag>
-                  <Tag color={GOLD}>HMM Regime Detection</Tag>
-                  <h3 style={{ color: "white", fontSize: 22, margin: "16px 0 8px", lineHeight: 1.3 }}>
-                    Dynamic Multi-Asset Portfolio Topology Reorganization During Geopolitical Stress
-                  </h3>
-                  <p style={{ color: TEXT_DIM, fontSize: 13, margin: 0 }}>N. Tavares, A. Hanini, B. Dasilva | Stevens Institute of Technology, 2025-2026</p>
-                </div>
-                <a href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank"
-                  style={{ padding: "10px 20px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>
-                  View on GitHub ↗
-                </a>
-              </div>
-              <p style={{ fontSize: 14, lineHeight: 1.7, marginTop: 16 }}>
-                A novel framework analyzing how multi-asset portfolio structures reorganize during geopolitical crises.
-                Constructs multi-layer similarity networks across <b>91 ETFs</b> spanning 8 asset classes using shrinkage correlation,
-                distance correlation, and tail-dependence measures. Applies Leiden community detection, Hidden Markov Model regime identification,
-                and information-theoretic metrics (transfer entropy via KSG estimator, Granger causality) to reveal directional
-                information flow between asset clusters.
-              </p>
-
-              <div style={{ marginTop: 20, background: `${BLUE}11`, border: `1px solid ${BLUE}33`, borderRadius: 8, padding: 12, marginBottom: 16 }}>
-                <p style={{ fontSize: 11, color: TEXT_DIM, margin: 0, lineHeight: 1.6 }}>
-                  <b style={{ color: BLUE }}>Academic Research:</b> Findings below are from a specific historical dataset and time period.
-                  They have not been validated for real-world application and should not be construed as investment recommendations.
-                </p>
-              </div>
-
-              <div style={{ marginTop: 20 }}>
-                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Key Findings</h4>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                  {[
-                    { icon: "\u26a1", text: "In this dataset, topology metrics showed structural changes preceding observed crises, a pattern meriting further study" },
-                    { icon: "\ud83d\udd17", text: "Tail-dependence CMI Granger-causes Pearson CMI (p=0.041) in our sample period (generalizability under investigation)" },
-                    { icon: "\ud83c\udfdb\ufe0f", text: "Treasury cluster shifted to primary information sender during geopolitical periods studied (vs. credit in calm)" },
-                    { icon: "\ud83d\udcca", text: "COVID period showed distinct cluster dissolution (CMI=1.0) with faster structural recovery than geopolitical shocks" },
-                  ].map((f, i) => (
-                    <div key={i} style={{ display: "flex", gap: 10, fontSize: 13, lineHeight: 1.6, color: TEXT }}>
-                      <span style={{ fontSize: 18 }}>{f.icon}</span><span>{f.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{ marginTop: 20 }}>
-                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Novel Contributions</h4>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["CMI (Cluster Migration Index)", "TDS (Topology Deformation Score)", "Layer Agreement Metric", "Net Transfer Entropy Ranking", "Cross-Layer Granger Causality"].map((c) => (
-                    <Tag key={c} color={BLUE}>{c}</Tag>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{ marginTop: 20 }}>
-                <h4 style={{ color: ACCENT, fontSize: 14, marginBottom: 12 }}>Methodology & Robustness</h4>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {["Walk-Forward Validation", "Block Bootstrap CI", "IAAFT Surrogate Testing", "Monte Carlo Power Analysis", "Bonferroni & BH-FDR Correction", "Sensitivity Analysis"].map((m) => (
-                    <Tag key={m} color={GREEN}>{m}</Tag>
-                  ))}
-                </div>
-              </div>
-            </Card>
-
-            <div style={{ marginTop: 24 }}>
-              <h4 style={{ color: "white", fontSize: 16, marginBottom: 16, textAlign: "center" }}>Publication-Quality Figures (24 Total)</h4>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-                {["CMI/TDS Time Series", "Correlation Heatmap", "Epic Fury Evolution", "Information Flow",
-                  "Transfer Entropy Heatmap", "Granger Network", "Cross-Layer Causality", "COVID Cluster Evolution"
-                ].map((fig, i) => (
-                  <div key={i} style={{
-                    background: `linear-gradient(135deg, ${CARD}, ${ACCENT}11)`, borderRadius: 8,
-                    padding: 16, border: `1px solid ${CARD_BORDER}`, textAlign: "center", fontSize: 11, color: TEXT_DIM,
-                  }}>
-                    <div style={{ fontSize: 28, marginBottom: 8 }}>{["\ud83d\udcc8", "\ud83d\uddfa\ufe0f", "\ud83c\udf00", "\ud83d\udd04", "\ud83d\udd25", "\ud83d\udd78\ufe0f", "\u26a1", "\ud83e\udda0"][i]}</div>
-                    Fig. {i + 1}: {fig}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Section>
-
-          {/* PROJECTS */}
-          <Section id="projects" dark>
-            <SectionTitle sub="Research systems, multi-agent AI, and quantitative tools">Projects</SectionTitle>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-              {projects.filter(p => p.visible).map((proj) => (
-                <Card key={proj.id} hover>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                    <Tag color={proj.color}>{proj.category}</Tag>
-                    {proj.stats && proj.stats.last_activity && proj.stats.last_activity !== "unknown" && (
-                      <span style={{ fontSize: 11, color: GREEN, fontWeight: 600 }}>Active {proj.stats.last_activity}</span>
-                    )}
-                  </div>
-                  <h3 style={{ color: "white", fontSize: 20, margin: "0 0 8px" }}>{proj.name}</h3>
-                  <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6 }}>{proj.description}</p>
-                  <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                    {proj.tags.map((t) => (
-                      <Tag key={t} color={proj.color}>{t}</Tag>
-                    ))}
-                  </div>
-                  {proj.github && !proj.github_private && (
-                    <a href={proj.github} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: 16, color: proj.color, textDecoration: "none", fontSize: 13, fontWeight: 600 }}>GitHub &#x2192;</a>
-                  )}
-                  {proj.github_private && (
-                    <span style={{ display: "inline-block", marginTop: 16, color: TEXT_DIM, fontSize: 13, fontWeight: 600 }}>Private Repository</span>
-                  )}
-                </Card>
-              ))}
-            </div>
-
-            <Card style={{ marginTop: 24, border: `1px dashed ${ACCENT}44`, background: `${ACCENT}08` }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                <Tag color={ACCENT}>Coming Soon</Tag>
-                <span style={{ fontSize: 13, color: ACCENT, fontWeight: 600 }}>Regime-Aware Research Engine</span>
-              </div>
-              <p style={{ color: TEXT_DIM, fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-                Merging Asset-Cluster-Migration topology analysis with Polymarket sentiment signals into a
-                research engine for studying regime transitions. When HMM detects structural shifts AND prediction
-                markets show divergence simultaneously, that convergence is theoretically interesting and worth
-                rigorous academic investigation.
-              </p>
-            </Card>
-          </Section>
-
-          {/* MATHEMATICS */}
-          <Section id="mathematics">
-            <SectionTitle sub="From abstract structures to applied algorithms, the mathematical foundation">Mathematical Interests</SectionTitle>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
-              {[
-                { title: "Partial Differential Equations", eq: "\u2202u/\u2202t = \u03b1\u2207\u00b2u + f(x,t)", desc: "Black-Scholes, heat equation, diffusion processes. The language of continuous-time finance.", color: ACCENT },
-                { title: "Calculus & Real Analysis", eq: "lim \u03b5\u21920 |f(x+\u03b5)\u2212f(x)|/\u03b5", desc: "Measure theory, Lebesgue integration, functional analysis. Rigorous foundations for probability.", color: BLUE },
-                { title: "Linear Algebra", eq: "Av = \u03bbv, det(A\u2212\u03bbI) = 0", desc: "Spectral decomposition, SVD, eigenvalue problems. Core of PCA, clustering, and network analysis.", color: GREEN },
-                { title: "Abstract & Lie Algebras", eq: "[X,Y] = XY \u2212 YX \u2208 g", desc: "Group theory, symmetry, representation theory. Structure behind gauge theories and symmetry breaking.", color: GOLD },
-                { title: "Complex Analysis", eq: "\u222e f(z)dz = 2\u03c0i \u03a3 Res(f,a\u2096)", desc: "Residue calculus, conformal mapping, analytic continuation. Elegant tools for signal processing.", color: "#a855f7" },
-                { title: "Probability & Stochastic Calculus", eq: "dX = \u03bcdt + \u03c3dW", desc: "It\u00f4 calculus, martingales, SDEs, measure-theoretic probability. The engine of quantitative finance.", color: ACCENT },
-                { title: "Graph & Network Theory", eq: "L = D \u2212 A, x^T Lx \u2265 0", desc: "Spectral graph theory, community detection, multi-layer networks. My primary research domain.", color: BLUE },
-                { title: "Information Theory", eq: "T_{X\u2192Y} = H(Y|Y\u207b) \u2212 H(Y|Y\u207b,X\u207b)", desc: "Transfer entropy, mutual information, KL divergence. Measuring causal information flow between assets.", color: GREEN },
-                { title: "Machine Learning Theory", eq: "R(f) \u2264 R\u0302(f) + \u221a(d/n)", desc: "VC dimension, generalization bounds, PAC learning, bias-variance decomposition. Rigorous ML.", color: GOLD },
-              ].map((m, i) => (
-                <Card key={i} hover>
-                  <div style={{ fontSize: 12, color: m.color, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>{m.title}</div>
-                  <div style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: 15, color: "white", padding: "12px 0", borderBottom: `1px solid ${CARD_BORDER}`, marginBottom: 12 }}>{m.eq}</div>
-                  <p style={{ fontSize: 12, color: TEXT_DIM, lineHeight: 1.6, margin: 0 }}>{m.desc}</p>
-                </Card>
-              ))}
-            </div>
-          </Section>
-
-          {/* EXPERIENCE */}
-          <Section id="experience" dark>
-            <SectionTitle sub="Academic research, engineering, and professional experience">Experience</SectionTitle>
-            <div style={{ position: "relative", paddingLeft: 32 }}>
-              <div style={{ position: "absolute", left: 7, top: 8, bottom: 8, width: 2, background: `linear-gradient(to bottom, ${ACCENT}, ${BLUE}, ${GREEN})` }} />
-              {[
-                {
-                  period: "2025 - Present", role: "Quantitative Researcher & ML Engineer",
-                  org: "Stevens Institute of Technology / Independent",
-                  desc: "Conducting research on multi-asset topology dynamics during geopolitical crises. Building multi-agent research systems for prediction market data analysis. Developing novel metrics (CMI, TDS) with full statistical robustness validation.",
-                  tags: ["Graph Theory", "Transfer Entropy", "HMM", "CrewAI", "LangChain"],
-                },
-                {
-                  period: "2023 - Present", role: "M.S. Mathematics",
-                  org: "Stevens Institute of Technology",
-                  desc: "Coursework in Machine Learning (CPE595), Applied Statistics (MA544), Time Series Analysis (MA641), Optimization & Stochastic Calculus (MA576), Big Data Technologies (BIA678). Building research projects that bridge academic rigor with practical financial applications.",
-                  tags: ["LSTM", "SARIMA", "HMM", "Spark", "Kafka", "PostgreSQL"],
-                },
-              ].map((exp, i) => (
-                <div key={i} style={{ marginBottom: 32, position: "relative" }}>
-                  <div style={{ position: "absolute", left: -28, top: 6, width: 14, height: 14, borderRadius: "50%", background: ACCENT, border: `3px solid ${DARKER}` }} />
-                  <Card>
-                    <span style={{ fontSize: 12, color: ACCENT, fontWeight: 600 }}>{exp.period}</span>
-                    <h3 style={{ color: "white", fontSize: 18, margin: "8px 0 4px" }}>{exp.role}</h3>
-                    {exp.org && <p style={{ color: TEXT_DIM, fontSize: 13, margin: "0 0 12px", fontWeight: 500 }}>{exp.org}</p>}
-                    {exp.linkedin ? (
-                      <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer"
-                        style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", background: "#0A66C2", color: "white", borderRadius: 8, textDecoration: "none", fontSize: 13, fontWeight: 600, marginTop: 4 }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        View on LinkedIn
-                      </a>
-                    ) : (
-                      <React.Fragment>
-                        <p style={{ fontSize: 13, lineHeight: 1.7, color: TEXT, margin: 0 }}>{exp.desc}</p>
-                        <div style={{ marginTop: 12, display: "flex", gap: 6, flexWrap: "wrap" }}>
-                          {exp.tags.map((t) => <Tag key={t}>{t}</Tag>)}
-                        </div>
-                      </React.Fragment>
-                    )}
-                  </Card>
-                </div>
-              ))}
-            </div>
-
-            <div style={{ marginTop: 40 }}>
-              <h3 style={{ color: "white", fontSize: 20, textAlign: "center", marginBottom: 24 }}>Technical Arsenal</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-                {[
-                  { cat: "Languages", items: "Python, SQL, LaTeX, Bash, R, JavaScript" },
-                  { cat: "ML/DL", items: "TensorFlow, Keras, Scikit-learn, XGBoost, LSTM, HMM, SARIMA" },
-                  { cat: "AI/Agents", items: "LangChain, CrewAI, Ollama, DeepSeek, LangSmith, RAG" },
-                  { cat: "Finance", items: "Black-Scholes, Monte Carlo, DCF, VaR, Transfer Entropy" },
-                  { cat: "Data", items: "Pandas, NumPy, SciPy, Polars, NetworkX, igraph, Statsmodels" },
-                  { cat: "Infrastructure", items: "PostgreSQL, Supabase, FastAPI, Docker, Git, GitHub Actions" },
-                  { cat: "Viz", items: "Matplotlib, Seaborn, Plotly, Chart.js, D3.js" },
-                  { cat: "APIs", items: "FMP, Polymarket, Bluesky, GDELT, Tavily, Alpha Vantage" },
-                ].map((s, i) => (
-                  <div key={i} style={{ background: CARD, border: `1px solid ${CARD_BORDER}`, borderRadius: 8, padding: 16 }}>
-                    <div style={{ fontSize: 11, color: ACCENT, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>{s.cat}</div>
-                    <div style={{ fontSize: 12, color: TEXT_DIM, lineHeight: 1.6 }}>{s.items}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Section>
-
-          {/* CONTACT */}
-          <Section id="contact">
-            <SectionTitle sub="Interested in research collaborations and quantitative problem-solving">Get In Touch</SectionTitle>
-            <div style={{ textAlign: "center", maxWidth: 500, margin: "0 auto" }}>
-              <p style={{ fontSize: 15, lineHeight: 1.8, color: TEXT, marginBottom: 32 }}>
-                Open to academic research collaborations, quantitative mathematics discussions,
-                and software engineering opportunities. If you're working on interesting problems at the
-                intersection of mathematics and computation, I'm happy to connect.
-              </p>
-              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-                <a href="mailto:nickcosta32@gmail.com" style={{ display: "inline-block", padding: "14px 36px", background: ACCENT, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14 }}>nickcosta32@gmail.com</a>
-                <a href="https://github.com/studyalwaysbro" target="_blank" style={{ display: "inline-block", padding: "14px 36px", background: CARD, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>GitHub</a>
-                <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "14px 36px", background: CARD, color: "white", borderRadius: 8, textDecoration: "none", fontWeight: 600, fontSize: 14, border: `1px solid ${CARD_BORDER}` }}>LinkedIn</a>
-              </div>
-            </div>
-          </Section>
-
-          {/* FOOTER */}
-          <footer style={{ padding: "32px 24px", borderTop: `1px solid ${CARD_BORDER}`, textAlign: "center" }}>
-            <div style={{ background: `${ACCENT}08`, border: `1px solid ${ACCENT}22`, borderRadius: 8, padding: 16, marginBottom: 20, maxWidth: 700, margin: "0 auto 20px" }}>
-              <p style={{ fontSize: 11, color: TEXT, margin: 0, lineHeight: 1.7 }}>
-                <b style={{ color: ACCENT }}>Disclosure:</b> This is a personal website. Nothing herein constitutes investment advice or a solicitation.
-                This site is not affiliated with or endorsed by any employer or financial institution.
-                All research content is academic and theoretical. <a href="#disclosures" style={{ color: ACCENT, textDecoration: "underline" }}>Full disclosures →</a>
-              </p>
-            </div>
-            <p style={{ fontSize: 12, color: TEXT_DIM, margin: 0 }}>
-              © {new Date().getFullYear()} Nicholas Tavares. Built with math, caffeine, and a rigorous curiosity about market structure.
-            </p>
-            <p style={{ fontSize: 11, color: `${TEXT_DIM}88`, marginTop: 8 }}>
-              "Understanding markets requires both humility and rigor," the kind of thing Keynes would say if he had Python
-            </p>
-          </footer>
+          </div>
         </div>
-      );
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DISCLOSURES ================= -->
+  <section id="disclosures">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">02 / Disclosures</div>
+        <h2>Read this first</h2>
+        <p>Short version: personal site, academic work, nothing here tells you what to do with money.</p>
+      </div>
+      <div class="disc-grid reveal">
+        <div class="card">
+          <h3>Personal Site</h3>
+          <p>This website is maintained in my personal capacity only. It is <b>not affiliated with, endorsed by, or associated with any employer</b> or financial institution. All views and opinions expressed here are my own and do not represent the views of any firm. For professional background, see my <a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Not Investment Advice</h3>
+          <p>Nothing on this site constitutes investment advice, a solicitation to buy or sell securities, or a recommendation of any investment product, strategy, or course of action. All content is for <b>educational and academic research purposes only</b> and should not be used as the basis for any investment decision.</p>
+        </div>
+        <div class="card">
+          <h3>Research Disclaimer</h3>
+          <p>All research findings, statistical results, and quantitative analysis presented here are theoretical and academic in nature. Historical patterns observed in specific datasets do not predict future performance and have not been validated for real-world application. Past performance, whether simulated or backtested, does not indicate future results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section id="research" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">03 / Research</div>
+        <h2>The thesis</h2>
+        <p>Publication-track quantitative research with novel mathematical contributions.</p>
+      </div>
+      <div class="card paper reveal">
+        <div class="paper-top">
+          <div style="flex:1; min-width:280px;">
+            <div>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Network Theory</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Information Theory</span>
+              <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Geopolitical Finance</span>
+              <span class="chip" style="background:rgba(245,158,11,0.12);color:var(--gold);">HMM Regime Detection</span>
+            </div>
+            <h3>Dynamic Multi-Asset Portfolio Topology Reorganization During Geopolitical Stress</h3>
+            <div class="paper-authors">N. Tavares, A. Hanini, B. Dasilva &middot; Stevens Institute of Technology &middot; 2025 to 2026</div>
+          </div>
+          <a class="btn btn-ember" href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank" rel="noopener noreferrer" style="flex-shrink:0;">View on GitHub &#8599;</a>
+        </div>
+        <p class="paper-body">
+          A framework for how multi-asset portfolio structures reorganize during geopolitical crises. It constructs multi-layer similarity networks across 91 ETFs in 8 asset classes using shrinkage correlation, distance correlation, and tail-dependence measures, then applies Leiden community detection, Hidden Markov Model regime identification, and information-theoretic tools (transfer entropy via the KSG estimator, Granger causality) to reveal directional information flow between asset clusters.
+        </p>
+        <div class="paper-stats">
+          <div class="paper-stat"><b>91</b><span>ETFs analyzed</span></div>
+          <div class="paper-stat"><b>8</b><span>asset classes</span></div>
+          <div class="paper-stat"><b>5</b><span>novel metrics</span></div>
+          <div class="paper-stat"><b>24</b><span>publication figures</span></div>
+          <div class="paper-stat"><b>6</b><span>validation methods</span></div>
+        </div>
+        <h4>Key findings</h4>
+        <div class="findings">
+          <div>In this dataset, topology metrics showed structural changes preceding observed crises. A pattern that merits further study, not a forecast.</div>
+          <div>Tail-dependence CMI Granger-causes Pearson CMI (p = 0.041) in the sample period. Generalizability is under investigation.</div>
+          <div>The Treasury cluster shifted to primary information sender during the geopolitical periods studied, versus credit in calm regimes.</div>
+          <div>COVID showed distinct cluster dissolution (CMI = 1.0) with faster structural recovery than geopolitical shocks.</div>
+        </div>
+        <h4>Novel contributions</h4>
+        <div>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">CMI (Cluster Migration Index)</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">TDS (Topology Deformation Score)</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Layer Agreement Metric</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Net Transfer Entropy Ranking</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Cross-Layer Granger Causality</span>
+        </div>
+        <h4>Methodology and robustness</h4>
+        <div>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Walk-Forward Validation</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Block Bootstrap CI</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">IAAFT Surrogate Testing</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Monte Carlo Power Analysis</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Bonferroni &amp; BH-FDR Correction</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Sensitivity Analysis</span>
+        </div>
+        <div class="note"><b>Academic research:</b> findings above come from a specific historical dataset and time period. They have not been validated for real-world application and should not be read as investment recommendations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">04 / Projects</div>
+        <h2>Things I've built</h2>
+        <p>Research systems, open source libraries, agents, graphics, and one video game.</p>
+      </div>
+      <div class="filters reveal" id="filters"></div>
+      <div class="proj-grid" id="featured-grid"></div>
+      <div class="more-list" id="more-list"></div>
+      <div class="pipeline-note reveal">
+        <span class="pulse"></span>
+        <p><b>This list writes itself.</b> A pipeline on my machine scans the local repos twice a day, pulls live git stats, runs a safety filter over every description, and republishes the JSON this page reads. New work shows up here when it's real, not when I remember to edit HTML.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MATHEMATICS ================= -->
+  <section id="mathematics" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">05 / Mathematics</div>
+        <h2>The foundation</h2>
+        <p>From abstract structures to applied algorithms.</p>
+      </div>
+      <div class="math-grid" id="math-grid"></div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">06 / Experience</div>
+        <h2>The path so far</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="card hov">
+            <span class="period">2025 to present</span>
+            <h3>Quantitative Researcher &amp; ML Engineer</h3>
+            <div class="org">Stevens Institute of Technology / Independent</div>
+            <p>Researching multi-asset topology dynamics during geopolitical crises and developing novel metrics (CMI, TDS) with full statistical robustness validation. Building multi-agent research systems for prediction market data, and releasing open source along the way: a multi-model deliberation engine, a from-scratch autodiff library, and a forecast comparison toolkit.</p>
+            <div class="proj-tags" style="margin-top:12px;">
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Graph Theory</span>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Transfer Entropy</span>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">HMM</span>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Multi-Agent Systems</span>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Open Source</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="card hov">
+            <span class="period">2023 to present</span>
+            <h3>M.S. Mathematics</h3>
+            <div class="org">Stevens Institute of Technology</div>
+            <p>Coursework in Machine Learning (CPE595), Applied Statistics (MA544), Time Series Analysis (MA641), Optimization &amp; Stochastic Calculus (MA576), and Big Data Technologies (BIA678). Research projects that bridge academic rigor with working software.</p>
+            <div class="proj-tags" style="margin-top:12px;">
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">LSTM</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">SARIMA</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">HMM</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Spark</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Kafka</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toolbox reveal" id="toolbox"></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal" style="text-align:center;">
+        <div class="sec-num">07 / Contact</div>
+        <h2>Get in touch</h2>
+      </div>
+      <div class="contact-box reveal">
+        <p>Open to academic research collaborations, quantitative mathematics discussions, and software engineering opportunities. If you're working on interesting problems at the intersection of mathematics and computation, I'm happy to connect.</p>
+        <div class="hero-cta" style="justify-content:center; margin-top:0;">
+          <a class="btn btn-ember" href="mailto:nickcosta32@gmail.com">nickcosta32@gmail.com</a>
+          <a class="btn btn-ghost" href="https://github.com/studyalwaysbro" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-disc">
+      <b>Disclosure:</b> this is a personal website. Nothing herein constitutes investment advice or a solicitation. This site is not affiliated with or endorsed by any employer or financial institution. All research content is academic and theoretical. <a href="#disclosures">Full disclosures &rarr;</a>
+    </div>
+    <div class="colophon">&copy; <span id="year"></span> Nicholas Tavares. Built by hand, no framework, no template.</div>
+    <div class="colophon-sub">The background up top is a Julia set your GPU rendered just now.</div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    /* ---------- tiny helpers ---------- */
+    var $ = function (s) { return document.querySelector(s); };
+    var esc = function (s) {
+      return String(s == null ? "" : s).replace(/[&<>"']/g, function (ch) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+      });
+    };
+    var hexAlpha = function (hex, a) {
+      var m = /^#?([0-9a-f]{6})$/i.exec(hex || "");
+      if (!m) return "rgba(140,140,163," + a + ")";
+      var n = parseInt(m[1], 16);
+      return "rgba(" + (n >> 16) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
+    };
+    $("#year").textContent = new Date().getFullYear();
+
+    /* ---------- live stats (stats.json, regenerated twice daily) ---------- */
+    fetch("stats.json?" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (s) {
+        var items = [
+          { v: s.loc_display || String(s.loc), l: "lines of code" },
+          { v: (s.commits || 0).toLocaleString(), l: "commits" },
+          { v: s.projects, l: "projects tracked" },
+          { v: s.public_repos, l: "public repos" }
+        ];
+        $("#hero-stats").innerHTML = items.map(function (it) {
+          return '<div class="hero-stat"><b>' + esc(it.v) + "</b><span>" + esc(it.l) + "</span></div>";
+        }).join("");
+        if (s.updated) {
+          var d = new Date(s.updated);
+          var when = d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+          $("#hero-sync").innerHTML = '<i>&#9679;</i> live numbers, synced automatically on ' + esc(when);
+        }
+      })
+      .catch(function () {});
+
+    /* ---------- projects (projects.json, regenerated twice daily) ---------- */
+    var PROJECTS = [];
+    var FILTER = "All";
+
+    function activityBits(label) {
+      if (!label || label === "unknown") return null;
+      var color = "#5b5b72";
+      if (label === "today" || label === "this week") color = "#2dd4bf";
+      else if (label === "this month") color = "#f59e0b";
+      return '<span class="activity"><span class="dot" style="background:' + color + ';"></span>active ' + esc(label) + "</span>";
     }
 
-    ReactDOM.createRoot(document.getElementById("root")).render(<Portfolio />);
+    function chipHTML(text, color) {
+      return '<span class="chip" style="background:' + hexAlpha(color, 0.12) + ";color:" + esc(color) + ';">' + esc(text) + "</span>";
+    }
+
+    function linkHTML(p) {
+      if (p.github && !p.github_private) {
+        return '<a class="proj-link" style="color:' + esc(p.color) + ';" href="' + esc(p.github) +
+          '" target="_blank" rel="noopener noreferrer">github &#8599;</a>';
+      }
+      return '<span class="proj-private">private repo</span>';
+    }
+
+    function renderProjects() {
+      var visible = PROJECTS.filter(function (p) { return p.visible; });
+      var shown = FILTER === "All" ? visible : visible.filter(function (p) { return p.category === FILTER; });
+
+      var featured = shown.filter(function (p) { return p.featured; });
+      var rest = shown.filter(function (p) { return !p.featured; });
+
+      $("#featured-grid").innerHTML = featured.map(function (p) {
+        var act = activityBits(p.stats && p.stats.last_activity);
+        return '<div class="card hov proj-card reveal in">' +
+          '<div class="proj-meta">' + chipHTML(p.category, p.color) + (act || "") + "</div>" +
+          "<h3>" + esc(p.name) + "</h3>" +
+          '<p class="desc">' + esc(p.description) + "</p>" +
+          '<div class="proj-tags">' + (p.tags || []).map(function (t) { return chipHTML(t, p.color); }).join("") + "</div>" +
+          '<div class="proj-foot">' + linkHTML(p) + "</div>" +
+          "</div>";
+      }).join("");
+
+      $("#more-list").innerHTML = rest.map(function (p) {
+        var act = activityBits(p.stats && p.stats.last_activity);
+        return '<div class="more-row reveal in">' +
+          "<h3>" + esc(p.name) + "</h3>" +
+          '<span class="cat" style="color:' + esc(p.color) + ';">' + esc(p.category) + "</span>" +
+          (act || "") +
+          '<span style="margin-left:auto;">' + linkHTML(p) + "</span>" +
+          '<p class="desc">' + esc(p.description) + "</p>" +
+          "</div>";
+      }).join("");
+    }
+
+    function renderFilters() {
+      var cats = [];
+      PROJECTS.forEach(function (p) {
+        if (p.visible && cats.indexOf(p.category) === -1) cats.push(p.category);
+      });
+      var all = ["All"].concat(cats);
+      $("#filters").innerHTML = all.map(function (c) {
+        return '<button class="filter-btn' + (c === FILTER ? " on" : "") + '" data-cat="' + esc(c) + '">' + esc(c) + "</button>";
+      }).join("");
+      $("#filters").querySelectorAll(".filter-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          FILTER = btn.getAttribute("data-cat");
+          renderFilters();
+          renderProjects();
+        });
+      });
+    }
+
+    fetch("projects.json?" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        PROJECTS = d.projects || [];
+        renderFilters();
+        renderProjects();
+      })
+      .catch(function () {
+        $("#featured-grid").innerHTML = '<p style="color:var(--dim);font-size:13px;">Project data failed to load. The repos are still real, I promise: <a href="https://github.com/studyalwaysbro" style="color:var(--ember);">github.com/studyalwaysbro</a></p>';
+      });
+
+    /* ---------- mathematics grid ---------- */
+    var MATH = [
+      ["Partial Differential Equations", "∂u/∂t = α∇²u + f(x,t)", "Black-Scholes, heat equation, diffusion processes. The language of continuous-time finance.", "#e94560"],
+      ["Calculus & Real Analysis", "lim ε→0 |f(x+ε)−f(x)|/ε", "Measure theory, Lebesgue integration, functional analysis. Rigorous foundations for probability.", "#5b7bff"],
+      ["Linear Algebra", "Av = λv, det(A−λI) = 0", "Spectral decomposition, SVD, eigenvalue problems. The core of PCA, clustering, and network analysis.", "#2dd4bf"],
+      ["Abstract & Lie Algebras", "[X,Y] = XY − YX ∈ 𝔤", "Group theory, symmetry, representation theory. The structure behind gauge theories and symmetry breaking.", "#f59e0b"],
+      ["Complex Analysis", "∮ f(z)dz = 2πi Σ Res(f,aₖ)", "Residue calculus, conformal mapping, analytic continuation. And the reason the hero background exists: Julia sets live here.", "#a78bfa"],
+      ["Probability & Stochastic Calculus", "dX = μdt + σdW", "Itô calculus, martingales, SDEs, measure-theoretic probability. The engine of quantitative finance.", "#e94560"],
+      ["Graph & Network Theory", "L = D − A, xᵀLx ≥ 0", "Spectral graph theory, community detection, multi-layer networks. My primary research domain.", "#5b7bff"],
+      ["Information Theory", "T(X→Y) = H(Y|Y⁻) − H(Y|Y⁻,X⁻)", "Transfer entropy, mutual information, KL divergence. Measuring causal information flow between assets.", "#2dd4bf"],
+      ["Machine Learning Theory", "R(f) ≤ R̂(f) + √(d/n)", "VC dimension, generalization bounds, PAC learning, bias-variance decomposition. ML with proofs attached.", "#f59e0b"]
+    ];
+    $("#math-grid").innerHTML = MATH.map(function (m) {
+      return '<div class="card hov math-card reveal">' +
+        '<div class="mt" style="color:' + m[3] + ';">' + esc(m[0]) + "</div>" +
+        '<div class="eq">' + esc(m[1]) + "</div>" +
+        "<p>" + esc(m[2]) + "</p></div>";
+    }).join("");
+
+    /* ---------- toolbox ---------- */
+    var TOOLS = [
+      ["Languages", "Python, SQL, GDScript, GLSL, LaTeX, Bash, JavaScript, R"],
+      ["ML / DL", "TensorFlow, Keras, Scikit-learn, XGBoost, LSTM, HMM, SARIMA"],
+      ["AI / Agents", "Multi-model deliberation, LangChain, CrewAI, Ollama, DeepSeek, RAG"],
+      ["Quant Methods", "Black-Scholes, Monte Carlo, Transfer Entropy, Bootstrap Inference, VaR"],
+      ["Data", "Pandas, NumPy, SciPy, Polars, NetworkX, igraph, Statsmodels, DuckDB"],
+      ["Infrastructure", "PostgreSQL, FastAPI, Docker, Git, GitHub Actions, systemd"],
+      ["Graphics / Game", "Godot, OpenGL, WebGL, raymarching, signed distance fields"],
+      ["Viz", "Matplotlib, Seaborn, Plotly, Chart.js, D3.js"]
+    ];
+    $("#toolbox").innerHTML = TOOLS.map(function (t) {
+      return '<div class="tool-cell"><b>' + esc(t[0]) + "</b><div>" + esc(t[1]) + "</div></div>";
+    }).join("");
+
+    /* ---------- nav: scrolled state + scroll spy ---------- */
+    var nav = $("#nav");
+    var navLinks = nav.querySelectorAll(".nav-links a");
+    var sectionIds = ["about", "disclosures", "research", "projects", "mathematics", "experience", "contact"];
+    function onScroll() {
+      nav.classList.toggle("scrolled", window.scrollY > 30);
+      var current = "";
+      sectionIds.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top < 220) current = id;
+      });
+      navLinks.forEach(function (a) {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + current);
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    /* ---------- reveal on scroll ---------- */
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { revealObs.observe(el); });
+
+    /* ---------- the Julia set ---------- */
+    var canvas = $("#julia");
+    var gl = canvas.getContext("webgl", { antialias: false, depth: false, stencil: false, alpha: false })
+          || canvas.getContext("experimental-webgl");
+    if (!gl) { canvas.style.display = "none"; return; }
+
+    var VERT = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+    var FRAG = [
+      "precision highp float;",
+      "uniform vec2 uRes;",
+      "uniform float uT;",
+      "uniform vec2 uDrift;",
+      "void main(){",
+      "  vec2 uv=(gl_FragCoord.xy*2.0-uRes)/min(uRes.x,uRes.y);",
+      "  uv*=1.30; uv.x-=0.62; uv.y+=0.05;",
+      "  float a=0.045*uT;",
+      "  vec2 c=0.7885*vec2(cos(a),sin(a))+uDrift*0.05;",
+      "  vec2 z=uv;",
+      "  float trap=1e9; float n=0.0; bool esc=false;",
+      "  for(int i=0;i<130;i++){",
+      "    z=vec2(z.x*z.x-z.y*z.y,2.0*z.x*z.y)+c;",
+      "    trap=min(trap,abs(length(z)-0.5));",
+      "    if(dot(z,z)>16.0){esc=true;break;}",
+      "    n+=1.0;",
+      "  }",
+      "  vec3 col=vec3(0.010,0.011,0.030);",
+      "  if(esc){",
+      "    float sn=n+1.0-log2(max(log2(dot(z,z))*0.5,1e-6));",
+      "    float t=clamp(sn/130.0,0.0,1.0);",
+      "    float g=pow(t,0.42);",
+      "    vec3 indigo=vec3(0.055,0.075,0.235);",
+      "    vec3 violet=vec3(0.42,0.33,0.72);",
+      "    vec3 ember=vec3(0.913,0.271,0.376);",
+      "    col=mix(col,indigo,smoothstep(0.05,0.55,g));",
+      "    col=mix(col,violet,smoothstep(0.50,0.82,g));",
+      "    col=mix(col,ember,smoothstep(0.80,1.0,g));",
+      "  }",
+      "  col+=vec3(0.913,0.271,0.376)*0.38*exp(-trap*7.0);",
+      "  col*=clamp(1.0-0.45*length(uv/1.7),0.0,1.0);",
+      "  gl_FragColor=vec4(col,1.0);",
+      "}"
+    ].join("\n");
+
+    function shader(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) return null;
+      return s;
+    }
+    var vs = shader(gl.VERTEX_SHADER, VERT), fs = shader(gl.FRAGMENT_SHADER, FRAG);
+    if (!vs || !fs) { canvas.style.display = "none"; return; }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display = "none"; return; }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    var locP = gl.getAttribLocation(prog, "p");
+    gl.enableVertexAttribArray(locP);
+    gl.vertexAttribPointer(locP, 2, gl.FLOAT, false, 0, 0);
+    var uRes = gl.getUniformLocation(prog, "uRes");
+    var uT = gl.getUniformLocation(prog, "uT");
+    var uDrift = gl.getUniformLocation(prog, "uDrift");
+
+    var SCALE = 0.5 * Math.min(window.devicePixelRatio || 1, 1.5);
+    function resize() {
+      var w = Math.max(1, Math.floor(canvas.clientWidth * SCALE));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * SCALE));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w; canvas.height = h;
+        gl.viewport(0, 0, w, h);
+      }
+    }
+    window.addEventListener("resize", resize);
+
+    var mouse = { x: 0, y: 0 }, drift = { x: 0, y: 0 };
+    window.addEventListener("mousemove", function (e) {
+      mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+    }, { passive: true });
+
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var heroVisible = true;
+    new IntersectionObserver(function (entries) {
+      heroVisible = entries[0].isIntersecting;
+    }, { threshold: 0 }).observe(canvas);
+
+    function draw(tMs) {
+      resize();
+      drift.x += (mouse.x - drift.x) * 0.02;
+      drift.y += (mouse.y - drift.y) * 0.02;
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uT, tMs * 0.001);
+      gl.uniform2f(uDrift, drift.x, -drift.y);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+
+    if (reduced) {
+      draw(34000); // one pleasant static frame
+    } else {
+      var loop = function (t) {
+        if (heroVisible && !document.hidden) draw(t + 30000);
+        requestAnimationFrame(loop);
+      };
+      requestAnimationFrame(loop);
+    }
+  })();
   </script>
 </body>
 </html>
