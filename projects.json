@@ -228,6 +228,23 @@
       }
     },
     {
+      "id": "tavares-construction-website",
+      "name": "Tavares Construction Website",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "twitter-agent",
       "name": "Twitter Agent",
       "category": "Automation",
@@ -244,23 +261,6 @@
       "github_private": true,
       "stats": {
         "last_activity": "recently"
-      }
-    },
-    {
-      "id": "tavares-construction-website",
-      "name": "Tavares Construction Website",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "this month"
       }
     },
     {
@@ -422,5 +422,5 @@
       }
     }
   ],
-  "generated": "2026-06-19T17:30:09.425488+00:00"
+  "generated": "2026-06-20T17:30:09.133069+00:00"
 }
