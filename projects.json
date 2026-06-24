@@ -23,6 +23,26 @@
       }
     },
     {
+      "id": "gachapon-spire",
+      "name": "Prize Fighter",
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": true,
+      "visible": true,
+      "description": "A single-player roguelike deckbuilder in Godot where every relic comes out of a gachapon machine. Drop rates are printed on the machine, the pity dial is visible, and dupes always upgrade. It is a slot machine where you rig the slots, and rigging them is the strategy game. Combat and capsule logic live in a pure, engine-independent sim with a headless test suite, and the pull ceremony (coin clunk, drum rattle, pop reveal) gets the same obsessive attention as the math. No real-money purchases, ever.",
+      "tags": [
+        "Godot",
+        "GDScript",
+        "Systems Design",
+        "Authored RNG"
+      ],
+      "github": null,
+      "github_private": true,
+      "stats": {
+        "last_activity": "today"
+      }
+    },
+    {
       "id": "quorum",
       "name": "Quorum",
       "category": "AI Systems",
@@ -83,26 +103,6 @@
       "github_private": false,
       "stats": {
         "last_activity": "recently"
-      }
-    },
-    {
-      "id": "gachapon-spire",
-      "name": "Prize Fighter",
-      "category": "Game",
-      "color": "#f59e0b",
-      "featured": true,
-      "visible": true,
-      "description": "A single-player roguelike deckbuilder in Godot where every relic comes out of a gachapon machine. Drop rates are printed on the machine, the pity dial is visible, and dupes always upgrade. It is a slot machine where you rig the slots, and rigging them is the strategy game. Combat and capsule logic live in a pure, engine-independent sim with a headless test suite, and the pull ceremony (coin clunk, drum rattle, pop reveal) gets the same obsessive attention as the math. No real-money purchases, ever.",
-      "tags": [
-        "Godot",
-        "GDScript",
-        "Systems Design",
-        "Authored RNG"
-      ],
-      "github": null,
-      "github_private": true,
-      "stats": {
-        "last_activity": "today"
       }
     },
     {
@@ -456,5 +456,5 @@
       }
     }
   ],
-  "generated": "2026-06-24T04:20:39.181660+00:00"
+  "generated": "2026-06-24T17:57:57.144537+00:00"
 }
