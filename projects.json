@@ -168,40 +168,6 @@
       }
     },
     {
-      "id": ".pf-intro-events",
-      "name": ".pf Intro Events",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
-      }
-    },
-    {
-      "id": ".pf-card-ux",
-      "name": ".pf Card Ux",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today"
-      }
-    },
-    {
       "id": "ticker-prophet",
       "name": "Ticker Prophet",
       "category": "Bot",
@@ -490,5 +456,5 @@
       }
     }
   ],
-  "generated": "2026-07-02T04:16:27.473634+00:00"
+  "generated": "2026-07-02T17:30:06.916732+00:00"
 }
