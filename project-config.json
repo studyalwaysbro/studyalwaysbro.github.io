@@ -397,6 +397,36 @@
         "Code"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": ".pf-card-ux",
+      "name": ".pf Card Ux",
+      "repo_path": ".pf-card-ux",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "_auto_discovered": true
+    },
+    {
+      "id": ".pf-intro-events",
+      "name": ".pf Intro Events",
+      "repo_path": ".pf-intro-events",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
