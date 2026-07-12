@@ -59,7 +59,7 @@
       "github": "https://github.com/studyalwaysbro/quorum",
       "github_private": false,
       "stats": {
-        "last_activity": "this month"
+        "last_activity": "today"
       }
     },
     {
@@ -280,7 +280,7 @@
       "github": null,
       "github_private": true,
       "stats": {
-        "last_activity": "recently"
+        "last_activity": "a while ago"
       }
     },
     {
@@ -297,7 +297,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "last_activity": "recently"
+        "last_activity": "a while ago"
       }
     },
     {
@@ -456,5 +456,5 @@
       }
     }
   ],
-  "generated": "2026-07-11T17:33:10.116083+00:00"
+  "generated": "2026-07-12T17:30:45.831254+00:00"
 }
