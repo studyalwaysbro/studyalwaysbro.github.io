@@ -427,6 +427,21 @@
         "Code"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "yeet-cannon-broker",
+      "name": "Yeet Cannon Broker",
+      "repo_path": "yeet-cannon-broker",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
