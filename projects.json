@@ -124,7 +124,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "last_activity": "this week"
+        "last_activity": "this month"
       }
     },
     {
@@ -183,7 +183,7 @@
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
       "github_private": true,
       "stats": {
-        "last_activity": "this week"
+        "last_activity": "this month"
       }
     },
     {
@@ -473,5 +473,5 @@
       }
     }
   ],
-  "generated": "2026-07-20T17:30:15.685321+00:00"
+  "generated": "2026-07-21T04:18:23.661405+00:00"
 }
