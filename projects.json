@@ -43,26 +43,6 @@
       }
     },
     {
-      "id": "quorum",
-      "name": "Quorum",
-      "category": "AI Systems",
-      "color": "#a78bfa",
-      "featured": true,
-      "visible": true,
-      "description": "A multi-model deliberation engine, open source under MIT. Ask a panel of language models one question and Quorum runs a structured deliberation: every model answers blind first so nobody anchors, an adversarial skeptic attacks the emerging consensus, and a distiller maps where the panel actually agrees instead of counting votes. Built after months of running ad hoc model councils by hand and noticing that naive fan-out voting is often worse than one good model. Every verdict ships with a fully replayable transcript.",
-      "tags": [
-        "Python",
-        "LLM Orchestration",
-        "Multi-Agent",
-        "MIT"
-      ],
-      "github": "https://github.com/studyalwaysbro/quorum",
-      "github_private": false,
-      "stats": {
-        "last_activity": "this month"
-      }
-    },
-    {
       "id": "jenkins-discord-bot",
       "name": "Jenkins the Law",
       "category": "Bot",
@@ -80,7 +60,27 @@
       "github": "https://github.com/studyalwaysbro/jenkins-discord-bot",
       "github_private": false,
       "stats": {
-        "last_activity": "a while ago"
+        "last_activity": "this week"
+      }
+    },
+    {
+      "id": "quorum",
+      "name": "Quorum",
+      "category": "AI Systems",
+      "color": "#a78bfa",
+      "featured": true,
+      "visible": true,
+      "description": "A multi-model deliberation engine, open source under MIT. Ask a panel of language models one question and Quorum runs a structured deliberation: every model answers blind first so nobody anchors, an adversarial skeptic attacks the emerging consensus, and a distiller maps where the panel actually agrees instead of counting votes. Built after months of running ad hoc model councils by hand and noticing that naive fan-out voting is often worse than one good model. Every verdict ships with a fully replayable transcript.",
+      "tags": [
+        "Python",
+        "LLM Orchestration",
+        "Multi-Agent",
+        "MIT"
+      ],
+      "github": "https://github.com/studyalwaysbro/quorum",
+      "github_private": false,
+      "stats": {
+        "last_activity": "this month"
       }
     },
     {
@@ -241,7 +241,7 @@
       "github": null,
       "github_private": false,
       "stats": {
-        "last_activity": "this month"
+        "last_activity": "recently"
       }
     },
     {
@@ -473,5 +473,5 @@
       }
     }
   ],
-  "generated": "2026-07-24T04:23:26.192602+00:00"
+  "generated": "2026-07-26T11:31:16.296422+00:00"
 }
