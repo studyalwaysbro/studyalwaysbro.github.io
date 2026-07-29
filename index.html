@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicholas Tavares | Mathematics, Machine Learning, Systems</title>
-  <meta name="description" content="Graduate mathematics research on early warnings for diversification breakdown, a from-scratch autodiff engine, a multi-model deliberation engine, GPU fractals, Python-made phonk, and a roguelike deckbuilder." />
+  <meta name="description" content="Graduate mathematics research on early warnings for diversification breakdown, a from-scratch autodiff engine, a multi-model deliberation engine, fractal films with original scores, and a roguelike deckbuilder." />
   <meta property="og:title" content="Nicholas Tavares | Mathematics, Machine Learning, Systems" />
   <meta property="og:description" content="Structure, found in chaos. Research code that gets validated and infrastructure that runs itself." />
   <meta property="og:type" content="website" />
@@ -344,6 +344,37 @@
     footer .colophon { font-size: 12px; color: var(--dim); }
     footer .colophon-sub { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-top: 8px; }
 
+    /* ---------- films ---------- */
+    .films-lead { color: var(--text); font-size: 15.5px; line-height: 1.85; max-width: 660px; margin-bottom: 42px; }
+    .film-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; }
+    .film {
+      position: relative; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border); background: #000; cursor: pointer;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .film:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+    .film img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .film .play {
+      position: absolute; top: 50%; left: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px;
+      border-radius: 50%; background: rgba(7,7,13,0.62); border: 1px solid rgba(255,255,255,0.25);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    }
+    .film .play::after {
+      content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-38%, -50%);
+      border-style: solid; border-width: 9px 0 9px 15px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .film-label {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 14px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      font-family: var(--mono); font-size: 10.5px; color: var(--dim); line-height: 1.6;
+      pointer-events: none;
+    }
+    .film-label b { display: block; color: #fff; letter-spacing: 1.2px; }
+    .film iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .chan-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 38px; }
+    @media (max-width: 760px) { .film-grid { grid-template-columns: 1fr; max-width: 300px; } }
+
     /* ---------- activity ticker ---------- */
     .ticker {
       position: relative; overflow: hidden;
@@ -461,6 +492,7 @@
         <a href="#research">research</a>
         <a href="#projects">projects</a>
         <a href="#mathematics">math</a>
+        <a href="#films">films</a>
         <a href="#experience">experience</a>
         <a href="#contact">contact</a>
         <span class="nav-kbd" id="nav-kbd" title="command palette">/</span>
@@ -476,7 +508,7 @@
       <div class="kicker">Mathematics &middot; Machine Learning &middot; Systems</div>
       <h1>Structure,<br />found in chaos.</h1>
       <p class="hero-thesis">I'm Nicholas Tavares, a graduate mathematician who builds research code that gets validated and infrastructure that runs itself.</p>
-      <p class="hero-sub">An early warning for the moment diversification quietly stops working. A from-scratch autodiff engine. A deliberation protocol for panels of language models. GPU fractals. Phonk written in Python. A deckbuilder about rigging slot machines. It all connects, I promise.</p>
+      <p class="hero-sub">An early warning for the moment diversification quietly stops working. A from-scratch autodiff engine. A deliberation protocol for panels of language models. Short films made of math. Phonk written in Python. A deckbuilder about rigging slot machines. It all connects, I promise.</p>
       <div class="hero-cta">
         <a class="btn btn-ember" href="#research">The research</a>
         <a class="btn btn-ghost" href="#projects">Projects</a>
@@ -529,6 +561,10 @@
             <div class="edu-item">
               <b><a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">LinkedIn &#8599;</a></b>
               <div>Professional background</div>
+            </div>
+            <div class="edu-item">
+              <b><a href="https://www.youtube.com/@wakaboomnick" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">YouTube &#8599;</a></b>
+              <div>Fractal films and the comedy lane</div>
             </div>
           </div>
         </div>
@@ -650,11 +686,46 @@
     </div>
   </section>
 
-  <!-- ================= EXPERIENCE ================= -->
-  <section id="experience">
+  <!-- ================= FILMS ================= -->
+  <section id="films">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="sec-num">06 / Experience</div>
+        <div class="sec-num">06 / Films</div>
+        <h2>The math makes movies</h2>
+        <p>Fractal films with original scores, and a comedy lane to keep things honest.</p>
+      </div>
+      <p class="films-lead reveal">The raymarcher behind Fractal Madness is also a film camera. Point it at a Kleinian limit set or a brand-new fractal object, choreograph the flight path, and score it with a track from Phonk Lab: the result is a running catalog of short films about mathematical objects that deserve the nature-documentary treatment. Sound on. And because not everything has to be profound, the same channels carry a comedy lane of captioned animal shorts.</p>
+      <div class="film-grid reveal">
+        <div class="film" data-yt="SS9IltUi5DA" data-title="Gold Reliquary" role="button" tabindex="0" aria-label="Play Gold Reliquary">
+          <img src="https://i.ytimg.com/vi/SS9IltUi5DA/oardefault.jpg" alt="Gold Reliquary: a dive through a Kleinian limit-set fractal" loading="lazy" />
+          <span class="play"></span>
+          <span class="film-label"><b>GOLD RELIQUARY</b>one unbroken dive through a Kleinian limit set</span>
+        </div>
+        <div class="film" data-yt="MvzqST6BIlg" data-title="Tetrabrot" role="button" tabindex="0" aria-label="Play Tetrabrot">
+          <img src="https://i.ytimg.com/vi/MvzqST6BIlg/oardefault.jpg" alt="Tetrabrot: a crystal made of two Mandelbrot sets multiplied together" loading="lazy" />
+          <span class="play"></span>
+          <span class="film-label"><b>TETRABROT</b>two Mandelbrot sets multiplied together</span>
+        </div>
+        <div class="film" data-yt="cH1r8qriQb0" data-title="Comedy lane" role="button" tabindex="0" aria-label="Play a comedy short">
+          <img src="https://i.ytimg.com/vi/cH1r8qriQb0/oardefault.jpg" alt="Comedy lane: the coworker who stays calm during every crisis" loading="lazy" />
+          <span class="play"></span>
+          <span class="film-label"><b>COMEDY LANE</b>the coworker who stays calm during every crisis</span>
+        </div>
+      </div>
+      <div class="chan-row reveal">
+        <a class="btn btn-ghost" href="https://www.youtube.com/@wakaboomnick" target="_blank" rel="noopener noreferrer">YouTube &#8599;</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/guru.tav/" target="_blank" rel="noopener noreferrer">Instagram &#8599;</a>
+        <a class="btn btn-ghost" href="https://www.tiktok.com/@yeetyeetersontav" target="_blank" rel="noopener noreferrer">TikTok &#8599;</a>
+        <a class="btn btn-ghost" href="https://x.com/ntavarbuilds" target="_blank" rel="noopener noreferrer">X &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">07 / Experience</div>
         <h2>The path so far</h2>
       </div>
       <div class="timeline">
@@ -695,10 +766,10 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact" class="alt">
+  <section id="contact">
     <div class="wrap">
       <div class="sec-head reveal" style="text-align:center;">
-        <div class="sec-num">07 / Contact</div>
+        <div class="sec-num">08 / Contact</div>
         <h2>Get in touch</h2>
       </div>
       <div class="contact-box reveal">
@@ -894,7 +965,7 @@
     /* ---------- nav: scrolled state + scroll spy ---------- */
     var nav = $("#nav");
     var navLinks = nav.querySelectorAll(".nav-links a");
-    var sectionIds = ["about", "disclosures", "research", "projects", "mathematics", "experience", "contact"];
+    var sectionIds = ["about", "disclosures", "research", "projects", "mathematics", "films", "experience", "contact"];
     function onScroll() {
       nav.classList.toggle("scrolled", window.scrollY > 30);
       var current = "";
@@ -935,6 +1006,24 @@
       track.innerHTML = seg + seg;
     }
 
+    /* ---------- films: click-to-load embeds (no iframe until asked) ---------- */
+    function playFilm(f) {
+      if (f.querySelector("iframe")) return;
+      var ifr = document.createElement("iframe");
+      ifr.src = "https://www.youtube.com/embed/" + encodeURIComponent(f.getAttribute("data-yt")) + "?autoplay=1&playsinline=1&rel=0";
+      ifr.allow = "autoplay; encrypted-media; picture-in-picture";
+      ifr.allowFullscreen = true;
+      ifr.title = f.getAttribute("data-title") || "film";
+      f.innerHTML = "";
+      f.appendChild(ifr);
+    }
+    document.querySelectorAll(".film").forEach(function (f) {
+      f.addEventListener("click", function () { playFilm(f); });
+      f.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playFilm(f); }
+      });
+    });
+
     /* ---------- command palette ---------- */
     var enterExplorer = null, exitExplorer = null; // wired up by the fractal block below, if WebGL is available
     $("#explore-btn").addEventListener("click", function () { if (enterExplorer) enterExplorer(); });
@@ -944,11 +1033,16 @@
       { t: "Research: Before the Correlation Moves", k: "section", go: "#research" },
       { t: "Projects", k: "section", go: "#projects" },
       { t: "Mathematics", k: "section", go: "#mathematics" },
+      { t: "Films", k: "section", go: "#films" },
       { t: "Experience", k: "section", go: "#experience" },
       { t: "Contact", k: "section", go: "#contact" },
       { t: "Take the fractal controls", k: "action", run: function () { if (enterExplorer) enterExplorer(); } },
       { t: "GitHub profile", k: "link", href: "https://github.com/studyalwaysbro" },
       { t: "LinkedIn", k: "link", href: "https://www.linkedin.com/in/nicholas-tavares-34986399/" },
+      { t: "YouTube channel", k: "link", href: "https://www.youtube.com/@wakaboomnick" },
+      { t: "Instagram", k: "link", href: "https://www.instagram.com/guru.tav/" },
+      { t: "TikTok", k: "link", href: "https://www.tiktok.com/@yeetyeetersontav" },
+      { t: "X / Twitter", k: "link", href: "https://x.com/ntavarbuilds" },
       { t: "Email me", k: "link", href: "mailto:nickcosta32@gmail.com" }
     ];
 
