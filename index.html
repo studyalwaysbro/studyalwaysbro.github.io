@@ -4,7 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicholas Tavares | Mathematics, Machine Learning, Systems</title>
-  <meta name="description" content="Graduate mathematics research, machine learning systems, a from-scratch autodiff engine, a multi-model deliberation engine, GPU fractals, and a roguelike deckbuilder." />
+  <meta name="description" content="Graduate mathematics research on early warnings for diversification breakdown, a from-scratch autodiff engine, a multi-model deliberation engine, GPU fractals, Python-made phonk, and a roguelike deckbuilder." />
+  <meta property="og:title" content="Nicholas Tavares | Mathematics, Machine Learning, Systems" />
+  <meta property="og:description" content="Structure, found in chaos. Research code that gets validated and infrastructure that runs itself." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://studyalwaysbro.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicholas Tavares",
+    "url": "https://studyalwaysbro.github.io/",
+    "sameAs": [
+      "https://github.com/studyalwaysbro",
+      "https://www.linkedin.com/in/nicholas-tavares-34986399/"
+    ]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2307070d'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23e94560' font-family='Georgia'%3E%E2%88%87%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -327,6 +344,95 @@
     footer .colophon { font-size: 12px; color: var(--dim); }
     footer .colophon-sub { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-top: 8px; }
 
+    /* ---------- activity ticker ---------- */
+    .ticker {
+      position: relative; overflow: hidden;
+      background: var(--bg2);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .ticker-track {
+      display: inline-block; white-space: nowrap; padding: 10px 0;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.9px;
+      color: var(--faint); will-change: transform;
+      animation: tick 70s linear infinite;
+    }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+    .ticker b { color: var(--dim); font-weight: 500; }
+    .ticker .hot { color: var(--teal); }
+    .ticker .sep { color: var(--ember); padding: 0 14px; }
+
+    /* ---------- command palette ---------- */
+    .nav-kbd {
+      font-family: var(--mono); font-size: 10.5px; color: var(--dim);
+      border: 1px solid var(--border2); border-radius: 4px; background: var(--surface);
+      padding: 2px 8px; cursor: pointer; flex: none; align-self: center;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-kbd:hover { color: var(--ember); border-color: var(--ember); }
+    #palette { position: fixed; inset: 0; z-index: 300; }
+    #palette[hidden] { display: none; }
+    .pal-backdrop {
+      position: absolute; inset: 0; background: rgba(7,7,13,0.6);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .pal-box {
+      position: relative; max-width: 560px; margin: 12vh auto 0; padding: 0 20px;
+    }
+    .pal-inner {
+      background: var(--surface); border: 1px solid var(--border2);
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    }
+    #pal-input {
+      width: 100%; padding: 16px 20px; border: none; outline: none;
+      background: transparent; color: #fff;
+      font-family: var(--mono); font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    #pal-input::placeholder { color: var(--faint); }
+    .pal-list { max-height: 320px; overflow-y: auto; }
+    .pal-item {
+      display: flex; align-items: baseline; gap: 12px;
+      padding: 11px 20px; cursor: pointer;
+      border-left: 2px solid transparent;
+      font-size: 13.5px; color: var(--text);
+    }
+    .pal-item .pk {
+      font-family: var(--mono); font-size: 10px; color: var(--faint);
+      letter-spacing: 1px; text-transform: uppercase; margin-left: auto; flex: none;
+    }
+    .pal-item.sel { background: var(--surface2); border-left-color: var(--ember); }
+    .pal-item.sel .pk { color: var(--ember); }
+    .pal-empty { padding: 18px 20px; font-family: var(--mono); font-size: 12px; color: var(--faint); }
+    .pal-foot {
+      padding: 9px 20px; border-top: 1px solid var(--border);
+      font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.6px;
+    }
+
+    /* ---------- fractal explorer mode ---------- */
+    #julia.explorer { position: fixed; inset: 0; z-index: 200; cursor: crosshair; }
+    body.explorer-on { overflow: hidden; }
+    body.explorer-on nav { display: none; }
+    .explore-btn {
+      pointer-events: auto; margin-top: 8px; cursor: pointer;
+      background: transparent; border: 1px solid var(--border2); border-radius: 4px;
+      font-family: var(--mono); font-size: 10.5px; color: var(--dim);
+      padding: 4px 10px; transition: color 0.2s, border-color 0.2s;
+    }
+    .explore-btn:hover { color: var(--ember); border-color: var(--ember); }
+    .exp-hud {
+      position: fixed; left: 18px; bottom: 16px; z-index: 201; display: none;
+      font-family: var(--mono); font-size: 11px; color: var(--dim); line-height: 1.9;
+      background: rgba(7,7,13,0.72); border: 1px solid var(--border2); border-radius: 8px;
+      padding: 10px 16px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    body.explorer-on .exp-hud { display: block; }
+    .exp-hud b { color: #fff; font-weight: 500; }
+    .exp-hud .x { color: var(--ember); cursor: pointer; text-decoration: underline; }
+    .proj-card.flash, .more-row.flash { border-color: var(--ember); box-shadow: 0 0 0 1px var(--ember); }
+
     /* ---------- responsive ---------- */
     @media (max-width: 980px) {
       .about-grid, .proj-grid, .findings { grid-template-columns: 1fr; }
@@ -357,6 +463,7 @@
         <a href="#mathematics">math</a>
         <a href="#experience">experience</a>
         <a href="#contact">contact</a>
+        <span class="nav-kbd" id="nav-kbd" title="command palette">/</span>
       </div>
     </div>
   </nav>
@@ -369,7 +476,7 @@
       <div class="kicker">Mathematics &middot; Machine Learning &middot; Systems</div>
       <h1>Structure,<br />found in chaos.</h1>
       <p class="hero-thesis">I'm Nicholas Tavares, a graduate mathematician who builds research code that gets validated and infrastructure that runs itself.</p>
-      <p class="hero-sub">Network topology of markets under stress. A from-scratch autodiff engine. A deliberation protocol for panels of language models. GPU fractals. A deckbuilder about rigging slot machines. It all connects, I promise.</p>
+      <p class="hero-sub">An early warning for the moment diversification quietly stops working. A from-scratch autodiff engine. A deliberation protocol for panels of language models. GPU fractals. Phonk written in Python. A deckbuilder about rigging slot machines. It all connects, I promise.</p>
       <div class="hero-cta">
         <a class="btn btn-ember" href="#research">The research</a>
         <a class="btn btn-ghost" href="#projects">Projects</a>
@@ -380,9 +487,13 @@
     </div>
     <div class="shader-caption">
       <b>background:</b> Julia set, z &rarr; z&sup2; + c, c orbiting the cardioid<br />
-      rendered live on your GPU &middot; little sibling of the Fractal Madness project
+      rendered live on your GPU &middot; little sibling of the Fractal Madness project<br />
+      <button class="explore-btn" id="explore-btn">take the controls &rarr;</button>
     </div>
+    <div class="exp-hud" id="exp-hud"></div>
   </section>
+
+  <div class="ticker" id="ticker" aria-hidden="true"><div class="ticker-track" id="ticker-track"></div></div>
 
   <!-- ================= ABOUT ================= -->
   <section id="about" class="alt">
@@ -456,57 +567,55 @@
       <div class="sec-head reveal">
         <div class="sec-num">03 / Research</div>
         <h2>The thesis</h2>
-        <p>Publication-track quantitative research with novel mathematical contributions.</p>
+        <p>Working-paper research on the moment portfolio diversification quietly stops working.</p>
       </div>
       <div class="card paper reveal">
         <div class="paper-top">
           <div style="flex:1; min-width:280px;">
             <div>
-              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Network Theory</span>
-              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Information Theory</span>
-              <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Geopolitical Finance</span>
-              <span class="chip" style="background:rgba(245,158,11,0.12);color:var(--gold);">HMM Regime Detection</span>
+              <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Network Topology</span>
+              <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Early Warning</span>
+              <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Tail Dependence</span>
+              <span class="chip" style="background:rgba(245,158,11,0.12);color:var(--gold);">Consensus Clustering</span>
             </div>
-            <h3>Dynamic Multi-Asset Portfolio Topology Reorganization During Geopolitical Stress</h3>
-            <div class="paper-authors">N. Tavares, A. Hanini, B. Dasilva &middot; Stevens Institute of Technology &middot; 2025 to 2026</div>
+            <h3>Before the Correlation Moves: An Early Warning for Diversification Breakdown</h3>
+            <div class="paper-authors">N. Tavares, A. Hanini, B. DaSilva &middot; Stevens Institute of Technology &middot; 2025 to 2026</div>
           </div>
           <a class="btn btn-ember" href="https://github.com/studyalwaysbro/asset-cluster-migration" target="_blank" rel="noopener noreferrer" style="flex-shrink:0;">View on GitHub &#8599;</a>
         </div>
         <p class="paper-body">
-          A framework for how multi-asset portfolio structures reorganize during geopolitical crises. It constructs multi-layer similarity networks across 91 ETFs in 8 asset classes using shrinkage correlation, distance correlation, and tail-dependence measures, then applies Leiden community detection, Hidden Markov Model regime identification, and information-theoretic tools (transfer entropy via the KSG estimator, Granger causality) to reveal directional information flow between asset clusters.
+          Diversification failure is usually diagnosed after the fact, once correlations have already converged. This paper asks whether the breakdown is visible earlier as a structural process: assets defecting between data-drawn clusters, and the dependence network changing shape before correlation levels and volatility confirm anything. We build rolling similarity networks over a 76-ETF multi-asset panel spanning 2010 to 2026, cluster each window with consensus Leiden detection, and track two structural measures, a Cluster Migration Index and a Topology Deformation Score, across eleven market stress episodes.
         </p>
         <div class="paper-stats">
-          <div class="paper-stat"><b>91</b><span>ETFs analyzed</span></div>
-          <div class="paper-stat"><b>8</b><span>asset classes</span></div>
-          <div class="paper-stat"><b>5</b><span>novel metrics</span></div>
-          <div class="paper-stat"><b>24</b><span>publication figures</span></div>
-          <div class="paper-stat"><b>6</b><span>validation methods</span></div>
+          <div class="paper-stat"><b>76</b><span>ETF panel</span></div>
+          <div class="paper-stat"><b>16</b><span>years of data</span></div>
+          <div class="paper-stat"><b>781</b><span>rolling windows</span></div>
+          <div class="paper-stat"><b>11</b><span>stress episodes</span></div>
+          <div class="paper-stat"><b>7</b><span>pipeline stages</span></div>
         </div>
         <h4>Key findings</h4>
         <div class="findings">
-          <div>In this dataset, topology metrics showed structural changes preceding observed crises. A pattern that merits further study, not a forecast.</div>
-          <div>Tail-dependence CMI Granger-causes Pearson CMI (p = 0.041) in the sample period. Generalizability is under investigation.</div>
-          <div>The Treasury cluster shifted to primary information sender during the geopolitical periods studied, versus credit in calm regimes.</div>
-          <div>COVID showed distinct cluster dissolution (CMI = 1.0) with faster structural recovery than geopolitical shocks.</div>
+          <div>The deformation score crossed its alert threshold 37 trading days before the 2022 Fed repricing and 8 before the October 2025 tariff shock, while volatility measures stayed quiet.</div>
+          <div>Surprise shocks are different: COVID gave no advance warning at all. The paper says so plainly instead of curve-fitting around it.</div>
+          <div>Out of sample and net of costs, a deformation-gated 60/40 de-risking rule kept 98 percent of the static portfolio's return at 83 percent of its volatility. Volatility gating never managed that on the same data.</div>
+          <div>Overlay parameters were frozen on 2012 to 2018 training data before any out-of-sample evaluation, and the tail-dependence variant that failed is disclosed in the appendix as tested and rejected.</div>
         </div>
         <h4>Novel contributions</h4>
         <div>
           <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">CMI (Cluster Migration Index)</span>
           <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">TDS (Topology Deformation Score)</span>
-          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Layer Agreement Metric</span>
-          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Net Transfer Entropy Ranking</span>
-          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Cross-Layer Granger Causality</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Deformation-Gated Overlay</span>
+          <span class="chip" style="background:rgba(91,123,255,0.12);color:var(--blue);">Strictly Causal Z-Scoring</span>
         </div>
         <h4>Methodology and robustness</h4>
         <div>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Walk-Forward Validation</span>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Block Bootstrap CI</span>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">IAAFT Surrogate Testing</span>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Monte Carlo Power Analysis</span>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Bonferroni &amp; BH-FDR Correction</span>
-          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Sensitivity Analysis</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Consensus Leiden (100 runs)</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Frozen-Parameter OOS Design</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Bonferroni-Corrected Granger</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Event Studies, 2011 to 2026</span>
+          <span class="chip" style="background:rgba(45,212,191,0.12);color:var(--teal);">Failed Hypotheses Disclosed</span>
         </div>
-        <div class="note"><b>Academic research:</b> findings above come from a specific historical dataset and time period. They have not been validated for real-world application and should not be read as investment recommendations.</div>
+        <div class="note"><b>Academic research:</b> every number above regenerates from a single results file produced by a pinned seven-stage analysis pipeline; if a claim is not in that file, it does not appear here. Findings come from a specific historical dataset, have not been validated for real-world application, and are not investment recommendations.</div>
       </div>
     </div>
   </section>
@@ -554,7 +663,7 @@
             <span class="period">2025 to present</span>
             <h3>Quantitative Researcher &amp; ML Engineer</h3>
             <div class="org">Stevens Institute of Technology / Independent</div>
-            <p>Researching multi-asset topology dynamics during geopolitical crises and developing novel metrics (CMI, TDS) with full statistical robustness validation. Building multi-agent research systems for prediction market data, and releasing open source along the way: a multi-model deliberation engine, a from-scratch autodiff library, and a forecast comparison toolkit.</p>
+            <p>Built an early-warning framework for diversification breakdown, with novel structural metrics (CMI, TDS) evaluated on a frozen-parameter, strictly out-of-sample design. Building multi-agent research systems along the way, and releasing open source as I go: a multi-model deliberation engine, a from-scratch autodiff library, and a forecast comparison toolkit.</p>
             <div class="proj-tags" style="margin-top:12px;">
               <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Graph Theory</span>
               <span class="chip" style="background:rgba(233,69,96,0.12);color:var(--ember);">Transfer Entropy</span>
@@ -603,12 +712,23 @@
     </div>
   </section>
 
+  <div id="palette" hidden>
+    <div class="pal-backdrop" id="pal-backdrop"></div>
+    <div class="pal-box">
+      <div class="pal-inner">
+        <input id="pal-input" type="text" placeholder="jump anywhere..." autocomplete="off" spellcheck="false" aria-label="command palette" />
+        <div class="pal-list" id="pal-list"></div>
+        <div class="pal-foot">&uarr;&darr; navigate &middot; enter select &middot; esc close</div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="foot-disc">
       <b>Disclosure:</b> this is a personal website. Nothing herein constitutes investment advice or a solicitation. This site is not affiliated with or endorsed by any employer or financial institution. All research content is academic and theoretical. <a href="#disclosures">Full disclosures &rarr;</a>
     </div>
     <div class="colophon">&copy; <span id="year"></span> Nicholas Tavares. Built by hand, no framework, no template.</div>
-    <div class="colophon-sub">The background up top is a Julia set your GPU rendered just now.</div>
+    <div class="colophon-sub">The background up top is a Julia set your GPU rendered just now. Press / to move around faster.</div>
   </footer>
 
   <script>
@@ -638,7 +758,8 @@
           { v: s.open_source_releases, l: "open-source releases" },
           { v: s.projects, l: "projects" },
           { v: s.public_repos, l: "public repos" },
-          { v: s.active_this_month, l: "active this month" }
+          { v: s.active_this_month, l: "active this month" },
+          { v: s.loc_display, l: "lines of code" }
         ];
         $("#hero-stats").innerHTML = items.map(function (it) {
           return '<div class="hero-stat"><b>' + esc(it.v) + "</b><span>" + esc(it.l) + "</span></div>";
@@ -684,7 +805,7 @@
 
       $("#featured-grid").innerHTML = featured.map(function (p) {
         var act = activityBits(p.stats && p.stats.last_activity);
-        return '<div class="card hov proj-card reveal in">' +
+        return '<div class="card hov proj-card reveal in" data-pid="' + esc(p.id) + '">' +
           '<div class="proj-meta">' + chipHTML(p.category, p.color) + (act || "") + "</div>" +
           "<h3>" + esc(p.name) + "</h3>" +
           '<p class="desc">' + esc(p.description) + "</p>" +
@@ -695,7 +816,7 @@
 
       $("#more-list").innerHTML = rest.map(function (p) {
         var act = activityBits(p.stats && p.stats.last_activity);
-        return '<div class="more-row reveal in">' +
+        return '<div class="more-row reveal in" data-pid="' + esc(p.id) + '">' +
           "<h3>" + esc(p.name) + "</h3>" +
           '<span class="cat" style="color:' + esc(p.color) + ';">' + esc(p.category) + "</span>" +
           (act || "") +
@@ -729,6 +850,8 @@
         PROJECTS = d.projects || [];
         renderFilters();
         renderProjects();
+        buildTicker(d);
+        palAddProjects();
       })
       .catch(function () {
         $("#featured-grid").innerHTML = '<p style="color:var(--dim);font-size:13px;">Project data failed to load. The repos are still real, I promise: <a href="https://github.com/studyalwaysbro" style="color:var(--ember);">github.com/studyalwaysbro</a></p>';
@@ -762,7 +885,7 @@
       ["Data", "Pandas, NumPy, SciPy, Polars, NetworkX, igraph, Statsmodels, DuckDB"],
       ["Infrastructure", "PostgreSQL, FastAPI, Docker, Git, GitHub Actions, systemd"],
       ["Graphics / Game", "Godot, OpenGL, WebGL, raymarching, signed distance fields"],
-      ["Viz", "Matplotlib, Seaborn, Plotly, Chart.js, D3.js"]
+      ["Viz / Audio", "Matplotlib, Plotly, D3.js, librosa, soundfonts, FFT analysis"]
     ];
     $("#toolbox").innerHTML = TOOLS.map(function (t) {
       return '<div class="tool-cell"><b>' + esc(t[0]) + "</b><div>" + esc(t[1]) + "</div></div>";
@@ -794,11 +917,146 @@
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(function (el) { revealObs.observe(el); });
 
+    /* ---------- activity ticker (built from the same JSON the pipeline publishes) ---------- */
+    function buildTicker(d) {
+      var track = $("#ticker-track");
+      if (!track) return;
+      var bits = (d.projects || []).filter(function (p) { return p.visible; }).map(function (p) {
+        var act = p.stats && p.stats.last_activity;
+        var hot = act === "today" || act === "this week" || act === "this month";
+        return "<b>" + esc(p.name.toUpperCase()) + "</b> " +
+          (act && act !== "unknown" ? '<span class="' + (hot ? "hot" : "") + '">active ' + esc(act) + "</span>" : "");
+      });
+      if (d.generated) {
+        var g = new Date(d.generated);
+        bits.push("DATA SYNCED " + esc(g.toLocaleDateString("en-US", { month: "short", day: "numeric" }).toUpperCase()) + " BY THE PIPELINE, NOT BY HAND");
+      }
+      var seg = bits.map(function (b) { return b + '<span class="sep">&#10022;</span>'; }).join("");
+      track.innerHTML = seg + seg;
+    }
+
+    /* ---------- command palette ---------- */
+    var enterExplorer = null, exitExplorer = null; // wired up by the fractal block below, if WebGL is available
+    $("#explore-btn").addEventListener("click", function () { if (enterExplorer) enterExplorer(); });
+    var PAL_ITEMS = [
+      { t: "About", k: "section", go: "#about" },
+      { t: "Disclosures", k: "section", go: "#disclosures" },
+      { t: "Research: Before the Correlation Moves", k: "section", go: "#research" },
+      { t: "Projects", k: "section", go: "#projects" },
+      { t: "Mathematics", k: "section", go: "#mathematics" },
+      { t: "Experience", k: "section", go: "#experience" },
+      { t: "Contact", k: "section", go: "#contact" },
+      { t: "Take the fractal controls", k: "action", run: function () { if (enterExplorer) enterExplorer(); } },
+      { t: "GitHub profile", k: "link", href: "https://github.com/studyalwaysbro" },
+      { t: "LinkedIn", k: "link", href: "https://www.linkedin.com/in/nicholas-tavares-34986399/" },
+      { t: "Email me", k: "link", href: "mailto:nickcosta32@gmail.com" }
+    ];
+
+    function palAddProjects() {
+      PROJECTS.filter(function (p) { return p.visible; }).forEach(function (p) {
+        PAL_ITEMS.push({
+          t: p.name, k: p.category.toLowerCase(),
+          run: (function (id) {
+            return function () {
+              FILTER = "All"; renderFilters(); renderProjects();
+              var card = document.querySelector('[data-pid="' + id + '"]');
+              if (card) {
+                card.scrollIntoView({ block: "center" });
+                card.classList.add("flash");
+                setTimeout(function () { card.classList.remove("flash"); }, 1800);
+              }
+            };
+          })(p.id)
+        });
+      });
+    }
+
+    var pal = $("#palette"), palInput = $("#pal-input"), palList = $("#pal-list");
+    var palSel = 0, palShown = [];
+
+    function palScore(q, t) {
+      q = q.toLowerCase(); t = t.toLowerCase();
+      if (!q) return 1;
+      if (t.indexOf(q) !== -1) return 100 - t.indexOf(q);
+      var qi = 0, score = 0;
+      for (var i = 0; i < t.length && qi < q.length; i++) {
+        if (t[i] === q[qi]) { qi++; score += 2; }
+      }
+      return qi === q.length ? score : 0;
+    }
+
+    function palRender() {
+      var q = palInput.value.trim();
+      palShown = PAL_ITEMS
+        .map(function (it) { return { it: it, s: palScore(q, it.t + " " + it.k) }; })
+        .filter(function (x) { return x.s > 0; })
+        .sort(function (a, b) { return b.s - a.s; })
+        .slice(0, 10)
+        .map(function (x) { return x.it; });
+      if (palSel >= palShown.length) palSel = Math.max(0, palShown.length - 1);
+      palList.innerHTML = palShown.length
+        ? palShown.map(function (it, i) {
+            return '<div class="pal-item' + (i === palSel ? " sel" : "") + '" data-i="' + i + '">' +
+              esc(it.t) + '<span class="pk">' + esc(it.k) + "</span></div>";
+          }).join("")
+        : '<div class="pal-empty">nothing matches. it might not be built yet.</div>';
+      palList.querySelectorAll(".pal-item").forEach(function (el) {
+        el.addEventListener("mouseenter", function () { palSel = +el.getAttribute("data-i"); palRender(); });
+        el.addEventListener("click", palGo);
+      });
+    }
+
+    function palOpen() {
+      pal.hidden = false;
+      palInput.value = ""; palSel = 0;
+      palRender();
+      palInput.focus();
+    }
+    function palClose() { pal.hidden = true; palInput.blur(); }
+    function palGo() {
+      var it = palShown[palSel];
+      if (!it) return;
+      palClose();
+      if (it.go) {
+        var el = document.querySelector(it.go);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else if (it.href) {
+        if (it.href.indexOf("mailto:") === 0) location.href = it.href;
+        else window.open(it.href, "_blank", "noopener");
+      } else if (it.run) {
+        it.run();
+      }
+    }
+
+    $("#nav-kbd").addEventListener("click", palOpen);
+    $("#pal-backdrop").addEventListener("click", palClose);
+    palInput.addEventListener("input", function () { palSel = 0; palRender(); });
+    document.addEventListener("keydown", function (e) {
+      var typing = /^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || "");
+      if (pal.hidden) {
+        if ((e.key === "/" && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) {
+          e.preventDefault(); palOpen();
+        } else if (e.key === "Escape" && exitExplorer) {
+          exitExplorer();
+        }
+        return;
+      }
+      if (e.key === "Escape") { e.preventDefault(); palClose(); }
+      else if (e.key === "ArrowDown") { e.preventDefault(); palSel = Math.min(palSel + 1, palShown.length - 1); palRender(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); palSel = Math.max(palSel - 1, 0); palRender(); }
+      else if (e.key === "Enter") { e.preventDefault(); palGo(); }
+    });
+
     /* ---------- the Julia set ---------- */
     var canvas = $("#julia");
     var gl = canvas.getContext("webgl", { antialias: false, depth: false, stencil: false, alpha: false })
           || canvas.getContext("experimental-webgl");
-    if (!gl) { canvas.style.display = "none"; return; }
+    function noGL() {
+      canvas.style.display = "none";
+      var cap = document.querySelector(".shader-caption");
+      if (cap) cap.style.display = "none";
+    }
+    if (!gl) { noGL(); return; }
 
     var VERT = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
     var FRAG = [
@@ -806,11 +1064,15 @@
       "uniform vec2 uRes;",
       "uniform float uT;",
       "uniform vec2 uDrift;",
+      "uniform float uZoom;",
+      "uniform float uMix;",
+      "uniform vec2 uCUser;",
       "void main(){",
       "  vec2 uv=(gl_FragCoord.xy*2.0-uRes)/min(uRes.x,uRes.y);",
-      "  uv*=1.30; uv.x-=0.62; uv.y+=0.05;",
+      "  uv*=1.30/uZoom; uv.x-=0.62*(1.0-uMix); uv.y+=0.05*(1.0-uMix);",
       "  float a=0.045*uT;",
-      "  vec2 c=0.7885*vec2(cos(a),sin(a))+uDrift*0.05;",
+      "  vec2 cOrb=0.7885*vec2(cos(a),sin(a))+uDrift*0.05;",
+      "  vec2 c=mix(cOrb,uCUser,uMix);",
       "  vec2 z=uv;",
       "  float trap=1e9; float n=0.0; bool esc=false;",
       "  for(int i=0;i<130;i++){",
@@ -845,10 +1107,10 @@
       return s;
     }
     var vs = shader(gl.VERTEX_SHADER, VERT), fs = shader(gl.FRAGMENT_SHADER, FRAG);
-    if (!vs || !fs) { canvas.style.display = "none"; return; }
+    if (!vs || !fs) { noGL(); return; }
     var prog = gl.createProgram();
     gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display = "none"; return; }
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { noGL(); return; }
     gl.useProgram(prog);
     var buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
@@ -859,11 +1121,18 @@
     var uRes = gl.getUniformLocation(prog, "uRes");
     var uT = gl.getUniformLocation(prog, "uT");
     var uDrift = gl.getUniformLocation(prog, "uDrift");
+    var uZoom = gl.getUniformLocation(prog, "uZoom");
+    var uMix = gl.getUniformLocation(prog, "uMix");
+    var uCUser = gl.getUniformLocation(prog, "uCUser");
 
-    var SCALE = 0.5 * Math.min(window.devicePixelRatio || 1, 1.5);
+    var explorer = false, frozen = false;
+    function scaleNow() {
+      return (explorer ? 0.85 : 0.5) * Math.min(window.devicePixelRatio || 1, 1.5);
+    }
     function resize() {
-      var w = Math.max(1, Math.floor(canvas.clientWidth * SCALE));
-      var h = Math.max(1, Math.floor(canvas.clientHeight * SCALE));
+      var s = scaleNow();
+      var w = Math.max(1, Math.floor(canvas.clientWidth * s));
+      var h = Math.max(1, Math.floor(canvas.clientHeight * s));
       if (canvas.width !== w || canvas.height !== h) {
         canvas.width = w; canvas.height = h;
         gl.viewport(0, 0, w, h);
@@ -872,10 +1141,63 @@
     window.addEventListener("resize", resize);
 
     var mouse = { x: 0, y: 0 }, drift = { x: 0, y: 0 };
+    var zoomTarget = 1, cUser = { x: -0.7269, y: 0.1889 };
+    var mixCur = 0, zoomCur = 1, cCur = { x: cUser.x, y: cUser.y };
+    var hud = $("#exp-hud"), expVal = null;
+
     window.addEventListener("mousemove", function (e) {
       mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
       mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+      if (explorer && !frozen) { cUser.x = mouse.x * 1.1; cUser.y = -mouse.y * 1.1; }
     }, { passive: true });
+
+    canvas.addEventListener("touchmove", function (e) {
+      if (!explorer) return;
+      e.preventDefault();
+      var t = e.touches[0];
+      if (t && !frozen) {
+        cUser.x = ((t.clientX / window.innerWidth) * 2 - 1) * 1.1;
+        cUser.y = -(((t.clientY / window.innerHeight) * 2 - 1)) * 1.1;
+      }
+    }, { passive: false });
+
+    window.addEventListener("wheel", function (e) {
+      if (!explorer) return;
+      e.preventDefault();
+      zoomTarget *= e.deltaY < 0 ? 1.18 : 1 / 1.18;
+      zoomTarget = Math.min(3500, Math.max(0.6, zoomTarget));
+    }, { passive: false });
+
+    canvas.addEventListener("click", function () {
+      if (explorer) frozen = !frozen;
+    });
+
+    function hudUpdate() {
+      if (!expVal) return;
+      var sign = cCur.y < 0 ? "-" : "+";
+      expVal.textContent = "c = " + cCur.x.toFixed(4) + " " + sign + " " +
+        Math.abs(cCur.y).toFixed(4) + "i  ·  zoom " + zoomCur.toFixed(1) + "x" +
+        (frozen ? "  ·  c frozen" : "");
+    }
+
+    enterExplorer = function () {
+      if (explorer) return;
+      explorer = true; frozen = false; zoomTarget = 1.6;
+      document.body.classList.add("explorer-on");
+      canvas.classList.add("explorer");
+      if (!expVal) {
+        hud.innerHTML = '<b id="exp-val"></b><br />move to steer c &middot; click to freeze c &middot; scroll to zoom &middot; <span class="x" id="exp-exit">exit</span>';
+        expVal = document.getElementById("exp-val");
+        document.getElementById("exp-exit").addEventListener("click", function () { exitExplorer(); });
+      }
+      startLoop();
+    };
+    exitExplorer = function () {
+      if (!explorer) return;
+      explorer = false; zoomTarget = 1;
+      document.body.classList.remove("explorer-on");
+      canvas.classList.remove("explorer");
+    };
 
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var heroVisible = true;
@@ -887,20 +1209,35 @@
       resize();
       drift.x += (mouse.x - drift.x) * 0.02;
       drift.y += (mouse.y - drift.y) * 0.02;
+      mixCur += ((explorer ? 1 : 0) - mixCur) * 0.08;
+      zoomCur += (zoomTarget - zoomCur) * 0.14;
+      cCur.x += (cUser.x - cCur.x) * 0.12;
+      cCur.y += (cUser.y - cCur.y) * 0.12;
       gl.uniform2f(uRes, canvas.width, canvas.height);
       gl.uniform1f(uT, tMs * 0.001);
       gl.uniform2f(uDrift, drift.x, -drift.y);
+      gl.uniform1f(uZoom, zoomCur);
+      gl.uniform1f(uMix, mixCur);
+      gl.uniform2f(uCUser, cCur.x, cCur.y);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
+      if (explorer) hudUpdate();
     }
 
-    if (reduced) {
-      draw(34000); // one pleasant static frame
-    } else {
+    var loopRunning = false;
+    function startLoop() {
+      if (loopRunning) return;
+      loopRunning = true;
       var loop = function (t) {
-        if (heroVisible && !document.hidden) draw(t + 30000);
+        if ((heroVisible || explorer || mixCur > 0.01) && !document.hidden) draw(t + 30000);
         requestAnimationFrame(loop);
       };
       requestAnimationFrame(loop);
+    }
+
+    if (reduced) {
+      draw(34000); // one pleasant static frame; motion starts only if the visitor takes the controls
+    } else {
+      startLoop();
     }
   })();
   </script>

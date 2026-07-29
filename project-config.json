@@ -9,7 +9,7 @@
       "color": "#e94560",
       "featured": true,
       "visible": true,
-      "description": "My thesis project and the thing I'm most proud of right now. This is a deep dive into how asset clusters fall apart and rebuild themselves when geopolitical chaos hits. I built the whole pipeline from scratch: spectral clustering, transfer entropy networks, hidden Markov models for regime detection, and a bunch of novel metrics that didn't exist before I needed them. 91 ETFs across 8 asset classes, years of data, and some genuinely surprising findings about how information flows between markets when everything goes sideways.",
+      "description": "My thesis project and the thing I'm most proud of right now. The question: does diversification break down structurally, with assets defecting between clusters before correlation levels and volatility confirm anything? I built the whole pipeline from scratch: consensus Leiden clustering over rolling windows, a topology deformation score, tail-dependence networks, and a 7-stage analysis where every published number regenerates from one results file. A 76-ETF multi-asset panel over 16 years, 11 stress episodes studied, and the failures are documented right next to the findings.",
       "tags": [
         "Python",
         "Spectral Clustering",
@@ -47,7 +47,7 @@
       "color": "#4361ee",
       "featured": true,
       "visible": true,
-      "description": "A personal ML research project exploring ensemble methods across 4 model architectures (XGBoost, Random Forest, GRU, TFT). Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, and daily report generation. Built purely as a learning exercise in production ML engineering \u2014 not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
+      "description": "A personal ML research project exploring ensemble methods across several model architectures, from gradient boosting to recurrent and transformer networks. Models train daily on historical data, a meta-learner combines outputs, and an LLM judge cross-checks results with macro context. The whole thing runs on cron jobs with automated retraining, staleness checks, deadman alerts, and daily report generation. Built purely as a learning exercise in production ML engineering, not financial advice or a trading system. This is the project where I learned the most about building systems that actually run without babysitting.",
       "tags": [
         "TensorFlow",
         "XGBoost",
@@ -120,7 +120,7 @@
       "color": "#2dd4bf",
       "featured": false,
       "visible": true,
-      "description": "A personal learning project where I taught myself React by building a multi tab data dashboard. 16 different views covering various data visualizations and API integrations. Purely educational, built it because I wanted to understand how frontend frameworks actually work after years of only writing Python.",
+      "description": "A personal learning project where I taught myself React by building a terminal-style, multi tab data dashboard: screeners, macro views, rates, breadth, media panels, and a command bar to jump between them. Purely educational, built it because I wanted to understand how frontend frameworks actually work after years of only writing Python.",
       "tags": [
         "React",
         "Vite",
@@ -373,15 +373,18 @@
       "name": "Phonk Lab",
       "repo_path": "phonk-lab",
       "github": null,
-      "category": "Unknown",
-      "color": "#8888aa",
+      "github_private": true,
+      "category": "Music",
+      "color": "#f472b6",
       "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "visible": true,
+      "description": "Original deep house and phonk, written entirely in Python. Pattern sequencing with hand-tuned 57 percent swing, soundfont instruments, sidechained sine subs layered an octave under the bass, and FFT-verified mastering targets. The craft notes log what actually makes a groove move, including everything that did not work. Started because sampling other people's music is a licensing minefield; kept going because writing my own turned out to be more fun.",
       "tags": [
-        "Python"
-      ],
-      "_auto_discovered": true
+        "Python",
+        "librosa",
+        "Audio DSP",
+        "Sequencing"
+      ]
     },
     {
       "id": "gabriela-junqueira",

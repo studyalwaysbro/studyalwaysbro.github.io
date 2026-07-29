@@ -50,6 +50,11 @@ EXCLUDE_DIRS = {
 }
 
 
+def keep_dir(d):
+    """Directory filter for os.walk: skip vendor/venv trees (any .venv* variant)."""
+    return d not in EXCLUDE_DIRS and not d.startswith(".venv")
+
+
 def run_git(cmd, cwd):
     try:
         result = subprocess.run(
@@ -79,7 +84,7 @@ def count_loc(repo_path):
     """Count lines of source code, excluding generated/vendor dirs."""
     total = 0
     for root, dirs, files in os.walk(repo_path):
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+        dirs[:] = [d for d in dirs if keep_dir(d)]
         for f in files:
             ext = Path(f).suffix.lower()
             if ext in SOURCE_EXTENSIONS:
@@ -96,7 +101,7 @@ def count_python_files(repo_path):
     """Count .py files in a repo, excluding venvs and caches."""
     total = 0
     for root, dirs, files in os.walk(repo_path):
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+        dirs[:] = [d for d in dirs if keep_dir(d)]
         for f in files:
             if f.endswith(".py"):
                 total += 1
@@ -318,7 +323,7 @@ def detect_tags(repo_path):
     tags = set()
     all_files = []
     for root, dirs, files in os.walk(p):
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+        dirs[:] = [d for d in dirs if keep_dir(d)]
         all_files.extend(files)
         if len(all_files) > 500:
             break
