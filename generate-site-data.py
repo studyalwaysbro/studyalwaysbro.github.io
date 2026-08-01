@@ -108,6 +108,26 @@ def count_python_files(repo_path):
     return total
 
 
+def commit_spark(repo_path, months=12):
+    """Monthly commit counts for the trailing year, oldest first (Tufte sparkline data)."""
+    from datetime import timedelta
+    out = run_git(["log", f"--since={months + 1} months ago", "--date=format:%Y-%m", "--pretty=%ad"], repo_path)
+    counts = {}
+    for line in out.splitlines():
+        line = line.strip()
+        if line:
+            counts[line] = counts.get(line, 0) + 1
+    now = datetime.now(timezone.utc)
+    keys = []
+    y, m = now.year, now.month
+    for _ in range(months):
+        keys.append(f"{y:04d}-{m:02d}")
+        m -= 1
+        if m == 0:
+            y, m = y - 1, 12
+    return [counts.get(k, 0) for k in reversed(keys)]
+
+
 def get_repo_stats(repo_path):
     """Get live stats from a local git repo."""
     stats = {
@@ -128,6 +148,7 @@ def get_repo_stats(repo_path):
     stats["is_git"] = True
     stats["loc"] = count_loc(repo_path)
     stats["python_scripts"] = count_python_files(repo_path)
+    stats["spark"] = commit_spark(repo_path)
 
     count = run_git(["rev-list", "--count", "HEAD"], repo_path)
     stats["commits"] = int(count) if count.isdigit() else 0
@@ -429,6 +450,7 @@ def sanitize_project(proj, stats, is_private, compliance_cfg):
             "commits": stats["commits"],
             "last_activity": activity_label(days),
             "last_commit_date": stats["last_commit_date"],
+            "spark": stats.get("spark", []),
         },
     }
 
@@ -496,7 +518,7 @@ def generate_projects(compliance_cfg):
 
     public_projects = []
     for p in enriched:
-        pub = {**p, "stats": {k: v for k, v in p["stats"].items() if k in ("last_activity",)}}
+        pub = {**p, "stats": {k: v for k, v in p["stats"].items() if k in ("last_activity", "spark")}}
         public_projects.append(pub)
 
     with open(PROJECTS_OUTPUT, "w") as f:
