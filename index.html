@@ -10,6 +10,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://studyalwaysbro.github.io/" />
   <meta name="twitter:card" content="summary" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,17 +41,28 @@
       --paper2: #e9e2d2;
       --ink: #1b1611;
       --ink2: #5a5140;
-      --faint: #8f8571;
+      --faint: #6e6553;
       --rule: #d8cfbc;
       --red: #a53125;
+      --red-solid: #a53125;
       --hero-bg: #07070d;
       --hero-text: #d9d9e3;
       --hero-dim: #8c8ca3;
-      --hero-faint: #5b5b72;
+      --hero-faint: #83839c;
       --ember: #e94560;
       --serif: "Newsreader", Georgia, serif;
       --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
       --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    :root[data-theme="dark"] {
+      --paper: #16120d;
+      --paper2: #211a13;
+      --ink: #e6ddca;
+      --ink2: #ab9f87;
+      --faint: #948a76;
+      --rule: #352d22;
+      --red: #e07a57;
+      --red-solid: #a53125;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -54,8 +74,9 @@
       line-height: 1.72;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.2s, color 0.2s;
     }
-    ::selection { background: var(--red); color: var(--paper); }
+    ::selection { background: #a53125; color: #f6f1e6; }
     a { color: inherit; }
 
     /* ---------- nav: transparent over the cover, ink on the pages ---------- */
@@ -173,12 +194,12 @@
       transition: background 0.18s, color 0.18s, border-color 0.18s;
     }
     .btn:hover { background: var(--ink); color: var(--paper); }
-    .btn-ember { background: var(--red); border-color: var(--red); color: #f6f1e6; }
+    .btn-ember { background: var(--red-solid); border-color: var(--red-solid); color: #f6f1e6; }
     .btn-ember:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
     #hero .btn { border-color: rgba(255,255,255,0.5); color: var(--hero-text); }
     #hero .btn:hover { background: #fff; color: var(--hero-bg); border-color: #fff; }
-    #hero .btn-ember { background: var(--ember); border-color: var(--ember); color: #fff; }
-    #hero .btn-ember:hover { background: #f25672; border-color: #f25672; }
+    #hero .btn-ember { background: #d13050; border-color: #d13050; color: #fff; }
+    #hero .btn-ember:hover { background: #b82a45; border-color: #b82a45; }
 
     /* ---------- sections: rules, not boxes ---------- */
     section { position: relative; padding: 84px 0 56px; }
@@ -300,6 +321,9 @@
     .proj-private { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--faint); }
     .activity { font-family: var(--mono); font-size: 10px; letter-spacing: 0.6px; color: var(--faint); display: inline-flex; align-items: center; gap: 6px; }
     .activity .dot { width: 6px; height: 6px; display: inline-block; }
+    .dot-hot { background: var(--red); }
+    .dot-warm { background: var(--ink2); }
+    .dot-cool { background: var(--faint); }
     .more-list { display: block; }
     .more-entry {
       counter-increment: proj;
@@ -392,7 +416,8 @@
     /* ---------- activity ticker: the spine between cover and pages ---------- */
     .ticker {
       position: relative; overflow: hidden;
-      background: var(--ink);
+      background: #14100c;
+      border-bottom: 1px solid var(--rule);
     }
     .ticker-track {
       display: inline-block; white-space: nowrap; padding: 10px 0;
@@ -403,7 +428,7 @@
     .ticker:hover .ticker-track { animation-play-state: paused; }
     @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
-    .ticker b { color: var(--paper); font-weight: 500; }
+    .ticker b { color: #f2ede2; font-weight: 500; }
     .ticker .hot { color: var(--ember); }
     .ticker .sep { color: var(--ember); padding: 0 14px; }
 
@@ -499,6 +524,7 @@
         <a href="#films">films</a>
         <a href="#experience">experience</a>
         <a href="#contact">contact</a>
+        <button class="nav-kbd" id="nav-theme" title="dark or light" aria-label="toggle dark or light theme">&#9680;</button>
         <span class="nav-kbd" id="nav-kbd" title="command palette">/</span>
       </div>
     </div>
@@ -559,15 +585,15 @@
           <div class="card" style="margin-top: 16px;">
             <h3>Elsewhere</h3>
             <div class="edu-item">
-              <b><a href="https://github.com/studyalwaysbro" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">GitHub &#8599;</a></b>
+              <b><a href="https://github.com/studyalwaysbro" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">GitHub &#8599;</a></b>
               <div>Open source: Quorum, nabla, forecast-compare</div>
             </div>
             <div class="edu-item">
-              <b><a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">LinkedIn &#8599;</a></b>
+              <b><a href="https://www.linkedin.com/in/nicholas-tavares-34986399/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">LinkedIn &#8599;</a></b>
               <div>Professional background</div>
             </div>
             <div class="edu-item">
-              <b><a href="https://www.youtube.com/@wakaboomnick" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;">YouTube &#8599;</a></b>
+              <b><a href="https://www.youtube.com/@wakaboomnick" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">YouTube &#8599;</a></b>
               <div>Fractal films and the comedy lane</div>
             </div>
           </div>
@@ -834,10 +860,10 @@
 
     function activityBits(label) {
       if (!label || label === "unknown") return null;
-      var color = "#8f8571";
-      if (label === "today" || label === "this week") color = "#a53125";
-      else if (label === "this month") color = "#5a5140";
-      return '<span class="activity"><span class="dot" style="background:' + color + ';"></span>active ' + esc(label) + "</span>";
+      var heat = "dot-cool";
+      if (label === "today" || label === "this week") heat = "dot-hot";
+      else if (label === "this month") heat = "dot-warm";
+      return '<span class="activity"><span class="dot ' + heat + '"></span>active ' + esc(label) + "</span>";
     }
 
     function linkHTML(p) {
@@ -994,6 +1020,16 @@
       track.innerHTML = seg + seg;
     }
 
+    /* ---------- theme: dark pages or light pages, reader's choice ---------- */
+    function themeIsDark() { return document.documentElement.getAttribute("data-theme") === "dark"; }
+    function setTheme(t) {
+      if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      else document.documentElement.removeAttribute("data-theme");
+      try { localStorage.setItem("theme", t); } catch (e) {}
+    }
+    function toggleTheme() { setTheme(themeIsDark() ? "light" : "dark"); }
+    $("#nav-theme").addEventListener("click", toggleTheme);
+
     /* ---------- films: click-to-load embeds (no iframe until asked) ---------- */
     function playFilm(f) {
       if (f.querySelector("iframe")) return;
@@ -1025,6 +1061,7 @@
       { t: "Experience", k: "section", go: "#experience" },
       { t: "Contact", k: "section", go: "#contact" },
       { t: "Take the fractal controls", k: "action", run: function () { if (enterExplorer) enterExplorer(); } },
+      { t: "Switch dark or light pages", k: "action", run: toggleTheme },
       { t: "GitHub profile", k: "link", href: "https://github.com/studyalwaysbro" },
       { t: "LinkedIn", k: "link", href: "https://www.linkedin.com/in/nicholas-tavares-34986399/" },
       { t: "YouTube channel", k: "link", href: "https://www.youtube.com/@wakaboomnick" },
