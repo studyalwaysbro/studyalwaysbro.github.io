@@ -573,15 +573,13 @@ def generate_stats(projects, public_repo_count, compliance_cfg):
 
     active_count = sum(1 for p in projects if p.get("visible") and p["stats"]["commits"] > 0)
 
+    # Note: no LOC / script-count vanity metrics in the public stats file.
     stats = {
         "open_source_releases": open_source_releases,
         "projects": visible_count,
         "public_repos": public_repo_count,
         "active_this_month": active_this_month,
         "active_projects": active_count,
-        "python_scripts": total_python,
-        "loc": total_loc,
-        "loc_display": loc_display,
         "commits": total_commits,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "scope": "visible_projects_only" if visible_only else "all_local",
