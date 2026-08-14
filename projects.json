@@ -194,7 +194,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "last_activity": "today",
+        "last_activity": "this week",
         "spark": [
           0,
           0,
@@ -787,5 +787,5 @@
       }
     }
   ],
-  "generated": "2026-08-13T17:30:12.827395+00:00"
+  "generated": "2026-08-14T04:48:10.017592+00:00"
 }
