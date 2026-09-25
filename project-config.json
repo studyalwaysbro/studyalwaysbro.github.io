@@ -490,6 +490,22 @@
         "Python"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "wow-forever-guild",
+      "name": "Wow Forever Guild",
+      "repo_path": "wow-forever-guild",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Node.js",
+        "TypeScript"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [
