@@ -194,7 +194,7 @@
       "github": "https://github.com/studyalwaysbro/stock-signal-engine",
       "github_private": true,
       "stats": {
-        "last_activity": "this week",
+        "last_activity": "this month",
         "spark": [
           0,
           0,
@@ -313,6 +313,38 @@
       }
     },
     {
+      "id": "wow-forever-guild",
+      "name": "Wow Forever Guild",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Node.js",
+        "TypeScript"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      }
+    },
+    {
       "id": "forecast-comparison-lab",
       "name": "forecast-compare",
       "category": "Research",
@@ -343,38 +375,6 @@
           0,
           0,
           0
-        ]
-      }
-    },
-    {
-      "id": "wow-forever-guild",
-      "name": "Wow Forever Guild",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Node.js",
-        "TypeScript"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          10
         ]
       }
     },
@@ -873,5 +873,5 @@
       }
     }
   ],
-  "generated": "2026-09-27T04:12:49.552322+00:00"
+  "generated": "2026-09-27T17:30:11.007291+00:00"
 }
