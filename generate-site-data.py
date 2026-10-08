@@ -41,7 +41,7 @@ BINARY_EXTENSIONS = {
 
 SOURCE_EXTENSIONS = {
     ".py", ".js", ".ts", ".jsx", ".tsx", ".sh", ".sql", ".css", ".html",
-    ".mjs", ".cjs", ".vue", ".svelte", ".go", ".rs", ".rb",
+    ".mjs", ".cjs", ".vue", ".svelte", ".go", ".rs", ".rb", ".lua",
 }
 
 EXCLUDE_DIRS = {

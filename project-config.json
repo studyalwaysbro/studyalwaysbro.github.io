@@ -506,6 +506,41 @@
         "TypeScript"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "yeeterson-forge",
+      "name": "Yeeterson Forge",
+      "repo_path": "yeeterson-forge",
+      "github": "https://github.com/studyalwaysbro/yeeterson-forge",
+      "category": "Tooling",
+      "color": "#2dd4bf",
+      "featured": false,
+      "visible": true,
+      "description": "An addon updater for World of Warcraft: Forever on Linux, written as one Python file with nothing but the standard library. I wanted an updater small enough to read in one sitting, so every decision it makes is explicit: downloads are hash-checked, zips that try to write outside their folder are refused, an addon built for the wrong game version never lands, and a failed update is rolled back so you are never left half-installed. It never touches anything while the game is running. When an author blocks third-party downloads it respects that instead of working around it. No telemetry, no account. 66 tests, and I broke the code on purpose 24 ways to make sure the tests notice.",
+      "tags": [
+        "Python",
+        "CLI",
+        "systemd",
+        "Linux",
+        "MIT"
+      ]
+    },
+    {
+      "id": "godslayer",
+      "name": "Godslayer",
+      "repo_path": "godslayer",
+      "github": "https://github.com/studyalwaysbro/godslayer",
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": false,
+      "visible": true,
+      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
+      "tags": [
+        "Lua",
+        "WoW Addon API",
+        "Property Testing",
+        "MIT"
+      ]
     }
   ],
   "excluded_repos": [
