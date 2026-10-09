@@ -280,6 +280,38 @@
       }
     },
     {
+      "id": "wow-forever-guild",
+      "name": "Wow Forever Guild",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Node.js",
+        "TypeScript"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          46
+        ]
+      }
+    },
+    {
       "id": "ticker-prophet",
       "name": "Ticker Prophet",
       "category": "Bot",
@@ -309,38 +341,6 @@
           0,
           0,
           0
-        ]
-      }
-    },
-    {
-      "id": "wow-forever-guild",
-      "name": "Wow Forever Guild",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Node.js",
-        "TypeScript"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          16,
-          34
         ]
       }
     },
@@ -509,6 +509,71 @@
       }
     },
     {
+      "id": "godslayer",
+      "name": "Godslayer",
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": false,
+      "visible": true,
+      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
+      "tags": [
+        "Lua",
+        "WoW Addon API",
+        "Property Testing",
+        "MIT"
+      ],
+      "github": "https://github.com/studyalwaysbro/godslayer",
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "id": "torchcall",
+      "name": "Torchcall",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
       "id": "yeet-terminal",
       "name": "YeetTerminal",
       "category": "Learning Project",
@@ -623,40 +688,6 @@
         "MIT"
       ],
       "github": "https://github.com/studyalwaysbro/yeeterson-forge",
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1
-        ]
-      }
-    },
-    {
-      "id": "godslayer",
-      "name": "Godslayer",
-      "category": "Game",
-      "color": "#f59e0b",
-      "featured": false,
-      "visible": true,
-      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
-      "tags": [
-        "Lua",
-        "WoW Addon API",
-        "Property Testing",
-        "MIT"
-      ],
-      "github": "https://github.com/studyalwaysbro/godslayer",
       "github_private": false,
       "stats": {
         "last_activity": "today",
@@ -940,25 +971,7 @@
         "last_activity": "unknown",
         "spark": []
       }
-    },
-    {
-      "id": "torchcall",
-      "name": "Torchcall",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "unknown",
-        "spark": []
-      }
     }
   ],
-  "generated": "2026-10-08T17:30:07.795085+00:00"
+  "generated": "2026-10-09T04:47:54.579941+00:00"
 }
