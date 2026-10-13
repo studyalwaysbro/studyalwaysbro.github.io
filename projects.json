@@ -122,7 +122,7 @@
       "github": "https://github.com/studyalwaysbro/quorum",
       "github_private": false,
       "stats": {
-        "last_activity": "recently",
+        "last_activity": "a while ago",
         "spark": [
           0,
           0,
@@ -307,7 +307,7 @@
           0,
           0,
           16,
-          51
+          61
         ]
       }
     },
@@ -327,7 +327,7 @@
       "github": "https://github.com/studyalwaysbro/ticker-prophet",
       "github_private": true,
       "stats": {
-        "last_activity": "recently",
+        "last_activity": "a while ago",
         "spark": [
           0,
           0,
@@ -341,6 +341,37 @@
           0,
           0,
           0
+        ]
+      }
+    },
+    {
+      "id": "torchcall",
+      "name": "Torchcall",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11
         ]
       }
     },
@@ -375,6 +406,40 @@
           0,
           0,
           0
+        ]
+      }
+    },
+    {
+      "id": "godslayer",
+      "name": "Godslayer",
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": false,
+      "visible": true,
+      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
+      "tags": [
+        "Lua",
+        "WoW Addon API",
+        "Property Testing",
+        "MIT"
+      ],
+      "github": "https://github.com/studyalwaysbro/godslayer",
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10
         ]
       }
     },
@@ -509,71 +574,6 @@
       }
     },
     {
-      "id": "godslayer",
-      "name": "Godslayer",
-      "category": "Game",
-      "color": "#f59e0b",
-      "featured": false,
-      "visible": true,
-      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
-      "tags": [
-        "Lua",
-        "WoW Addon API",
-        "Property Testing",
-        "MIT"
-      ],
-      "github": "https://github.com/studyalwaysbro/godslayer",
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          2
-        ]
-      }
-    },
-    {
-      "id": "torchcall",
-      "name": "Torchcall",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          2
-        ]
-      }
-    },
-    {
       "id": "yeet-terminal",
       "name": "YeetTerminal",
       "category": "Learning Project",
@@ -690,7 +690,7 @@
       "github": "https://github.com/studyalwaysbro/yeeterson-forge",
       "github_private": false,
       "stats": {
-        "last_activity": "today",
+        "last_activity": "this week",
         "spark": [
           0,
           0,
@@ -971,7 +971,79 @@
         "last_activity": "unknown",
         "spark": []
       }
+    },
+    {
+      "id": "bond-radar",
+      "name": "Bond Radar",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
+    },
+    {
+      "id": "torchbinds",
+      "name": "Torchbinds",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "TypeScript"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
+    },
+    {
+      "id": "torchlinks",
+      "name": "Torchlinks",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
+    },
+    {
+      "id": "ubuntu-2604-readiness",
+      "name": "Ubuntu 2604 Readiness",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
     }
   ],
-  "generated": "2026-10-09T17:30:08.347222+00:00"
+  "generated": "2026-10-13T03:24:46.255717+00:00"
 }
