@@ -307,7 +307,7 @@
           0,
           0,
           16,
-          61
+          66
         ]
       }
     },
@@ -345,6 +345,37 @@
       }
     },
     {
+      "id": "torchcall",
+      "name": "Torchcall",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13
+        ]
+      }
+    },
+    {
       "id": "godslayer",
       "name": "Godslayer",
       "category": "Game",
@@ -375,37 +406,6 @@
           0,
           0,
           12
-        ]
-      }
-    },
-    {
-      "id": "torchcall",
-      "name": "Torchcall",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          11
         ]
       }
     },
@@ -1043,7 +1043,25 @@
         "last_activity": "unknown",
         "spark": []
       }
+    },
+    {
+      "id": "torchcall-backups",
+      "name": "Torchcall Backups",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
     }
   ],
-  "generated": "2026-10-13T04:13:32.282313+00:00"
+  "generated": "2026-10-13T17:30:12.048356+00:00"
 }
