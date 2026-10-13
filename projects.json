@@ -345,6 +345,40 @@
       }
     },
     {
+      "id": "godslayer",
+      "name": "Godslayer",
+      "category": "Game",
+      "color": "#f59e0b",
+      "featured": false,
+      "visible": true,
+      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
+      "tags": [
+        "Lua",
+        "WoW Addon API",
+        "Property Testing",
+        "MIT"
+      ],
+      "github": "https://github.com/studyalwaysbro/godslayer",
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      }
+    },
+    {
       "id": "torchcall",
       "name": "Torchcall",
       "category": "Unknown",
@@ -406,40 +440,6 @@
           0,
           0,
           0
-        ]
-      }
-    },
-    {
-      "id": "godslayer",
-      "name": "Godslayer",
-      "category": "Game",
-      "color": "#f59e0b",
-      "featured": false,
-      "visible": true,
-      "description": "A World of Warcraft: Forever addon I wrote for my guild. It keeps score in our running world PvP feud with the biggest guild network on the other faction: who you beat, how often, a title ladder, and a leaderboard that syncs itself between guildmates. The interesting part was the engineering. The new version of the game hides the combat log from addons, so kills have to be inferred from the few signals the game still exposes, without double counting. I could not run it in the game while building, so I wrote a stand-in for the game's API in plain Lua and tested against that, including a soak test that throws 900,000 random events at it and checks the books still balance.",
-      "tags": [
-        "Lua",
-        "WoW Addon API",
-        "Property Testing",
-        "MIT"
-      ],
-      "github": "https://github.com/studyalwaysbro/godslayer",
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          10
         ]
       }
     },
@@ -1045,5 +1045,5 @@
       }
     }
   ],
-  "generated": "2026-10-13T03:24:46.255717+00:00"
+  "generated": "2026-10-13T04:13:32.282313+00:00"
 }
