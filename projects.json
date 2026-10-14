@@ -307,7 +307,7 @@
           0,
           0,
           16,
-          66
+          69
         ]
       }
     },
@@ -345,37 +345,6 @@
       }
     },
     {
-      "id": "torchcall",
-      "name": "Torchcall",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "Code"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "today",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          13
-        ]
-      }
-    },
-    {
       "id": "godslayer",
       "name": "Godslayer",
       "category": "Game",
@@ -405,7 +374,38 @@
           0,
           0,
           0,
-          12
+          15
+        ]
+      }
+    },
+    {
+      "id": "torchcall",
+      "name": "Torchcall",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Code"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13
         ]
       }
     },
@@ -574,6 +574,41 @@
       }
     },
     {
+      "id": "yeeterson-forge",
+      "name": "Yeeterson Forge",
+      "category": "Tooling",
+      "color": "#2dd4bf",
+      "featured": false,
+      "visible": true,
+      "description": "An addon updater for World of Warcraft: Forever on Linux, written as one Python file with nothing but the standard library. I wanted an updater small enough to read in one sitting, so every decision it makes is explicit: downloads are hash-checked, zips that try to write outside their folder are refused, an addon built for the wrong game version never lands, and a failed update is rolled back so you are never left half-installed. It never touches anything while the game is running. When an author blocks third-party downloads it respects that instead of working around it. No telemetry, no account. 66 tests, and I broke the code on purpose 24 ways to make sure the tests notice.",
+      "tags": [
+        "Python",
+        "CLI",
+        "systemd",
+        "Linux",
+        "MIT"
+      ],
+      "github": "https://github.com/studyalwaysbro/yeeterson-forge",
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      }
+    },
+    {
       "id": "yeet-terminal",
       "name": "YeetTerminal",
       "category": "Learning Project",
@@ -669,41 +704,6 @@
           0,
           0,
           0
-        ]
-      }
-    },
-    {
-      "id": "yeeterson-forge",
-      "name": "Yeeterson Forge",
-      "category": "Tooling",
-      "color": "#2dd4bf",
-      "featured": false,
-      "visible": true,
-      "description": "An addon updater for World of Warcraft: Forever on Linux, written as one Python file with nothing but the standard library. I wanted an updater small enough to read in one sitting, so every decision it makes is explicit: downloads are hash-checked, zips that try to write outside their folder are refused, an addon built for the wrong game version never lands, and a failed update is rolled back so you are never left half-installed. It never touches anything while the game is running. When an author blocks third-party downloads it respects that instead of working around it. No telemetry, no account. 66 tests, and I broke the code on purpose 24 ways to make sure the tests notice.",
-      "tags": [
-        "Python",
-        "CLI",
-        "systemd",
-        "Linux",
-        "MIT"
-      ],
-      "github": "https://github.com/studyalwaysbro/yeeterson-forge",
-      "github_private": false,
-      "stats": {
-        "last_activity": "this week",
-        "spark": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1
         ]
       }
     },
@@ -1063,5 +1063,5 @@
       }
     }
   ],
-  "generated": "2026-10-13T17:30:12.048356+00:00"
+  "generated": "2026-10-14T04:12:29.225541+00:00"
 }
