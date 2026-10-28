@@ -646,6 +646,36 @@
         "Code"
       ],
       "_auto_discovered": true
+    },
+    {
+      "id": "claude-five",
+      "name": "Claude Five",
+      "repo_path": "claude-five",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
+    },
+    {
+      "id": "yeet-quant",
+      "name": "Yeet Quant",
+      "repo_path": "yeet-quant",
+      "github": null,
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "_auto_discovered": true
     }
   ],
   "excluded_repos": [

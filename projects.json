@@ -307,7 +307,7 @@
           0,
           0,
           16,
-          164
+          189
         ]
       }
     },
@@ -690,7 +690,7 @@
       "github": null,
       "github_private": true,
       "stats": {
-        "last_activity": "recently",
+        "last_activity": "a while ago",
         "spark": [
           0,
           0,
@@ -1079,7 +1079,43 @@
         "last_activity": "unknown",
         "spark": []
       }
+    },
+    {
+      "id": "claude-five",
+      "name": "Claude Five",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
+    },
+    {
+      "id": "yeet-quant",
+      "name": "Yeet Quant",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "Python"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "unknown",
+        "spark": []
+      }
     }
   ],
-  "generated": "2026-10-26T17:30:16.202219+00:00"
+  "generated": "2026-10-28T17:30:28.866119+00:00"
 }
