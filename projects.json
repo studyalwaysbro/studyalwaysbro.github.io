@@ -25,9 +25,9 @@
           0,
           0,
           0,
-          0,
           96,
           36,
+          0,
           0,
           0,
           0
@@ -58,10 +58,10 @@
           0,
           0,
           0,
-          0,
           22,
           2,
           3,
+          0,
           0,
           0,
           0,
@@ -93,12 +93,12 @@
           0,
           0,
           0,
-          0,
           20,
           3,
           0,
           0,
           4,
+          0,
           0,
           0,
           0
@@ -130,9 +130,9 @@
           0,
           0,
           0,
-          0,
           24,
           2,
+          0,
           0,
           0,
           0
@@ -162,11 +162,11 @@
         "spark": [
           0,
           0,
-          0,
           7,
           5,
           7,
           1,
+          0,
           0,
           0,
           0,
@@ -199,7 +199,6 @@
           0,
           0,
           0,
-          0,
           4,
           10,
           2,
@@ -207,6 +206,7 @@
           1,
           1,
           1,
+          0,
           0
         ]
       }
@@ -236,8 +236,8 @@
           0,
           0,
           0,
-          0,
           4,
+          0,
           0,
           0,
           0,
@@ -270,8 +270,8 @@
           0,
           0,
           0,
-          0,
           1,
+          0,
           0,
           0,
           0,
@@ -305,9 +305,9 @@
           0,
           0,
           0,
-          0,
           16,
-          217
+          218,
+          0
         ]
       }
     },
@@ -332,12 +332,12 @@
           0,
           0,
           0,
-          0,
           3,
           6,
           8,
           38,
           3,
+          0,
           0,
           0,
           0
@@ -373,8 +373,8 @@
           0,
           0,
           0,
-          0,
-          19
+          19,
+          0
         ]
       }
     },
@@ -404,8 +404,8 @@
           0,
           0,
           0,
-          0,
-          13
+          13,
+          0
         ]
       }
     },
@@ -433,8 +433,8 @@
           0,
           0,
           0,
-          0,
           10,
+          0,
           0,
           0,
           0,
@@ -468,8 +468,8 @@
           0,
           0,
           0,
-          0,
           7,
+          0,
           0
         ]
       }
@@ -494,7 +494,7 @@
       "stats": {
         "last_activity": "a while ago",
         "spark": [
-          3,
+          0,
           0,
           0,
           0,
@@ -531,8 +531,8 @@
           0,
           0,
           0,
-          0,
           5,
+          0,
           0,
           0,
           0,
@@ -561,9 +561,9 @@
           0,
           0,
           0,
-          0,
           2,
           1,
+          0,
           0,
           0,
           0,
@@ -603,8 +603,39 @@
           0,
           0,
           0,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "torchbinds",
+      "name": "Torchbinds",
+      "category": "Unknown",
+      "color": "#8888aa",
+      "featured": false,
+      "visible": false,
+      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
+      "tags": [
+        "TypeScript"
+      ],
+      "github": null,
+      "github_private": false,
+      "stats": {
+        "last_activity": "today",
+        "spark": [
           0,
-          2
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
         ]
       }
     },
@@ -631,8 +662,8 @@
           0,
           0,
           0,
-          0,
           1,
+          0,
           0,
           0,
           0,
@@ -662,8 +693,8 @@
           0,
           0,
           0,
-          0,
           1,
+          0,
           0,
           0,
           0,
@@ -699,8 +730,8 @@
           0,
           0,
           0,
-          0,
           1,
+          0,
           0,
           0,
           0
@@ -991,24 +1022,6 @@
       }
     },
     {
-      "id": "torchbinds",
-      "name": "Torchbinds",
-      "category": "Unknown",
-      "color": "#8888aa",
-      "featured": false,
-      "visible": false,
-      "description": "Auto-discovered project. Edit project-config.json to add a description and set visible to true.",
-      "tags": [
-        "TypeScript"
-      ],
-      "github": null,
-      "github_private": false,
-      "stats": {
-        "last_activity": "unknown",
-        "spark": []
-      }
-    },
-    {
       "id": "torchlinks",
       "name": "Torchlinks",
       "category": "Unknown",
@@ -1135,5 +1148,5 @@
       }
     }
   ],
-  "generated": "2026-10-31T17:30:26.926372+00:00"
+  "generated": "2026-11-01T04:06:28.285623+00:00"
 }
